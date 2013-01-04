@@ -1,2 +1,36 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+      	<%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>  
+<% else %>
+
+	<div class="center hero-unit">
+	  <h1>Welcome to Notable</h1>
+
+	  <p>
+	    This is the home page for the prequel app described in
+	    <a href="http://productivityanywhere.com">Productivity Anywhere</a>.
+	    It is a next generation note-taking tool that gives you a new way to view your notes so you can come up with best ideas.
+	  </p>
+
+	  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+	</div> 
+
+	<div class="center">
+	<%= link_to image_tag("flower.jpg", alt: "Flower"), 'assets/flower.jpg' %>
+	</div>
+<% end %>
