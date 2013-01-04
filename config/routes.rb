@@ -1,4 +1,10 @@
-Railstut::Application.routes.draw do
+Notable::Application.routes.draw do
+  get "users/new"
+
+  get "users/create"
+
+  get "users/edit"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :notes, only: [:create, :destroy]
