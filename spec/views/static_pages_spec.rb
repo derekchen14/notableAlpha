@@ -43,7 +43,6 @@ describe "Static pages" do
 
   end
 
-
  describe "Help page" do
     before { visit help_path } 
     it { should have_selector('h1', text: 'Help') }
@@ -62,8 +61,6 @@ describe "Static pages" do
     it { should have_selector('title', text: " | Contact") }
   end
 
-=begin ----------------------
-
   it "should have the right links on the layout" do
     visit root_path
     click_link "About"
@@ -75,7 +72,5 @@ describe "Static pages" do
     click_link "Home"
     click_link "Sign up now!"
   end
-
-=end
 
 end
