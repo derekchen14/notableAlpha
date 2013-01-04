@@ -8,8 +8,8 @@ describe "Static pages" do
     it { should have_selector('h1', text: 'Notable') }
     it { should have_selector('title', text: 'Notable') }
     it { should have_selector('a', text: '0.2')}
+# add link (a) with (id) of logo
     it { should_not have_selector('title', text: " | Home") }
-
 
 =begin ----------------------
 
