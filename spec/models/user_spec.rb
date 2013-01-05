@@ -9,11 +9,11 @@ describe User do
 
   it { should respond_to(:username) }
   it { should respond_to(:email) }
-
-=begin
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+
+=begin
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
@@ -21,6 +21,7 @@ describe User do
 
   it { should be_valid }
   it { should_not be_admin }
+=end
 
   describe "when username is not present" do
     before { @user.username = " " }
@@ -47,6 +48,8 @@ describe User do
       end      
     end
   end
+
+
 
   describe "when email format is valid" do
     it "should be valid" do
@@ -81,6 +84,8 @@ describe User do
   	before { @user.password_confirmation = nil }
   	it { should_not be_valid }
 	end
+
+=begin
 
 	describe "return value of authenticate method" do
   	before { @user.save }

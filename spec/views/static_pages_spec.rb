@@ -7,9 +7,9 @@ describe "Static pages" do
     before { visit root_path } 
     it { should have_selector('h1', text: 'Notable') }
     it { should have_selector('title', text: 'Notable') }
-    it { should have_selector('a', text: '0.2')}
-# add link (a) with (id) of logo
+    it { should have_selector('a#logo', text: '0.2')}
     it { should_not have_selector('title', text: " | Home") }
+  end
 
 =begin ----------------------
 
@@ -41,9 +41,8 @@ describe "Static pages" do
     end
 =end
 
-  end
 
- describe "Help page" do
+  describe "Help page" do
     before { visit help_path } 
     it { should have_selector('h1', text: 'Help') }
     it { should have_selector('title', text: " | Help") }
@@ -69,8 +68,5 @@ describe "Static pages" do
     should have_selector 'title', text: full_title('Help')
     click_link "Contact"
     should have_selector 'title', text: full_title('Contact')
-    click_link "Home"
-    click_link "Sign up now!"
   end
-
 end
