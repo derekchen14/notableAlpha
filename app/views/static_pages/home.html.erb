@@ -5,15 +5,12 @@
         <%= render 'shared/user_info' %>
       </section>
       <section>
-        <%= render 'shared/stats' %>
-      </section>
-      <section>
-      	<%= render 'shared/micropost_form' %>
+      	<%= render 'shared/note_form' %>
       </section>
     </aside>
     <div class="span8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
+      <h3><%= current_user.username %> Notes</h3>
+      <%= render 'shared/notebook' %>
     </div>
 
   </div>  

@@ -1,0 +1,6 @@
+<% if @notebook_items.any? %>
+  <ol class="notes">
+    <%= render partial: 'shared/notebook_item', collection: @notebook_items %>
+  </ol>
+  <%= will_paginate @notebook_items %>
+<% end %>
