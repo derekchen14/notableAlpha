@@ -1,4 +1,21 @@
 <% provide(:title, @user.username) %>
 <div class="row">
-  <p>Some Lorem Ipsum</p>
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user, size: 60 %>
+        <%= @user.username %>
+      </h1>
+    </section>
+  </aside>
+
+  <div class="span8">
+    <% if @user.notes.any? %>
+      <h3>Notes (<%= @user.notes.count %>)</h3>
+      <ol class="notes">
+        <%= render @notes %>
+      </ol>
+      <%= will_paginate @notes %>
+    <% end %>
+  </div>
 </div>

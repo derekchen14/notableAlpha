@@ -1,10 +1,9 @@
-@import "bootstrap";
-
 /****************
   Mixins and Variables
  *****************/
 
 $grayMediumLight: #eaeaea;
+$grayLight: #444fff;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
