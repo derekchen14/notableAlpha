@@ -1,8 +1,8 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: f.object  %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
 
   <%= f.label :email %>
   <%= f.text_field :email %>
@@ -13,7 +13,7 @@
   <%= f.label :password_confirmation, "Confirm Password" %>
   <%= f.password_field :password_confirmation %>
 
-  <% @btn_label = @user.name ? "Save changes" : "Create my account" %>
+  <% @btn_label = @user.username ? "Save changes" : "Create my account" %>
   <%= f.submit @btn_label, class: "btn btn-large btn-primary" %>
 
 <% end %>

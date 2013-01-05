@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @notes = @user.notes.paginate(page: params[:page])
+    #@notes = @user.notes.paginate(page: params[:page])
   end
 
   def new
@@ -64,9 +64,9 @@ class UsersController < ApplicationController
     end
 
     def already_member
-      if signed_in?
-        redirect_to root_url
-      end
+      #if signed_in?
+      # redirect_to root_url
+      #end
     end
 
 end
