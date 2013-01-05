@@ -8,7 +8,7 @@ class NotesController < ApplicationController
       flash[:success] = "Note created!"
       redirect_to root_url
     else
-      #@feed_items = []
+      #@notebook_items = []
       render 'static_pages/home'
     end
 	end

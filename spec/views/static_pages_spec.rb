@@ -22,8 +22,8 @@ describe "Static pages" do
         visit root_path
       end
 
-      it "should render the user's feed" do
-        user.feed.each do |item|
+      it "should render the user's notebook" do
+        user.notebook.each do |item|
           page.should have_selector("li##{item.id}", text: item.content)
         end
       end
