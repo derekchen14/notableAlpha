@@ -40,4 +40,8 @@ class User < ActiveRecord::Base
       self.remember_token = SecureRandom.urlsafe_base64
     end
 
+    def notebook
+      Note.where("user_id = ?", id)
+    end
+    
 end

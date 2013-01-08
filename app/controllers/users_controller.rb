@@ -48,10 +48,6 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  #def notebook
-  #  Note.where("user_id = ?", id)
-  #end
-
   private
 
     def signed_in_user
