@@ -4,7 +4,7 @@ class CreateNotes < ActiveRecord::Migration
       t.string :content
       t.integer :user_id
       t.references :item
-      t.string :format, default: 'topdown'
+      t.string :format
 
       t.timestamps
     end
