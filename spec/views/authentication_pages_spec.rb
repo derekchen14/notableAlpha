@@ -3,7 +3,6 @@ require 'spec_helper'
 describe "Authentication" do
   subject { page }
 
-=begin
   describe "Sign in" do
   	before { visit signin_path }
 
@@ -37,6 +36,7 @@ describe "Authentication" do
 		end
 	end
 
+=begin
 	describe "authorization" do
 
     describe "as non-admin user" do

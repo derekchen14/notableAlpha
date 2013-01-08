@@ -17,25 +17,16 @@
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "Sign out", '#', method: "delete" %>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
                 </li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", '#' %></li>
+            <li><%= link_to "Sign in", signin_path %></li>
           <% end %>
         </ul>
       </nav>
     </div>
   </div>
-
-
-<!--
-
-
-
-signout_path
-signin_path
--->
 
 </header>

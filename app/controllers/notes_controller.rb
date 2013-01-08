@@ -1,14 +1,14 @@
 class NotesController < ApplicationController
-	#before_filter :signed_in_user
-	#before_filter :correct_user,   only: :destroy
+	before_filter :signed_in_user
+	before_filter :correct_user,   only: :destroy
 
 	def create
-		@note = current_user.microposts.build(params[:note])
+		@note = current_user.notes.build(params[:note])
     if @note.save
       flash[:success] = "Note created!"
       redirect_to root_url
     else
-      #@notebook_items = []
+      @notebook_items = []
       render 'static_pages/home'
     end
 	end

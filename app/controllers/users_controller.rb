@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
     if @user.save
       flash[:success] = "Welcome to Notable!"
-      #sign_in @user      
+      sign_in @user      
       redirect_to @user
     else
       render 'new'
@@ -49,8 +49,8 @@ class UsersController < ApplicationController
   end
 
   def notebook
-    Note.where("user_id = ?", id) 
-  end 
+    Note.where("user_id = ?", id)
+  end
 
   private
 
@@ -64,9 +64,9 @@ class UsersController < ApplicationController
     end
 
     def already_member
-      #if signed_in?
-      # redirect_to root_url
-      #end
+      if signed_in?
+       redirect_to root_url
+      end
     end
 
 end

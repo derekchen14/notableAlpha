@@ -3,8 +3,8 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.string :content
       t.integer :user_id
-      t.integer :item_id
-      t.string :format
+      t.references :item
+      t.string :format, default: 'topdown'
 
       t.timestamps
     end
