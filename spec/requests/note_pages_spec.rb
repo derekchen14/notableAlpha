@@ -3,7 +3,6 @@ require 'spec_helper'
 describe "Notes" do
 	subject { page }
 
-=begin
   let(:user) { FactoryGirl.create(:user) }
   before { sign_in user }
 
@@ -38,9 +37,8 @@ describe "Notes" do
       before { visit root_path }
 
       it "should delete a note" do
-        expect { click_link "delete" }.to change(Note, :count).by(-1)
+        expect { click_link "Mark Complete" }.to change(Note, :count).by(-1)
       end
     end
   end
-=end
 end

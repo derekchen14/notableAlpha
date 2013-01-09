@@ -13,7 +13,6 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
 
-=begin
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
@@ -21,7 +20,6 @@ describe User do
 
   it { should be_valid }
   it { should_not be_admin }
-=end
 
   describe "when username is not present" do
     before { @user.username = " " }
@@ -85,7 +83,7 @@ describe User do
   	it { should_not be_valid }
 	end
 
-=begin
+
 
 	describe "return value of authenticate method" do
   	before { @user.save }
@@ -136,7 +134,5 @@ describe User do
       end
     end
   end  
-
-=end
 
 end
