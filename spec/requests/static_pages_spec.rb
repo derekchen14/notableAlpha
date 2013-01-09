@@ -26,6 +26,12 @@ describe "Static pages" do
         end
       end
 
+      describe "Settings page" do
+        before { visit settings_path } 
+        it { should have_selector('h1', text: 'Settings') }
+        it { should have_selector('title', text: " | Settings") }
+      end
+
     end
 
   describe "Help page" do

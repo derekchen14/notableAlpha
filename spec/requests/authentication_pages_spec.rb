@@ -12,7 +12,7 @@ describe "Authentication" do
 	    it { should have_selector('div.alert.alert-error', text: 'Invalid') }
 
 	    describe "after visiting another page" do
-	      before { click_link "Home" }
+	      before { click_link "Help" }
 	      it { should_not have_selector('div.alert.alert-error') }
 	    end
 		end
@@ -22,14 +22,15 @@ describe "Authentication" do
 	    before { sign_in(user) }
 
 	    it { should have_selector('title', text: user.username) }
-      it { should have_link('Notebook',    href: root_path) }
-      it { should have_link('Profile', href: user_path(user)) }
-	    it { should have_link('Settings', href: edit_user_path(user)) }
+      it { should have_link('Notebook',    href: notes_path) }
+      it { should have_link('Profile', href: edit_user_path(user)) }
+	    it { should have_link('Settings', href: settings_path) }
 	    it { should have_link('Sign out', href: signout_path) }
 	    it { should_not have_link('Sign in', href: signin_path) }
 
 	    describe "followed by signout" do
         before { click_link "Sign out" }
+        it { should have_link('Help') }
         it { should have_link('Sign in') }
       end
 	 

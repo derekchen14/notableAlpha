@@ -18,6 +18,9 @@ class NotesController < ApplicationController
     redirect_to root_url
 	end
 
+  def index
+  end
+
 	private
     def correct_user
       @note = current_user.notes.find_by_id(params[:id])
