@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(function() {
+	$(".alert").fadeTo(7000, 1.0).fadeOut(1400);
+	//$('#clear').click(clearAll);
+});
+
+//function clearAll(event) {
+//	var $t = $(event.target);
+//	What you want to have happen when someone
+//	clicks on the object with an id = "clear";
+//}
