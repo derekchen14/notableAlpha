@@ -1,4 +1,6 @@
 Notable::Application.routes.draw do
+  get "items/create"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :notes, only: [:create, :destroy, :index]
