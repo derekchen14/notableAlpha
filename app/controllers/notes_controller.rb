@@ -1,3 +1,5 @@
+require 'mail/mail_util'
+
 class NotesController < ApplicationController
 	before_filter :signed_in_user
 	before_filter :correct_user,   only: :destroy
@@ -6,6 +8,7 @@ class NotesController < ApplicationController
 		@note = current_user.notes.build(params[:note])
     if @note.save
       flash[:success] = "Note created!"
+      #Mailer.send_default_email
       redirect_to root_url
     else
       @notebook_items = []
