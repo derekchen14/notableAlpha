@@ -18,7 +18,7 @@ class Texter
 		http.use_ssl = true
 		res = http.request(req)
 
-		return res.code == 201
+		return res.code == '201'
 	end
 
 end
