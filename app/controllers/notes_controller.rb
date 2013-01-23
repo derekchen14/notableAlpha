@@ -1,4 +1,4 @@
-require 'mail/mail_util'
+require 'text/text_util'
 
 class NotesController < ApplicationController
 	before_filter :signed_in_user
@@ -6,9 +6,17 @@ class NotesController < ApplicationController
 
 	def create
 		@note = current_user.notes.build(params[:note])
-    if @note.save
-      flash[:success] = "Note created!"
-      #Mailer.send_default_email
+    btn_text = params[:commit]
+    if @note.save  
+      if btn_text == "Post"
+        flash[:success] = "Note created!"
+      elsif btn_text == "Text" 
+        if Texter.send_text(@note.content)
+          flash[:success] = "Note texted to your phone."
+        else
+          flash[:error] = "Failed to text your phone."
+        end
+      end
       redirect_to root_url
     else
       @notebook_items = []

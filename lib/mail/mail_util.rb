@@ -1,18 +1,9 @@
 require 'mail'
 
-# Mail.defaults do
-# 	delivery_method
-# 	<some code>
-# end
-
 class Mailer
 
 	DEFAULT_EMAIL = 'Derek <derek@notable.com>'
 	ADMIN_EMAIL = 'admin <admin@notable.com>'
-
-	def self.fancy
-		puts "hi i'm fancy"
-	end
 
 	def self.send_default_email
 		self.send_mail()
