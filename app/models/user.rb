@@ -11,18 +11,19 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :username, :email, :password, :password_confirmation,
-    :remember_token
+  attr_accessible :username, :email, :phone_number, :password, 
+    :password_confirmation, :remember_token
   has_secure_password
   has_many :notes, dependent: :destroy
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
+  before_save :make_username
 
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   validates :username, 
-  	presence: true,
+  	#presence: true,
   	length: {maximum: 50}  
   validates :email,
     presence: true, 
@@ -36,6 +37,12 @@ class User < ActiveRecord::Base
 		presence: true
 
   private
+    def make_username
+      if self.username.nil?
+        self.username = self.email[/[^@]+/]
+      end
+    end
+
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
