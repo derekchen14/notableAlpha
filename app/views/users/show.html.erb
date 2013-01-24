@@ -1,21 +1,14 @@
 <% provide(:title, @user.username) %>
+<h1>Profile Information</h1>
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user, size: 60 %>
-        <%= @user.username %>
-      </h1>
-    </section>
-  </aside>
-
-  <div class="span8">
-    <% if @user.notes.any? %>
-      <h3>Notes (<%= @user.notes.count %>)</h3>
-      <ol class="notes">
-        <%= render @notes %>
-      </ol>
-      <%= will_paginate @notes %>
-    <% end %>
+  <div class="span6 offset3 profile_info">
+    <h2><strong>Username:</strong> <%= @user.username %> </h2>
+    <h2><strong>Email:</strong> <%= @user.email %> </h2>
+    <h2><strong>Phone Number:</strong> 
+      <%= @user.phone_number.nil? ? "N/A" : @user.phone_number %>
+    </h2>
+    <h2><strong>Note Count:</strong> <%= @user.notes.count %> </h2>
+    <%= link_to "Edit Profile", edit_user_path(current_user), 
+      class: "btn btn-large btn-primary" %>
   </div>
 </div>
