@@ -1,3 +1,5 @@
+require 'text/text_util'
+
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:edit, :update, :index, 
     :destroy, :following, :followers]
@@ -34,9 +36,11 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profile successfully updated."
-      sign_in @user
-      redirect_to @user
+      if Texter.add_contact(@user.username, @user.phone_number)
+        flash[:success] = "Profile successfully updated."
+        sign_in @user
+        redirect_to @user
+      end
     else
       render 'edit'
     end

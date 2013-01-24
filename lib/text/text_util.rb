@@ -1,5 +1,5 @@
 require 'net/https'
-
+require 'json'
 
 class Texter
 	ACCOUNT_NUMBER = '7756575726'
@@ -17,6 +17,24 @@ class Texter
 		http = Net::HTTP.new(uri.host, uri.port)
 		http.use_ssl = true
 		res = http.request(req)
+
+		return res.code == '201'
+	end
+
+	def self.add_contact(username, phone_number)
+		data = {name: username, number: phone_number}
+
+		uri = URI.parse("https://api.sendhub.com/v1/contacts/?username=#{ACCOUNT_NUMBER}\&api_key=#{API_KEY}")
+		req = Net::HTTP::Post.new(uri.request_uri)
+		req.add_field("Content-Type","application/json")
+		req.body = data.to_json
+
+		http = Net::HTTP.new(uri.host, uri.port)
+		http.use_ssl = true
+		res = http.request(req)
+
+		body = JSON.parse(res.body)
+		puts body['id']
 
 		return res.code == '201'
 	end
