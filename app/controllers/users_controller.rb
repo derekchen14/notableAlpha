@@ -1,4 +1,5 @@
 require 'text/text_util'
+require 'json'
 
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:edit, :update, :index, 
@@ -36,7 +37,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(params[:user])
-      if Texter.add_contact(@user.username, @user.phone_number)
+      res = Texter.add_contact(@user.username, @user.phone_number)
+      if res.code == '201'
+        response_body = JSON.parse(res.body)
+        @user.update_attributes(sendhub_id: response_body['id'])
         flash[:success] = "Profile successfully updated."
         sign_in @user
         redirect_to @user

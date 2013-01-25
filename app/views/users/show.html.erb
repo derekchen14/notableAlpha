@@ -8,6 +8,7 @@
       <%= @user.phone_number.nil? ? "N/A" : @user.phone_number %>
     </h2>
     <h2><strong>Note Count:</strong> <%= @user.notes.count %> </h2>
+    <h2><strong>Sendhub ID:</strong> <%= @user.sendhub_id %> </h2>
     <%= link_to "Edit Profile", edit_user_path(current_user), 
       class: "btn btn-large btn-primary" %>
   </div>

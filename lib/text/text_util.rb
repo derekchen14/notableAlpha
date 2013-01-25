@@ -1,5 +1,4 @@
 require 'net/https'
-require 'json'
 
 class Texter
 	ACCOUNT_NUMBER = '7756575726'
@@ -33,10 +32,7 @@ class Texter
 		http.use_ssl = true
 		res = http.request(req)
 
-		body = JSON.parse(res.body)
-		puts body['id']
-
-		return res.code == '201'
+		return res
 	end
 
 end

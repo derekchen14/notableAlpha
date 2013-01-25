@@ -12,7 +12,7 @@
 
 class User < ActiveRecord::Base
   attr_accessible :username, :email, :phone_number, :password, 
-    :password_confirmation, :remember_token
+    :password_confirmation, :remember_token, :sendhub_id
   has_secure_password
   has_many :notes, dependent: :destroy
 
@@ -33,6 +33,8 @@ class User < ActiveRecord::Base
   	confirmation: true
 	validates :password, 
 		length: { minimum: 6 }
+  #validates :sendhub_id, 
+    #length: { is: 7 }
 	validates :password_confirmation, 
 		presence: true
 
