@@ -3,10 +3,9 @@ require 'net/https'
 class Texter
 	ACCOUNT_NUMBER = '7756575726'
 	API_KEY = '049d2b1dd2d87936814325c80db9b9ee41363785'
-	USER_ID = '2978488'
 
-	def self.send_text(content)
-		data = {contacts: [USER_ID], text: content}
+	def self.send_text(sendhub_id, content)
+		data = {contacts: [sendhub_id], text: content}
 
 		uri = URI.parse("https://api.sendhub.com/v1/messages/?username=#{ACCOUNT_NUMBER}\&api_key=#{API_KEY}")
 		req = Net::HTTP::Post.new(uri.request_uri)

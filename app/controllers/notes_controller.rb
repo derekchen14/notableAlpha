@@ -5,17 +5,20 @@ class NotesController < ApplicationController
 	before_filter :correct_user,   only: :destroy
 
 	def create
-		@note = current_user.notes.build(params[:note])
+    @note = current_user.notes.build(params[:note])
     btn_text = params[:commit]
     if @note.save  
       if btn_text == "Post"
         flash[:success] = "Note created!"
-      elsif btn_text == "Text" 
-        if Texter.send_text(@note.content)
+      elsif btn_text == "Set Reminder" 
+        puts "part one"
+        if Texter.send_text(current_user.sendhub_id, @note.content)
+          puts "part two"
           flash[:success] = "Note texted to your phone."
         else
           flash[:error] = "Failed to text your phone."
         end
+        puts "part three"
       end
       redirect_to root_url
     else
