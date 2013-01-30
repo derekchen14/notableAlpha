@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124234016) do
+ActiveRecord::Schema.define(:version => 20130130061826) do
 
   create_table "items", :force => true do |t|
     t.integer  "variable"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20130124234016) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
-    t.integer  "phone_number"
+    t.string   "phone_number"
     t.integer  "sendhub_id"
   end
 
