@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   private
     def clean_phone_number
-      self.phone_number = self.phone_number[/0-9/]
+      self.phone_number = self.phone_number.gsub(/\D/, '')
     end
 
     def make_username
