@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
   before_save :make_username
+  before_save :clean_phone_number
 
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
@@ -39,6 +40,10 @@ class User < ActiveRecord::Base
 		presence: true
 
   private
+    def clean_phone_number
+      self.phone_number = self.phone_number[/0-9/]
+    end
+
     def make_username
       if self.username.nil?
         self.username = self.email[/[^@]+/]

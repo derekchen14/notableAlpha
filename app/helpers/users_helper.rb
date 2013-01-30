@@ -7,4 +7,11 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: user.username, class: "gravatar")
   end
+
+  def display_number(phone_number)
+  	n = "(" + phone_number[0,3] + ")"
+  	n += phone_number[3,3] + "-" + phone_number[6,4]
+  	return n
+  end
+
 end

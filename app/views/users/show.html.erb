@@ -5,7 +5,7 @@
     <h2><strong>Username:</strong> <%= @user.username %> </h2>
     <h2><strong>Email:</strong> <%= @user.email %> </h2>
     <h2><strong>Phone Number:</strong> 
-      <%= @user.phone_number.nil? ? "N/A" : @user.phone_number %>
+      <%= @user.phone_number.nil? ? "N/A" : display_number(@user.phone_number) %>
     </h2>
     <h2><strong>Note Count:</strong> <%= @user.notes.count %> </h2>
     <%= link_to "Edit Profile", edit_user_path(current_user), 
