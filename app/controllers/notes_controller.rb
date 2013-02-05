@@ -8,20 +8,10 @@ class NotesController < ApplicationController
     @note = current_user.notes.build(params[:note])
     btn_text = params[:commit]
     if @note.save
-      if btn_text == "Post"
-        flash[:success] = "Note created!"
-        redirect_to root_url
-      elsif btn_text == "Set Reminder" 
-        if current_user.sendhub_id.nil?
-          flash[:error] = "Please add a phone number first."        
-          redirect_to edit_user_path(current_user)
-        else
-          set_reminder
-          redirect_to root_url
-        end
-      end
+      flash[:success] = "Note created!"
+      redirect_to root_url
     else
-      @notebook_items = []
+      @note = []
       render 'static_pages/home'
     end
 	end
@@ -41,10 +31,16 @@ class NotesController < ApplicationController
     end
 
     def set_reminder
-      if Texter.send_text(current_user.sendhub_id, @note.content)
-        flash[:success] = "Reminder sent to your phone."
+      if current_user.sendhub_id.nil?
+        flash[:error] = "Please add a phone number first."        
+        redirect_to edit_user_path(current_user)
       else
-        flash[:error] = "Failed to set a reminder."
+        if Texter.send_text(current_user.sendhub_id, @note.content)
+          flash[:success] = "Reminder sent to your phone."
+        else
+          flash[:error] = "Failed to set a reminder."
+        end
+        redirect_to root_url
       end
     end
 

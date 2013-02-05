@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   def home
   	if signed_in?
       @note = current_user.notes.build
-      @notebook_items = current_user.notes.paginate(page: params[:page])
+      @notes = current_user.notes.paginate(page: params[:page])
     end
   end
 

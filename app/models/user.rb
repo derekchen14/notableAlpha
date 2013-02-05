@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
     end
 
     def notebook
-      Note.where("user_id = ?", id)
+      notes
     end
     
 end
