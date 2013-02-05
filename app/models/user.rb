@@ -24,7 +24,6 @@ class User < ActiveRecord::Base
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   validates :username, 
-  	#presence: true,
   	length: {maximum: 50}  
   validates :email,
     presence: true, 
@@ -34,14 +33,14 @@ class User < ActiveRecord::Base
   	confirmation: true
 	validates :password, 
 		length: { minimum: 6 }
-  #validates :sendhub_id, 
-    #length: { is: 7 }
 	validates :password_confirmation, 
 		presence: true
 
   private
     def clean_phone_number
-      self.phone_number = self.phone_number.gsub(/\D/, '')
+      unless self.phone_number.nil?
+        self.phone_number = self.phone_number.gsub(/\D/, '')
+      end
     end
 
     def make_username
