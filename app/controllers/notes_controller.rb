@@ -8,13 +8,8 @@ class NotesController < ApplicationController
     @note = current_user.notes.build(params[:note])
     btn_text = params[:commit]
     if @note.save
-      set_reminder
-=begin      
       flash[:success] = "Note created!"
       redirect_to root_url
-
-      <%= link_to "Remind Me", '#', class: "btn pull-right remind" %>
-=end
     else
       @note = []
       render 'static_pages/home'

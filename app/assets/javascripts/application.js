@@ -18,8 +18,11 @@
 
 $(function() {
 	$(".alert").fadeTo(7000, 1.0).fadeOut(1400);
-	$(".add_phone").colorbox({html:"<p>Hello</p>", opacity: 0.6});
+	$('.remind').click(function() {
+  	$('.remind_times').toggle('slow');
+	});
 	//$('#clear').click(clearAll);
+	//$(".add_phone").colorbox({html:"<p>Hello</p>", opacity: 0.6});
 });
 
 //function clearAll(event) {

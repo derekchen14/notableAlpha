@@ -10,5 +10,14 @@
   	data: { confirm: "You sure?" }%>
   <% end %>
 
-  
+  <%= link_to "Remind Me", '#', class: "btn pull-right remind" %>
+
+  <div class="btn-group remind_times">
+  	<button class="badge badge-success">Right Now</button>
+  	<button class="badge badge-warning">30 Minutes</button>
+  	<button class="badge badge-important">In an Hour</button>
+  	<button class="badge badge-info">Tomorrow</button>
+  	<button class="badge badge-inverse">Next Week</button>
+  </div>
+
 </li>
