@@ -18,8 +18,8 @@
 
 $(function() {
 	$(".alert").fadeTo(7000, 1.0).fadeOut(1400);
-	$('.remind').click(function() {
-  	$('.remind_times').toggle('slow');
+	$(".remind").click(function() {
+		$(this).closest("li").children(".remind_times").toggle(300);
 	});
 	//$('#clear').click(clearAll);
 	//$(".add_phone").colorbox({html:"<p>Hello</p>", opacity: 0.6});
@@ -30,3 +30,4 @@ $(function() {
 //	What you want to have happen when someone
 //	clicks on the object with an id = "clear";
 //}
+
