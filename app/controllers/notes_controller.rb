@@ -8,7 +8,6 @@ class NotesController < ApplicationController
     @note = current_user.notes.build(params[:note])
     btn_text = params[:commit]
     if @note.save
-      flash[:success] = "Note created!"
       redirect_to root_url
     else
       @note = []

@@ -11,12 +11,20 @@
 
   <%= link_to "Remind Me", '#', class: "btn pull-right remind" %>
 
-  <div class="btn-group remind_times">
-  	<button class="badge badge-success">Right Now</button>
-  	<button class="badge badge-warning">30 Minutes</button>
-  	<button class="badge badge-important">In an Hour</button>
-  	<button class="badge badge-info">Tomorrow</button>
-  	<button class="badge badge-inverse">Next Week</button>
-  </div>
+  <% unless current_user.sendhub_id.nil? %>
+    <div class="btn-group remind_times">
+    	<button class="badge badge-success">Right Now</button>
+    	<button class="badge badge-warning">30 Minutes</button>
+    	<button class="badge badge-important">In an Hour</button>
+    	<button class="badge badge-info">Tomorrow</button>
+    	<button class="badge badge-inverse">Next Week</button>
+    </div>
+  <% else %>
+    <div class="remind_times">
+      <div class="instructions">Please add a phone number first:</div>
+      <input type="tel" class="no_phone phone_input"></input>
+      <button class="btn btn-small btn-primary no_phone">Add</button>
+    </div>
+  <% end %>
 
 </li>

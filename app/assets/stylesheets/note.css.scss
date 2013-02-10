@@ -3,7 +3,7 @@
  *****************/
 
 $grayMediumLight: #eaeaea;
-$grayLight: #444fff;
+$blueLight: #444fff;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -28,7 +28,7 @@ $grayLight: #444fff;
   display: block;
 }
 .timestamp {
-  color: $grayLight;
+  color: $blueLight;
 }
 .gravatar {
   float: left;
@@ -53,6 +53,22 @@ aside {
 .remind_times {
   margin: 14px 10px 4px 10px;
   display: none;
+}
+
+.instructions {
+  font-style: italic;
+  color: #8099B2;
+  display: inline;
+}
+
+.no_phone {
+  &.phone_input {
+    width: 140px;
+    margin: -2px 5px 0 8px;
+  }
+  &.btn {
+    border-radius: 15px;
+  }
 }
 
 .badge {
