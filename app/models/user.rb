@@ -40,6 +40,9 @@ class User < ActiveRecord::Base
     def clean_phone_number
       unless self.phone_number.nil?
         self.phone_number = self.phone_number.gsub(/\D/, '')
+		if self.phone_number.length == 11 
+			self.phone_number = self.phone_number.sub(/1/, '') #Remove country code "1" at beginning.
+		end
       end
     end
 
