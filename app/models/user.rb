@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   private
     def updating_password?
-      params[:password]
+      :password.nil?
     end
 
     def clean_phone_number
