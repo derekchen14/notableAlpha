@@ -6,28 +6,27 @@
 	<%= form_for(@user) do |f| %>
 	  <%= render 'shared/error_messages', object: f.object  %>
 
+	  <h2>Edit User</h2>
 	  <%= f.label :username %>
 	  <%= f.text_field :username %>
-
 	  <%= f.label :email %>
 	  <%= f.text_field :email %>
-
 	  <%= f.label :phone_number, "Phone Number" %>
 	  <%= f.text_field :phone_number %>
 
+  	<h2>Edit Profile Image</h2>
+	  <a href="http://gravatar.com/emails" id="edit_gravatar">
+	  	<%= gravatar_for @user %></a>
+
+	  <h2>Edit Password</h2>
 	  <%= f.label :password %>
 	  <%= f.password_field :password %>
-
 	  <%= f.label :password_confirmation, "Confirm Password" %>
 	  <%= f.password_field :password_confirmation %>
 	
-	  <%= f.submit "Save changes", 
-	  	class: "btn btn-large btn-primary" %>
-	  	
+	  <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 	<% end %>  
 	
-  <%= gravatar_for @user %>
-  <a href="http://gravatar.com/emails">Change Profile Image</a>
 
 	</div>
 </div>

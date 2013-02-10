@@ -32,17 +32,26 @@ class User < ActiveRecord::Base
   	format: {with: EMAIL_REGEX, on: :create},
   	confirmation: true
 	validates :password, 
-		length: { minimum: 6 }
+		length: { minimum: 6 },
+    on: :create
 	validates :password_confirmation, 
-		presence: true
+		presence: true,
+    :if => :updating_password?
+
 
   private
+    def updating_password?
+      params[:password]
+    end
+
     def clean_phone_number
       unless self.phone_number.nil?
         self.phone_number = self.phone_number.gsub(/\D/, '')
-		if self.phone_number.length == 11 
-			self.phone_number = self.phone_number.sub(/1/, '') #Remove country code "1" at beginning.
-		end
+        #Remove all non-digit symbols
+    		if self.phone_number.length == 11 
+    			self.phone_number = self.phone_number.sub(/1/, '') 
+          #Remove country code "1" at beginning.
+    		end
       end
     end
 
