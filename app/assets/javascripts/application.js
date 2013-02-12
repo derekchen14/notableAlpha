@@ -21,6 +21,8 @@ $(function() {
 	$(".remind").click(function() {
 		$(this).closest("li").children(".remind_times").toggle(300);
 	});
+	$(".badge-success").click(function() {
+	});
 	//$('#clear').click(clearAll);
 	//$(".add_phone").colorbox({html:"<p>Hello</p>", opacity: 0.6});
 });
