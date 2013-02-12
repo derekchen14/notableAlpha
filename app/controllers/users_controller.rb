@@ -36,6 +36,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    btn_text = params[:commit]
+    puts btn_text
     if @user.update_attributes(params[:user])
       res = Texter.add_contact(@user.username, @user.phone_number)
       if res.code == '201'
@@ -43,6 +45,10 @@ class UsersController < ApplicationController
         @user.update_attributes(sendhub_id: response_body['id'])
         flash[:success] = "Profile successfully updated."
         sign_in @user
+      end
+      if btn_text == 'Add'
+        redirect_to root_path
+      else
         redirect_to @user
       end
     else
