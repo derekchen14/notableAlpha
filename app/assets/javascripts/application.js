@@ -18,10 +18,11 @@
 
 $(function() {
 	$(".alert").fadeTo(7000, 1.0).fadeOut(1400);
-	$(".remind").click(function() {
+	$(".remind").click(function(e) {
+		e.preventDefault();
 		$(this).closest("li").children(".remind_times").toggle(300);
 	});
-  $(".badge").click(send_message);
+  //$(".badge").click(clearAll);
 });
 
 

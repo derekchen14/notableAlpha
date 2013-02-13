@@ -1,5 +1,6 @@
 Notable::Application.routes.draw do
   get "items/create"
+  get "reminders/create"
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

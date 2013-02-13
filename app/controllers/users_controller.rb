@@ -37,15 +37,8 @@ class UsersController < ApplicationController
 
   def update
     btn_text = params[:commit]
-    puts btn_text
     if @user.update_attributes(params[:user])
-      res = Texter.add_contact(@user.username, @user.phone_number)
-      if res.code == '201'
-        response_body = JSON.parse(res.body)
-        @user.update_attributes(sendhub_id: response_body['id'])
-        flash[:success] = "Profile successfully updated."
-        sign_in @user
-      end
+      set_reminder_id
       if btn_text == 'Add'
         redirect_to root_path
       else
@@ -63,6 +56,15 @@ class UsersController < ApplicationController
   end
 
   private
+    def set_reminder_id
+      res = Texter.add_contact(@user.username, @user.phone_number)
+      if res.code == '201'
+        response_body = JSON.parse(res.body)
+        @user.update_attributes(sendhub_id: response_body['id'])
+        flash[:success] = "Profile successfully updated."
+        sign_in @user
+      end
+    end
 
     def correct_user
       @user = User.find(params[:id])

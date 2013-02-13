@@ -27,13 +27,5 @@ class NotesController < ApplicationController
       @note = current_user.notes.find_by_id(params[:id])
       redirect_to root_url if @note.nil?
     end
-
-    def set_reminder
-      if Texter.send_text(current_user.sendhub_id, @note.content)
-        flash[:success] = "Reminder sent to your phone."
-      else
-        flash[:error] = "Failed to set a reminder."
-      end
-    end
-
+    
 end

@@ -13,11 +13,12 @@
 
   <% unless current_user.sendhub_id.nil? %>
     <div class="btn-group remind_times">
-      <button class="badge badge-success">Right Now</button>
-      <button class="badge badge-warning">30 Minutes</button>
-      <button class="badge badge-important">In an Hour</button>
-      <button class="badge badge-info">Tomorrow</button>
-      <button class="badge badge-inverse">Next Week</button>
+      <%= link_to "Right Now", reminders_create_path, class: "badge badge-success", remote: true %>
+      <%= link_to "30 Minutes", '#', class: "badge badge-warning", remote: true %>
+      <%= link_to "In an Hour", '#', class: "badge badge-important", remote: true %>
+      <%= link_to "Tomorrow", '#', class: "badge badge-info", 
+        remote: true %>
+      <%= link_to "Next Week", '#', class: "badge badge-inverse", remote: true %>
     </div>
   <% else %>
     <div class="remind_times"> 

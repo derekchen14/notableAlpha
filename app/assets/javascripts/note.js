@@ -26,21 +26,9 @@ $.rails.allowAction = function(element) {
 	return answer && callback;
 };
 
-function send_message(event) {
-  var t = $(event.target).text();
-  switch (t) {
-    case "Next Week":
-      var length = 10080; break;
-    case "Tomorrow":
-      var length = 1440; break;
-    case "30 Minutes": 
-      var length = 30; break;
-    case "In an Hour":
-      var length = 60; break;
-    case "Right Now":
-      var length = 0; break;
-    default:
-      var length = 1;
-  }
-  console.log("Sending a reminder in "+length+" minutes");
-}
+
+
+
+
+
+
