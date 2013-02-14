@@ -6,8 +6,6 @@ class RemindersController < ApplicationController
 	end
 
 	def create
-		flash.now[:success] = "A reminder will be sent soon."
-		flash[:success] = "Aniother antetp"
 		respond_to do |format|
 			format.html { redirect_to root_url }
 			format.json { send_reminder }
@@ -18,14 +16,14 @@ class RemindersController < ApplicationController
 	private
 
 		def send_reminder
-			length = params[:reminder][:length]
+			timing = params[:reminder][:timing]
 			if Texter.send_text(current_user.sendhub_id, params[:reminder][:content])
-				flash.now[:success] = "A reminder will be sent soon."
-				puts "this are works"
+				flash[:success] = "A reminder will be sent #{timing}."
+				render json: flash[:success], status: :ok
 			else
 				flash[:error] = "Failed to set a reminder."
+				render json: flash[:error], status: :unprocessable_entity
 			end
-			render json: flash[:success], status: :ok			
 		end
 
 end

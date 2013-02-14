@@ -28,18 +28,18 @@ $.rails.allowAction = function(element) {
 
 function send_message(event) {
   var $t = $(event.target)
-  var btn_text = $t.text();
+  var btn_text = $t.text().toLowerCase();
   var content = $t.closest("li").children("span.content").text();
   switch (btn_text) {
-    case "Next Week":
+    case "next week":
       var length = 10080; break;
-    case "Tomorrow":
+    case "tomorrow":
       var length = 1440; break;
-    case "In an Hour": 
+    case "in an hour": 
       var length = 60; break;
-    case "30 Minutes":
+    case "30 minutes":
       var length = 30; break;
-    case "Right Now":
+    case "right now":
       var length = 0; break;
     default:
       var length = 1;
@@ -49,7 +49,9 @@ function send_message(event) {
   $.ajax({
     url: "reminders/create.json",
     dataType: "json",
-    data: {reminder: {content: content, length: length }},
+    data: {reminder: {content: content, 
+      length: length, 
+      timing: btn_text }},
     type: "GET"
   });
 
