@@ -22,13 +22,5 @@ $(function() {
 		e.preventDefault();
 		$(this).closest("li").children(".remind_times").toggle(300);
 	});
-  //$(".badge").click(clearAll);
+  $(".badge").click(send_me_a_message);
 });
-
-
-//function clearAll(event) {
-//	var $t = $(event.target);
-//	What you want to have happen when someone
-//	clicks on the object with an id = "clear";
-//}
-

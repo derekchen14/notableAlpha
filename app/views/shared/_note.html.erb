@@ -5,20 +5,22 @@
   </span>
 
   <% if current_user?(note.user) %>
-  <%= link_to '<i class="icon-trash"></i>'.html_safe, note, method: :delete, 
-  	data: { confirm: "You sure?" }%>
+  <%= link_to '<i class="icon-trash"></i>'.html_safe, note, method: :delete, data: { confirm: "You sure?" }%>
   <% end %>
 
   <%= link_to "Remind Me", '#', class: "btn pull-right remind" %>
 
   <% unless current_user.sendhub_id.nil? %>
     <div class="btn-group remind_times">
-      <%= link_to "Right Now", reminders_create_path, class: "badge badge-success", remote: true %>
-      <%= link_to "30 Minutes", '#', class: "badge badge-warning", remote: true %>
-      <%= link_to "In an Hour", '#', class: "badge badge-important", remote: true %>
-      <%= link_to "Tomorrow", '#', class: "badge badge-info", 
-        remote: true %>
-      <%= link_to "Next Week", '#', class: "badge badge-inverse", remote: true %>
+      <%= link_to "Right Now", reminders_create_path, 
+        class: "badge badge-success", remote: true %>
+      <button class = "badge badge-warning">30 Minutes</button>
+      <%= link_to "In an Hour", reminders_create_path, 
+        class: "badge badge-important", remote: true %>
+      <%= link_to "Tomorrow", reminders_create_path, 
+        class: "badge badge-info", remote: true %>
+      <%= link_to "Next Week", reminders_create_path, 
+        class: "badge badge-inverse", remote: true %>
     </div>
   <% else %>
     <div class="remind_times"> 
