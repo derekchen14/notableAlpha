@@ -22,7 +22,7 @@ $(function() {
 		e.preventDefault();
 		$(this).closest("li").children(".remind_times").toggle(300);
 	});
-  $(".badge").click(send_me_a_message);
+  $(".badge").click(send_message);
 });
 
 $(document).ajaxError(function(event, request) {

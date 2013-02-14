@@ -26,34 +26,30 @@ $.rails.allowAction = function(element) {
 	return answer && callback;
 };
 
-function send_me_a_message(event) {
-    event.preventDefault();
-    var $t = $(event.target)
-    var btn_text = $t.text();
-    var content = $t.closest("li").children("span.content").text();
-    switch (btn_text) {
-      case "Next Week":
-        var length = 10080; break;
-      case "Tomorrow":
-        var length = 1440; break;
-      case "In an Hour": 
-        var length = 60; break;
-      case "30 Minutes":
-        var length = 30; break;
-      case "Right Now":
-        var length = 0; break;
-      default:
-        var length = 1;
-    }
-    console.log("JQuery event handler works");
-    console.log("Reminder: "+content+" sent in "+length+" minutes");
-  
-    data = {reminder: {content: content, length: length }}
+function send_message(event) {
+  var $t = $(event.target)
+  var btn_text = $t.text();
+  var content = $t.closest("li").children("span.content").text();
+  switch (btn_text) {
+    case "Next Week":
+      var length = 10080; break;
+    case "Tomorrow":
+      var length = 1440; break;
+    case "In an Hour": 
+      var length = 60; break;
+    case "30 Minutes":
+      var length = 30; break;
+    case "Right Now":
+      var length = 0; break;
+    default:
+      var length = 1;
+  }
+  console.log("Reminder: "+content+" sent in "+length+" minutes");
 
   $.ajax({
     url: "reminders/create.json",
     dataType: "json",
-    data: data,
+    data: {reminder: {content: content, length: length }},
     type: "GET"
   });
 

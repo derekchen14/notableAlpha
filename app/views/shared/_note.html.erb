@@ -12,15 +12,15 @@
 
   <% unless current_user.sendhub_id.nil? %>
     <div class="btn-group remind_times">
-      <button class = "badge badge-success"> Right Now</button>
-      <button class = "badge badge-warning">30 Minutes</button>
-      <button class = "badge badge-important">In an Hour</button>
-      <button class = "badge badge-info">Tomorrow</button>
-      <button class = "badge badge-inverse">Next Week</button>
+      <button class="badge badge-success">Right Now</button>
+      <button class="badge badge-warning">30 Minutes</button>
+      <button class="badge badge-important">In an Hour</button>
+      <button class="badge badge-info">Tomorrow</button>
+      <button class="badge badge-inverse">Next Week</button>
     </div>
   <% else %>
     <div class="remind_times"> 
-    <%= form_for(current_user) do |f| %>
+    <%= form_for(current_user) do |f| %>  
       <%= render 'shared/error_messages', object: f.object  %>
       <%= f.label :phone_number, "Please add a phone number first:", class: "phone_instructions" %>
       <%= f.telephone_field :phone_number, class: "phone_input" %>
