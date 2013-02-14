@@ -8,11 +8,22 @@ class ApplicationController < ActionController::Base
 	  	return unless request.xhr?
 	  	# This will discontinue execution if Rails detects that the 
 	  	# request is not from an AJAX request
-		  response.headers['x-flash'] = flash[:error]  unless flash[:error].blank?
-		  response.headers['x-flash'] = flash[:success]  unless flash[:success].blank?
-		  response.headers['x-flash'] = flash[:notice]  unless flash[:notice].blank?
-		  # Stops the flash appearing when you next refresh the page
-		  flash.discard
+	  	response.headers['x-flash'] = flash_message
+      response.headers['x-flash-type'] = flash_type.to_s
+		  
+		  flash.discard # Stops the flash appearing when you refresh the page
+		end
+
+		def flash_message
+			[:error, :warning, :notice, :success].each do |type|
+				return flash[type] unless flash[type].blank?
+			end
+		end
+
+		def flash_type
+			[:error, :warning, :notice, :success].each do |type|
+				return type unless flash[type].blank?
+			end
 		end
 
 end

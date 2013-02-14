@@ -25,7 +25,14 @@ $(function() {
   $(".badge").click(send_message);
 });
 
-$(document).ajaxError(function(event, request) {
-  var msg = request.getResponseHeader('x-flash');
-  if (msg) alert(msg);
+$(document).ajaxComplete(function(event, request) {
+  var x_flash = request.getResponseHeader('x-flash');
+  var x_flash_type = request.getResponseHeader('x-flash-type');
+  var msg = '<div class="alert alert-'+x_flash_type+'">'+x_flash+'</div>';
+  if (x_flash) {
+  	$("#main_container").prepend(msg);
+  	$(".alert").delay(7000).fadeOut(1400);
+  };
 });
+
+

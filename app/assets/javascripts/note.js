@@ -44,7 +44,6 @@ function send_message(event) {
     default:
       var length = 1;
   }
-  console.log("Reminder: "+content+" sent in "+length+" minutes");
 
   $.ajax({
     url: "reminders/create.json",
