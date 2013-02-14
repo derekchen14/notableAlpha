@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   private
 	  def flash_headers
 	  	return unless request.xhr?
+	  	puts "something in this area"
 	  	# This will discontinue execution if Rails detects that the 
 	  	# request is not from an AJAX request
 		  response.headers['x-flash'] = flash[:error]  unless flash[:error].blank?
