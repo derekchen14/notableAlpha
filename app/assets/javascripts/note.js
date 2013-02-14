@@ -47,9 +47,19 @@ function send_me_a_message(event) {
     }
     console.log("JQuery event handler works");
     console.log("Reminder: "+content+" sent in "+length+" minutes");
+  
+    data = {reminder: {content: content, length: length }}
+
+  $.ajax({
+    url: "reminders/create.json",
+    dataType: "json",
+    data: data,
+    type: "GET"
+  });
+
 }
 
-//add in some ajax call here to reminders_create_path
+
 
 
 

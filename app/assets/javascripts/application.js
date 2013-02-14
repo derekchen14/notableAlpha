@@ -17,10 +17,15 @@
 //= require_tree .
 
 $(function() {
-	$(".alert").fadeTo(7000, 1.0).fadeOut(1400);
+	$(".alert").delay(7000).fadeOut(1400);
 	$(".remind").click(function(e) {
 		e.preventDefault();
 		$(this).closest("li").children(".remind_times").toggle(300);
 	});
   $(".badge").click(send_me_a_message);
+});
+
+$(document).ajaxError(function(event, request) {
+  var msg = request.getResponseHeader('x-flash');
+  if (msg) alert(msg);
 });

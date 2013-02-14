@@ -62,8 +62,10 @@ class UsersController < ApplicationController
         response_body = JSON.parse(res.body)
         @user.update_attributes(sendhub_id: response_body['id'])
         flash[:success] = "Profile successfully updated."
-        sign_in @user
+      else 
+        flash[:error] = "Phone number not added. Please try again later."
       end
+        sign_in @user
     end
 
     def correct_user

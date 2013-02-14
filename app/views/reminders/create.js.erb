@@ -25,6 +25,8 @@ console.log("JS dot ERB file works");
 //   });
 // });
 
+<% puts "Ruby inside JS ERb file operational" %>
+
 <% if Texter.send_text(current_user.sendhub_id, "random content") %>
   <% flash.now[:success] = "Reminder sent to your phone." %>
 <% else %>
