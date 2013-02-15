@@ -12,12 +12,21 @@ class RemindersController < ApplicationController
 		end	
 	end
 
-
 	private
 
 		def send_reminder
+			content = params[:reminder][:content]
+			time_ahead = params[:reminder][:time_ahead]
 			timing = params[:reminder][:timing]
-			if Texter.send_text(current_user.sendhub_id, params[:reminder][:content])
+
+			if time_ahead == '0'
+				res = Texter.send_text(current_user.sendhub_id, content)
+			else
+				res = Texter.schedule_text(current_user.sendhub_id, 
+					content, time_ahead)
+			end
+
+			if res.code == '201'
 				flash[:success] = "A reminder will be sent #{timing}."
 				render json: flash[:success], status: :ok
 			else

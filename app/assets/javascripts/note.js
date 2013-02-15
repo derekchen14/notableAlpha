@@ -44,24 +44,24 @@ function send_message(event) {
   var content = $t.closest("li").children("span.content").text();
   switch (btn_text) {
     case "next week":
-      var length = 10080; break;
+      var time_ahead = 10080; break;
     case "tomorrow":
-      var length = 1440; break;
+      var time_ahead = 1440; break;
     case "in an hour": 
-      var length = 60; break;
+      var time_ahead = 60; break;
     case "30 minutes":
-      var length = 30; break;
+      var time_ahead = 30; break;
     case "right now":
-      var length = 0; break;
+      var time_ahead = 0; break;
     default:
-      var length = 1;
+      var time_ahead = 1;
   }
 
   $.ajax({
     url: "reminders/create.json",
     dataType: "json",
     data: {reminder: {content: content, 
-      length: length, 
+      time_ahead: time_ahead, 
       timing: btn_text }},
     type: "GET"
   });
