@@ -1,3 +1,15 @@
+$(function() {
+  $("li").hover(function(event) {
+    $(this).children(".remind").toggle();
+  });
+  $(".remind").click(function(e) {
+    e.preventDefault();
+    $(this).closest("li").children(".remind_times").toggle(300);
+  });
+  $(".badge").click(send_message);
+});
+
+
 $.rails.confirm = function(message, element) { 
   var state = element.data('state');
   var txt = element.text();

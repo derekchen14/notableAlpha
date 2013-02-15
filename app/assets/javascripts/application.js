@@ -18,11 +18,6 @@
 
 $(function() {
 	$(".alert").delay(7000).fadeOut(1400);
-	$(".remind").click(function(e) {
-		e.preventDefault();
-		$(this).closest("li").children(".remind_times").toggle(300);
-	});
-  $(".badge").click(send_message);
 });
 
 $(document).ajaxComplete(function(event, request) {
@@ -34,5 +29,3 @@ $(document).ajaxComplete(function(event, request) {
   	$(".alert").delay(7000).fadeOut(1400);
   };
 });
-
-

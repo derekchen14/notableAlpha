@@ -71,11 +71,13 @@ input[type="tel"], .phone_input {
 .remind {
   position:relative;
   bottom: 16px;
+  display: none;
 }
 
 a.remind:focus {
   outline: none;
 }
+
 
 .remind_times {
   margin: 14px 10px 4px 10px;
