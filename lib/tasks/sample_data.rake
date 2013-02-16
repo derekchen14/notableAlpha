@@ -25,7 +25,7 @@ end
 
 def make_notes
   users = User.all(limit: 6)
-  50.times do
+  5.times do
     content = Faker::Lorem.sentence(5)
     users.each { |user| user.notes.create!(content: content) }
   end

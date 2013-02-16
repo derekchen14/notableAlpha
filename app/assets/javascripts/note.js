@@ -43,14 +43,14 @@ function send_message(event) {
   var btn_text = $t.text().toLowerCase();
   var content = $t.closest("li").children("span.content").text();
   switch (btn_text) {
-    case "next week":
-      var time_ahead = 10080; break;
     case "tomorrow":
-      var time_ahead = 1440; break;
+      var time_ahead = 86390; break;
+    case "later today":
+      var time_ahead = 14000; break;
     case "in an hour": 
-      var time_ahead = 60; break;
+      var time_ahead = 3590; break;
     case "30 minutes":
-      var time_ahead = 30; break;
+      var time_ahead = 1790; break;
     case "right now":
       var time_ahead = 0; break;
     default:

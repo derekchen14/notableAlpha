@@ -36,6 +36,7 @@ class Texter
 
 	def self.schedule_text(sendhub_id, content, time_ahead)
 		timestamp = translate_to_UTC(time_ahead)
+		puts timestamp
 		data = {contacts: [sendhub_id], text: content, scheduled_at: timestamp}
 
 		uri = URI.parse("https://api.sendhub.com/v1/messages/?username=#{ACCOUNT_NUMBER}\&api_key=#{API_KEY}")
@@ -51,7 +52,9 @@ class Texter
 	end
 
 	def self.translate_to_UTC(time_ahead)
-		return '2013-02-15T12:30:00-0800'
+		present = Time.now.gmtime
+		future = present + time_ahead.to_i
+		timestamp = future.strftime("%Y-%m-%dT%H:%M:%S-0000")
 	end
 
 end
