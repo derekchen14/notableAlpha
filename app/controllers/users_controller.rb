@@ -37,8 +37,28 @@ class UsersController < ApplicationController
 
   def update
     btn_text = params[:commit]
-    if @user.update_attributes(params[:user])
-      set_reminder_id
+    
+    if (@user.phone_number.nil? || @user.phone_number.length == 0)
+      if (params[:user][:phone_number].nil? || params[:user][:phone_number].length == 0)
+        @updateSuccess = @user.update_attributes(params[:user])
+      else
+        if (set_reminder_id)
+          @updateSuccess = @user.update_attributes(params[:user])
+        end
+      end
+    else 
+      if (params[:user][:phone_number].nil? || params[:user][:phone_number].length == 0)
+        if (delete_reminder_id)
+          @updateSuccess = @user.update_attributes(params[:user])
+        end
+      else
+        if (edit_reminder_id)
+          @updateSuccess = @user.update_attributes(params[:user])
+        end
+      end
+    end
+    sign_in @user
+    if (@updateSucess)
       if btn_text == 'Add'
         redirect_to root_path
       else
@@ -57,17 +77,41 @@ class UsersController < ApplicationController
 
   private
     def set_reminder_id
-      res = Texter.add_contact(@user.username, @user.phone_number)
+      res = Texter.add_contact(params[:user][:username], params[:user][:phone_number])
       if res.code == '201'
         response_body = JSON.parse(res.body)
         @user.update_attributes(sendhub_id: response_body['id'])
         flash[:success] = "Profile successfully updated."
+        return true
       else 
-        flash[:error] = "Phone number not added. Please try again later."
+        flash[:error] = "Profile failed to be modified. Please try again later."
+        return false
       end
-        sign_in @user
     end
-
+    
+    def edit_reminder_id
+      res = Texter.edit_contact(params[:user][:username], params[:user][:phone_number], @user.sendhub_id)
+      if res.code == '202'
+        response_body = JSON.parse(res.body)
+        flash[:success] = "Profile successfully updated."
+        return true
+      else 
+        flash[:error] = "Profile failed to be modified. Please try again later."
+      end
+    end
+    
+    def delete_reminder_id
+      res = Texter.delete_contact(@user.sendhub_id)
+      @user.update_attributes(:sendhub_id => nil)
+      if res.code == '204'
+        flash[:success] = "Profile successfully updated."
+        return true
+      else 
+        flash[:error] = "Profile failed to be modified. Please try again later."
+        return false
+      end
+    end
+    
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)

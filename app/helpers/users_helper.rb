@@ -9,8 +9,11 @@ module UsersHelper
   end
 
   def display_number(phone_number)
-  	n = "(" + phone_number[0,3] + ")"
-  	n += phone_number[3,3] + "-" + phone_number[6,4]
+  	if (phone_number.nil? || phone_number.length == 0)
+  	  return "N/A"
+  	end
+  	n = "(" + phone_number[0,3].to_s + ")"
+  	n += phone_number[3,3].to_s + "-" + phone_number[6,4].to_s
   	return n
   end
 
