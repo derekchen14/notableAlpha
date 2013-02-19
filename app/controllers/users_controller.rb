@@ -37,34 +37,15 @@ class UsersController < ApplicationController
 
   def update
     btn_text = params[:commit]
-    
-    if (@user.phone_number.nil? || @user.phone_number.length == 0)
-      if (params[:user][:phone_number].nil? || params[:user][:phone_number].length == 0)
-        @updateSuccess = @user.update_attributes(params[:user])
-      else
-        if (set_reminder_id)
-          @updateSuccess = @user.update_attributes(params[:user])
-        end
-      end
-    else 
-      if (params[:user][:phone_number].nil? || params[:user][:phone_number].length == 0)
-        if (delete_reminder_id)
-          @updateSuccess = @user.update_attributes(params[:user])
-        end
-      else
-        if (edit_reminder_id)
-          @updateSuccess = @user.update_attributes(params[:user])
-        end
-      end
-    end
-    sign_in @user
-    if (@updateSucess)
+    if update_success
+      sign_in @user
       if btn_text == 'Add'
         redirect_to root_path
       else
         redirect_to @user
       end
     else
+      sign_in @user
       render 'edit'
     end
   end
@@ -76,38 +57,62 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_reminder_id
-      res = Texter.add_contact(params[:user][:username], params[:user][:phone_number])
-      if res.code == '201'
-        response_body = JSON.parse(res.body)
-        @user.update_attributes(sendhub_id: response_body['id'])
-        flash[:success] = "Profile successfully updated."
-        return true
-      else 
-        flash[:error] = "Profile failed to be modified. Please try again later."
-        return false
+    def update_success
+      if params[:user][:phone_number].blank?
+        unless @user.phone_number.nil? 
+          delete_reminder_id
+        end
+      elsif params[:user][:phone_number]
+        if @user.phone_number.nil? 
+          create_reminder_id 
+        else 
+          edit_reminder_id
+        end
+      end
+    end
+
+    def create_reminder_id
+      if @user.update_attributes(params[:user])
+        puts "create section"
+        res = Texter.add_contact(@user.username, @user.phone_number)
+        if res.code == '201'
+          response_body = JSON.parse(res.body)
+          @user.update_attributes(sendhub_id: response_body['id'])
+          flash[:success] = "Profile successfully updated."
+          return true
+        else 
+          flash[:error] = "Phone number not added. Please try again later."
+          return false
+        end
       end
     end
     
     def edit_reminder_id
-      res = Texter.edit_contact(params[:user][:username], params[:user][:phone_number], @user.sendhub_id)
-      if res.code == '202'
-        response_body = JSON.parse(res.body)
-        flash[:success] = "Profile successfully updated."
-        return true
-      else 
-        flash[:error] = "Profile failed to be modified. Please try again later."
+      if @user.update_attributes(params[:user])
+        puts "edit section"
+        res = Texter.edit_contact(@user.username, @user.phone_number, @user.sendhub_id)
+        puts res.body
+        if res.code == '202'
+          response_body = JSON.parse(res.body)
+          flash[:success] = "Profile successfully updated."
+          return true
+        else 
+          flash[:error] = "Phone number not updated. Please try again later."
+          return false
+        end
       end
     end
     
     def delete_reminder_id
+      puts "delete section"
       res = Texter.delete_contact(@user.sendhub_id)
-      @user.update_attributes(:sendhub_id => nil)
       if res.code == '204'
+        @user.update_attributes(:phone_number => nil)
+        @user.update_attributes(:sendhub_id => nil)
         flash[:success] = "Profile successfully updated."
         return true
       else 
-        flash[:error] = "Profile failed to be modified. Please try again later."
+        flash[:error] = "Phone number not removed. Please try again later."
         return false
       end
     end

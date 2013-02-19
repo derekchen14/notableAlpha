@@ -18,7 +18,7 @@ class Texter
 		return res
 	end
   def self.edit_contact(username, phone_number, sendhub_id)
-    data = {id: sendhub_id.to_s, name: username, number: phone_number.to_s}
+    data = {id: sendhub_id, name: username, number: phone_number}
     uri = URI.parse("https://api.sendhub.com/v1/contacts/#{sendhub_id}/?username=#{ACCOUNT_NUMBER}\&api_key=#{API_KEY}")
     req = Net::HTTP::Put.new(uri.request_uri)
     req.add_field("Content-Type","application/json")
