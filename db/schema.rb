@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130061826) do
+ActiveRecord::Schema.define(:version => 20130219052349) do
 
   create_table "items", :force => true do |t|
     t.integer  "variable"
@@ -43,11 +43,12 @@ ActiveRecord::Schema.define(:version => 20130130061826) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
-    t.string   "phone_number"
     t.integer  "sendhub_id"
+    t.string   "phone_number"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["phone_number"], :name => "phone_number_index", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end

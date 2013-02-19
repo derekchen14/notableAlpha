@@ -97,6 +97,7 @@ class UsersController < ApplicationController
         return true
       else 
         flash[:error] = "Profile failed to be modified. Please try again later."
+        return false
       end
     end
     
