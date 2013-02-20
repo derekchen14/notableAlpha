@@ -17,6 +17,7 @@ class Texter
 
 		return res
 	end
+	
   def self.edit_contact(username, phone_number, sendhub_id)
     data = {id: sendhub_id, name: username, number: phone_number}
     uri = URI.parse("https://api.sendhub.com/v1/contacts/#{sendhub_id}/?username=#{ACCOUNT_NUMBER}\&api_key=#{API_KEY}")
