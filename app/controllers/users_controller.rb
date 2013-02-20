@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    btn_text = params[:commit]    
+    btn_text = params[:commit]
     if update_success
       sign_in @user
       if btn_text == 'Add'

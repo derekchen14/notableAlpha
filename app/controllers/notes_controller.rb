@@ -6,12 +6,13 @@ class NotesController < ApplicationController
 
 	def create
     @note = current_user.notes.build(params[:note])
-    if @note.save
-      redirect_to root_url
+    if params[:note][:content].blank?
+      flash[:error] = "Note cannot be empty."
+    elsif @note.save
     else
-      @note = []
-      render 'static_pages/home'
+      flash[:error] = "Note was not saved correctly."
     end
+    redirect_to root_url
 	end
 
 	def destroy
