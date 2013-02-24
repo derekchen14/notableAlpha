@@ -28,3 +28,10 @@ guard 'rspec', :version => 2, :all_after_pass => false, :cli => '--drb' do
 
 end
 
+
+guard 'rails' do
+  watch('Gemfile.lock')
+  watch('routes.rb')
+  watch(%r{^(config|lib)/.*})
+end
+
