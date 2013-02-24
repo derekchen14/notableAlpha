@@ -15,7 +15,20 @@ class NotesController < ApplicationController
     redirect_to root_url
 	end
 
-	def destroy
+  def edit
+    @note = current_user.notes.find_by_id(params[:id])
+  end
+
+  def update
+    @note = current_user.notes.find_by_id(params[:id])
+    if @note.update_attributes(params[:note])
+      redirect_to root_url, notice: "Successfully updated note."
+    else
+      render :edit
+    end
+  end
+	
+  def destroy
 		@note.destroy
     redirect_to root_url
 	end
