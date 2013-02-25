@@ -1,4 +1,5 @@
 $(function() {
+  $(".best_in_place").best_in_place()
   $("li").hover(function(event) {
     $(this).children(".remind").toggle();
   });

@@ -4,7 +4,8 @@ Notable::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :notes, only: [:create, :destroy, :index]
+  resources :notes
+  # resources :notes, only: [:create, :destroy, :index]
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'

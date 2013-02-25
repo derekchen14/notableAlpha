@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
 		  flash.discard # Stops the flash appearing when you refresh the page
 		end
 
-		def flash_message
-			[:error, :warning, :notice, :success].each do |type|
-				return flash[type] unless flash[type].blank?
-			end
-		end
+    def flash_message
+      [:error, :warning, :notice, :success].each do |type|
+        return flash_type = flash[type].blank? ? "" : flash[type]
+      end
+    end
 
 		def flash_type
 			[:error, :warning, :notice, :success].each do |type|
