@@ -1,11 +1,10 @@
 <li id="<%= note.id %>">
-  <span class="content"><%= note.content %></span>
+  <span class="content"><%= best_in_place note, :content  %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(note.created_at) %> ago.
   </span>
 
   <% if current_user?(note.user) %>
-    <%= link_to "Update", edit_note_path(note.id) %>
   <%= link_to '<i class="icon-trash"></i>'.html_safe, note, method: :delete, data: { confirm: "You sure?" }%>
   <% end %>
 
