@@ -6,9 +6,8 @@
 
   <% if current_user?(note.user) %>
   <%= link_to '<i class="icon-trash"></i>'.html_safe, note, method: :delete, data: { confirm: "You sure?" }%>
+  <%= link_to '<i class="icon-time"></i>'.html_safe, '#', class: "remind" %>
   <% end %>
-
-  <%= link_to "Remind Me", '#', class: "btn pull-right remind" %>
 
   <% unless current_user.sendhub_id.nil? %>
     <div class="btn-group remind_times">
