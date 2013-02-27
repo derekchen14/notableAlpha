@@ -1,7 +1,7 @@
 require 'text/text_util'
 
 class NotesController < ApplicationController
-	before_filter :signed_in_user
+	# before_filter :signed_in_user
 	before_filter :correct_user,   only: :destroy
 
   respond_to :html, :json

@@ -11,7 +11,7 @@
     <% if Rails.env.development? %>
       <h2><strong>Sendhub ID:</strong> <%= @user.sendhub_id %> </h2>
     <% end %>    
-    <%= link_to "Edit Profile", edit_user_path(current_user), 
+    <%= link_to "Edit Profile", edit_user_registration_path(current_user), 
       class: "btn btn-large btn-primary" %>
   </div>
 </div>

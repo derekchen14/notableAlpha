@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130227032915) do
+ActiveRecord::Schema.define(:version => 20130227043431) do
 
   create_table "items", :force => true do |t|
     t.integer  "variable"
@@ -35,14 +35,26 @@ ActiveRecord::Schema.define(:version => 20130227032915) do
   add_index "notes", ["user_id", "created_at"], :name => "index_notes_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
-    t.string  "username"
-    t.string  "email"
-    t.boolean "admin",        :default => false
-    t.integer "sendhub_id"
-    t.string  "phone_number"
+    t.string   "username"
+    t.string   "email"
+    t.boolean  "admin",                  :default => false
+    t.integer  "sendhub_id"
+    t.string   "phone_number"
+    t.string   "encrypted_password",     :default => "",    :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
+  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["phone_number"], :name => "phone_number_index", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
