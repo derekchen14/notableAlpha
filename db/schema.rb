@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130219052349) do
+ActiveRecord::Schema.define(:version => 20130227032915) do
 
   create_table "items", :force => true do |t|
     t.integer  "variable"
@@ -35,20 +35,14 @@ ActiveRecord::Schema.define(:version => 20130219052349) do
   add_index "notes", ["user_id", "created_at"], :name => "index_notes_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "password"
-    t.string   "email"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.string   "password_digest"
-    t.string   "remember_token"
-    t.boolean  "admin",           :default => false
-    t.integer  "sendhub_id"
-    t.string   "phone_number"
+    t.string  "username"
+    t.string  "email"
+    t.boolean "admin",        :default => false
+    t.integer "sendhub_id"
+    t.string  "phone_number"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["phone_number"], :name => "phone_number_index", :unique => true
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end
