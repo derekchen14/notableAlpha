@@ -14,7 +14,7 @@ $notableBlue: #14A4FF;
 $notableOrange: #E97C12;
 $notableYellow: #FFDC33;
 $notableWhite: #FDFDFD;
-$notableBlack: #000014;
+$notableBlack: #3D3D3D;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -52,6 +52,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  color: $notableBlack;
 }
 
 h1 {
@@ -72,7 +73,7 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-  color: $grayLight;
+  color: gray;
 }
 
 /*******************
