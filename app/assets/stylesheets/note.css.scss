@@ -65,12 +65,20 @@ input[type="tel"], .phone_input {
 }
 
 /*******************
+  Trash 
+ *******************/
+
+.icon-trash {
+  margin: 2px 4px 0px 4px;
+}
+
+/*******************
   Reminders 
  *******************/
 
 .remind {
   position:relative;
-  bottom: 0px;
+  bottom: 1px;
   display: none;
 }
 
