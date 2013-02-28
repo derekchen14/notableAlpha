@@ -110,13 +110,22 @@ p {
 }
 
 /*******************
-  Profile page 
+  General Pages 
  *******************/
 
 .profile_info h2 {
   text-align: left;
   letter-spacing: 0px;
   font-family: "Trebuchet MS", Tahoma, Geneva, sans-serif;
+}
+
+.hero-unit {
+  background-color: #D5EFFF;
+
+  & p {
+    margin: 0 auto 10px;
+    width: 800px;
+  }
 }
 
 /*******************
