@@ -9,11 +9,11 @@ body {
   Mixins and Variables
  *****************/
 
-$grayMediumLight: #eaeaea;
 $notableBlue: #14A4FF;
 $notableOrange: #E97C12;
 $notableYellow: #FFDC33;
 $notableWhite: #FDFDFD;
+$notableGray: #EAEAEA;
 $notableBlack: #3D3D3D;
 
 @mixin box_sizing {
@@ -239,7 +239,7 @@ aside {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
+  border-top: 1px solid $notableGray;
   color: $grayLight;
   a {
     color: $gray;
