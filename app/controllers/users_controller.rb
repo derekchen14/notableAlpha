@@ -2,8 +2,6 @@ require 'text/text_util'
 require 'json'
 
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:edit, :update, :index, 
-    :destroy, :following, :followers]
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: :destroy
   before_filter :already_member, only: [:new, :create]
@@ -118,7 +116,7 @@ class UsersController < ApplicationController
     
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
+      redirect_to(root_path) unless current_user
     end
 
     def admin_user
@@ -126,7 +124,7 @@ class UsersController < ApplicationController
     end
 
     def already_member
-      if signed_in?
+      if user_signed_in?
        redirect_to root_url
       end
     end

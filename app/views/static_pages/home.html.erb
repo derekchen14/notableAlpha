@@ -1,4 +1,4 @@
-<% if signed_in? %>
+<% if user_signed_in? %>
   <% provide(:title, current_user.username) %>
   <div class="row">
     <aside class="span4">
@@ -26,7 +26,7 @@
 	    It is a next generation note-taking tool that gives you a new way to view your notes so you can come up with best ideas.
 	  </p>
 
-	  <%= link_to "Sign up now!", signup_path , class: "btn btn-large btn-primary" %>
+	  <%= link_to "Sign up now!", new_user_registration_path , class: "btn btn-large btn-primary" %>
 	</div> 
 
 	<div class="center">

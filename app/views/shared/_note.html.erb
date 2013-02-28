@@ -4,10 +4,10 @@
     Posted <%= time_ago_in_words(note.created_at) %> ago.
   </span>
 
-  <% if current_user?(note.user) %>
-  <%= link_to '<i class="icon-trash"></i>'.html_safe, note, 
-    method: :delete, data: { confirm: "You sure?" }, class: "trash" %>
-  <%= link_to image_tag("reminder.png", alt: "reminder", size: "15x15"),'#', class: "remind" %>
+  <% if current_user == note.user %>
+    <%= link_to '<i class="icon-trash"></i>'.html_safe, note, 
+      method: :delete, data: { confirm: "You sure?" }, class: "trash" %>
+    <%= link_to image_tag("reminder.png", alt: "reminder", size: "15x15"),'#', class: "remind" %>
   <% end %>
 
   <% unless current_user.sendhub_id.nil? %>

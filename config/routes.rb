@@ -1,9 +1,11 @@
 Notable::Application.routes.draw do
+  devise_for :users
+
   get "items/create"
   get "reminders/create"
 
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  # resources :sessions, only: [:new, :create, :destroy]
   resources :notes
   # resources :notes, only: [:create, :destroy, :index]
 
@@ -12,9 +14,9 @@ Notable::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/settings',to: 'static_pages#settings'
 
-  match '/signup',  to: 'users#new'
-  match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
+  # match '/signup',  to: 'users#new'
+  # match '/signin',  to: 'sessions#new'
+  # match '/signout', to: 'sessions#destroy', via: :delete
     
   # The priority is based upon order of creation:
   # first created -> highest priority.

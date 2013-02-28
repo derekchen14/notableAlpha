@@ -9,15 +9,40 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Removed Settings Before Adding Devise
+
+# has_secure_password
+# before_save :create_remember_token
+# validates :password, 
+# length: { minimum: 6 },
+#   on: :create
+# validates :password_confirmation, 
+# presence: true,
+#   :if => :updating_password?
+# def updating_password?
+#   :password.nil?
+# end
+# 
+# def create_remember_token
+#   self.remember_token = SecureRandom.urlsafe_base64
+# end
+# 
+# attr_accessible :username, :email, :phone_number, :password, 
+#   :password_confirmation, :remember_token, :sendhub_id
 
 class User < ActiveRecord::Base
-  attr_accessible :username, :email, :phone_number, :password, 
-    :password_confirmation, :remember_token, :sendhub_id
-  has_secure_password
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :phone_number, :sendhub_id 
+
   has_many :notes, dependent: :destroy
 
   before_save { |user| user.email = email.downcase }
-  before_save :create_remember_token
   before_save :make_username
   before_save :clean_phone_number
 
@@ -31,18 +56,9 @@ class User < ActiveRecord::Base
   	length: {minimum: 7},
   	format: {with: EMAIL_REGEX, on: :create},
   	confirmation: true
-	validates :password, 
-		length: { minimum: 6 },
-    on: :create
-	validates :password_confirmation, 
-		presence: true,
-    :if => :updating_password?
 
 
   private
-    def updating_password?
-      :password.nil?
-    end
 
     def clean_phone_number
       unless self.phone_number.nil?
@@ -59,10 +75,6 @@ class User < ActiveRecord::Base
       if self.username.nil?
         self.username = self.email[/[^@]+/]
       end
-    end
-
-    def create_remember_token
-      self.remember_token = SecureRandom.urlsafe_base64
     end
 
     def notebook

@@ -1,0 +1,35 @@
+<% provide(:title, 'Edit User') %>
+
+<h1>Update your profile</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <h2>Edit User</h1>
+      <%= f.label :username, :autofocus => true %>
+      <%= f.text_field :username %>
+      <%= f.label :email %>
+      <%= f.email_field :email%>
+      <%= f.label :phone_number, "Phone Number" %>
+      <%= f.text_field :phone_number %>
+
+      <h2>Edit Profile Image</h2>
+      <a href="http://gravatar.com/emails" id="edit_gravatar">
+        <%= gravatar_for @user %></a>
+
+      <h2>Edit Password</h2>
+      <%= f.label :password %><i>(leave blank if you don't want to change it)</i>
+      <%= f.password_field :password, :autocomplete => "off" %>
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation %>
+      <%= f.label :current_password %> 
+      <%= f.password_field :current_password %> <i>(we need your current password to confirm your changes)</i>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "Back", :back %>
