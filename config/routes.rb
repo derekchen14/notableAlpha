@@ -1,5 +1,8 @@
 Notable::Application.routes.draw do
-  devise_for :users
+  devise_for :users do
+    match '/signin', to: 'devise/sessions#new'
+    match '/signup', to: 'devise/registrations#new'
+  end
 
   get "items/create"
   get "reminders/create"
@@ -11,9 +14,6 @@ Notable::Application.routes.draw do
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
   match '/settings',to: 'static_pages#settings'
-    
-  match '/signin', to: 'devise/sessions#new'
-  match '/signup', to: 'devise/registration#new'
 
   root :to => "static_pages#home"
   
