@@ -83,7 +83,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #EEEEEE;
+  color: $notableWhite;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -93,6 +93,15 @@ p {
     color: $notableYellow;
     text-decoration: none;
   }
+}
+
+.navbar .nav > li > a {
+  color: $notableWhite;
+  text-shadow: 0 1px 0 #555555;
+}
+
+.navbar .nav li.dropdown > .dropdown-toggle .caret {
+  border-top-color: $notableWhite;
 }
 
 #navbar-main {
