@@ -16,9 +16,10 @@ group :development do
   gem 'rspec-rails', '2.11.0'
   gem 'guard-rspec', '1.2.1'
   gem 'guard-spork', '1.2.0'  
-  gem 'guard-rails', '0.3.1'  
+  gem 'guard-rails', '~> 0.3.4'
   gem 'spork', '0.9.2'
   gem 'annotate', '2.5.0'
+  gem 'rubygems-bundler', '1.1.0'
 end
 
 group :assets do

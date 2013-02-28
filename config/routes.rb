@@ -6,6 +6,7 @@ Notable::Application.routes.draw do
 
   get "items/create"
   get "reminders/create"
+  get "lasttest/create"
 
   resources :users
   resources :notes
