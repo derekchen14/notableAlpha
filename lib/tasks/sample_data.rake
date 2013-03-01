@@ -9,8 +9,8 @@ end
 def make_users
   admin = User.create!(username: "Derek Chen",
                        email:    "admin@notable.im",
-                       password: "foobar",
-                       password_confirmation: "foobar")
+                       password: "notable14",
+                       password_confirmation: "notable14")
   admin.toggle!(:admin)
   14.times do |n|
     username  = Faker::Name.name

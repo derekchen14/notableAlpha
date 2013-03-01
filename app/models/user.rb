@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :phone_number, :sendhub_id 
+  attr_accessible :email, :password, :password_confirmation, 
+    :remember_me, :username, :phone_number, :sendhub_id 
 
   has_many :notes, dependent: :destroy
 
@@ -22,7 +23,6 @@ class User < ActiveRecord::Base
     def clean_phone_number
       unless self.phone_number.nil?
         self.phone_number = self.phone_number.gsub(/\D/, '')
-        #Remove all non-digit symbols
     		if self.phone_number.length == 11 
     			self.phone_number = self.phone_number.sub(/1/, '') 
           #Remove country code "1" at beginning.
