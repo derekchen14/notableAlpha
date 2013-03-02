@@ -22,6 +22,11 @@ $notableBlack: #3D3D3D;
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Century Gothic Bold";
+  src: url(http://fonts.googleapis.com/css?family=Purple+Purse);
+}
+
 /****************
   Full Page
  *****************/
@@ -53,6 +58,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   color: $notableBlack;
+  #font-family: "Century Gothic Bold", Helvetica, Arial, sans-serif; 
 }
 
 h1 {
@@ -106,6 +112,8 @@ p {
 }
 
 #navbar-main {
+  background-color: #14A4FF;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,  from(#14A4FF), to(#1C8DFF));
   background-image: linear-gradient(to bottom, #14A4FF, #1C8DFF);
 }
 
