@@ -22,11 +22,6 @@ $notableBlack: #3D3D3D;
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "Century Gothic Bold";
-  src: url(http://fonts.googleapis.com/css?family=Purple+Purse);
-}
-
 /****************
   Full Page
  *****************/
@@ -58,7 +53,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   color: $notableBlack;
-  #font-family: "Century Gothic Bold", Helvetica, Arial, sans-serif; 
+  font-family: 'Century Gothic', Helvetica, Arial, sans-serif; 
 }
 
 h1 {
@@ -80,6 +75,7 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
   color: gray;
+  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /*******************

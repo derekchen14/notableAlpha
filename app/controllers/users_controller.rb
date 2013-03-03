@@ -3,7 +3,7 @@ require 'json'
 
 class UsersController < ApplicationController
   before_filter :correct_user,   only: [:edit, :update]
-  before_filter :admin_user,     only: :destroy
+  before_filter :admin_user,     only: [:destroy, :index]
   before_filter :already_member, only: [:new, :create]
 
   def index
