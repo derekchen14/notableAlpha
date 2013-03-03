@@ -64,7 +64,6 @@ class Texter
 
 	def self.schedule_text(sendhub_id, content, time_ahead)
 		timestamp = translate_to_UTC(time_ahead)
-		puts timestamp
 		data = {contacts: [sendhub_id], text: content, scheduled_at: timestamp}
 
 		uri = URI.parse("https://api.sendhub.com/v1/messages/?username=#{ACCOUNT_NUMBER}\&api_key=#{API_KEY}")
