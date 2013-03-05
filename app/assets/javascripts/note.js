@@ -1,3 +1,9 @@
+
+$(document).ready(function() {
+  $("ul#notes").sortable();
+});
+
+
 $(function() {
   $(".best_in_place").best_in_place()
   $("li").hover(function(event) {

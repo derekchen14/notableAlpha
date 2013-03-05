@@ -1,6 +1,6 @@
 <% if @notes.any? %>
-  <ol class="notes">
+  <ul id="notes" class="notes">
     <%= render partial: 'shared/note', collection: @notes %>
-  </ol>
+  </ul>
   <%= will_paginate @notes %>
 <% end %>
