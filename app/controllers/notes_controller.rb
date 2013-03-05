@@ -6,6 +6,7 @@ class NotesController < ApplicationController
 
   respond_to :html, :json
   
+
 	def create
     @note = current_user.notes.build(params[:note])
     if params[:note][:content].blank?
@@ -33,6 +34,14 @@ class NotesController < ApplicationController
 	end
 
   def index
+  end
+
+  def sort
+    params[:note].each_with_index do |id, index|
+      puts "Note id = #{id} - Note position = #{index}"
+      Note.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true    
   end
 
 	private
