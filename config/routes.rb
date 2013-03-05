@@ -9,7 +9,9 @@ Notable::Application.routes.draw do
   get "lasttest/create"
 
   resources :users
-  resources :notes
+  resources :notes do 
+    collection { post :sort }
+  end
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
