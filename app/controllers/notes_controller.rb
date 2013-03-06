@@ -34,7 +34,16 @@ class NotesController < ApplicationController
 
   def index
   end
-
+  
+  def duplicate
+    @note = current_user.notes.find(params[:id]).dup
+    @note.content = "(Copy) " + @note.content
+    @note.save
+    respond_to do |format|
+      format.html { redirect_to root_url}
+      format.js
+    end
+  end
 	private
     def correct_user
       @note = current_user.notes.find_by_id(params[:id])
