@@ -9,13 +9,16 @@ Notable::Application.routes.draw do
   get "lasttest/create"
 
   resources :users
+  match "/notes/:id" => "notes#duplicate", :via => [:post]
   resources :notes
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
   match '/settings',to: 'static_pages#settings'
-
+  
+  
+  
   root :to => "static_pages#home"
   
   # The priority is based upon order of creation:
