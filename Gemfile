@@ -10,7 +10,8 @@ gem 'jquery-rails', '2.0.2'
 gem 'json'
 gem 'best_in_place'
 gem 'devise'
-gem 'ranked-model'
+gem 'acts_as_list'
+# gem 'ranked-model'
 
 group :development do
   gem 'sqlite3', '1.3.5'
