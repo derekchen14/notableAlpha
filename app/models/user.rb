@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :remember_me, :username, :phone_number, :sendhub_id,
     :password, :password_confirmation, :current_password
 
-  has_many :notes, dependent: :destroy
-
+  has_many :notes, dependent: :destroy, :order => 'position'
   before_save { |user| user.email = email.downcase }
   before_save :make_username
   before_save :clean_phone_number

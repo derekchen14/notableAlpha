@@ -65,6 +65,18 @@ input[type="tel"], .phone_input {
 }
 
 /*******************
+  List Sorting 
+ *******************/
+
+.handle {
+  float:right;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  bottom: 15px;
+}
+
+/*******************
   Trash 
  *******************/
 

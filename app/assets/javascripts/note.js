@@ -1,7 +1,20 @@
+
+$(document).ready(function() {
+  $("ul#notes").sortable({
+    axis: 'y',
+    handle: '.handle',
+    update: function() {
+      $.post($(this).data('update-url'), $(this).sortable('serialize'));
+    }
+  });
+});
+
+
 $(function() {
   $(".best_in_place").best_in_place()
   $("li").hover(function(event) {
     $(this).children(".remind").toggle();
+    $(this).children(".handle").toggle();
   });
   $(".remind").click(function(e) {
     e.preventDefault();

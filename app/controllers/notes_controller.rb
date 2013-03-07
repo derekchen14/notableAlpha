@@ -6,11 +6,13 @@ class NotesController < ApplicationController
 
   respond_to :html, :json
   
+
 	def create
     @note = current_user.notes.build(params[:note])
     if params[:note][:content].blank?
       flash[:error] = "Note cannot be empty."
     elsif @note.save
+      @note.move_to_top
     else
       flash[:error] = "Note was not saved correctly."
     end
@@ -44,6 +46,14 @@ class NotesController < ApplicationController
       format.js
     end
   end
+
+  def sort
+    params[:note].each_with_index do |id, index|
+      Note.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true    
+  end
+
 	private
     def correct_user
       @note = current_user.notes.find_by_id(params[:id])
