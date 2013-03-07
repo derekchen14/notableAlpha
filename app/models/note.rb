@@ -1,6 +1,5 @@
 class Note < ActiveRecord::Base
-  include RankedModel
-  ranks :position
+  acts_as_list
 
   attr_accessible :content, :format
   belongs_to :user
