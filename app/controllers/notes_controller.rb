@@ -39,7 +39,7 @@ class NotesController < ApplicationController
   
   def duplicate
     @note = current_user.notes.find(params[:id]).dup
-    @note.content = "(Copy) " + @note.content
+    @note.content = @note.content + " (copy)"
     @note.save
     respond_to do |format|
       format.html { redirect_to root_url}

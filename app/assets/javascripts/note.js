@@ -13,7 +13,6 @@ $(document).ready(function() {
 $(function() {
   $(".best_in_place").best_in_place()
   $("li").hover(function(event) {
-    $(this).children(".remind").toggle();
     $(this).children(".handle").toggle();
   });
   $(".remind").click(function(e) {

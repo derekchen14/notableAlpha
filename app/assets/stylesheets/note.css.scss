@@ -77,27 +77,32 @@ input[type="tel"], .phone_input {
 }
 
 /*******************
-  Trash 
+  Icons 
  *******************/
 
 .icon-trash {
   margin: 2px 4px 0px 4px;
 }
 
-/*******************
-  Reminders 
- *******************/
-
-.remind {
+.duplicate {
+  margin: 0px 3px;
   position:relative;
   bottom: 1px;
-  display: none;
+}
+
+.remind {
+  margin: 0px 3px;
+  position:relative;
+  bottom: 1px;
 }
 
 a.remind:focus {
   outline: none;
 }
 
+/*******************
+  Reminders 
+ *******************/
 
 .remind_times {
   margin: 14px 10px 4px 10px;
