@@ -24,8 +24,6 @@
       <%= f.password_field :password, :autocomplete => "off" %>
       <%= f.label :password_confirmation, "Confirm Password" %>
       <%= f.password_field :password_confirmation %>
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-      <%= f.password_field :current_password %> 
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
