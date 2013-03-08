@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessor :password, :password_confirmation, :current_password
+  attr_accessor :current_password
   attr_accessible :email, :remember_me, :username, :phone_number, :sendhub_id,
     :password, :password_confirmation, :current_password
 
@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
   before_save :clean_phone_number
 
   validates :username, 
-  	length: {maximum: 50}  
+  	length: {maximum: 50},
+    :presence => true
 
   private
 
