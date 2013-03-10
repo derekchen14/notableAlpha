@@ -48,9 +48,7 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       render 'edit'
-      flash[:error] = "Profile not updated."
     end
-
   end
 
   def destroy
@@ -74,8 +72,12 @@ class RegistrationsController < Devise::RegistrationsController
     elsif !resource.phone_number.blank? && !phone.blank?
       edit_reminder_id
     else
-      resource.update_attributes(params[:user])
-      flash[:success] = "Profile successfully updated."
+      if resource.update_attributes(params[:user])
+        sign_in(current_user, :bypass => true)
+        flash[:success] = "Profile successfully updated."
+      else
+        false
+      end
     end
 
   end
