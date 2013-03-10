@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require pjax
 //= require best_in_place.purr
 //= require best_in_place
 //= require bootstrap
