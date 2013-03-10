@@ -73,6 +73,7 @@ class RegistrationsController < Devise::RegistrationsController
       edit_reminder_id
     else
       if resource.update_attributes(params[:user])
+        sign_in(current_user, :bypass => true)
         flash[:success] = "Profile successfully updated."
       else
         false
