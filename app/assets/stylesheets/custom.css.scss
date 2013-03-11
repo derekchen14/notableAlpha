@@ -169,10 +169,11 @@ input {
   margin: 5px 0px 15px 0px;
 }
 
-#sign_up_link {
-  float: right;
+.form_links {
+  position:absolute;
   font-size: 14px;
 }
+
 
 /*******************
   Sidebar
@@ -188,7 +189,7 @@ aside {
     }
     span {
       display: block;
-      margin-bottom: 3px;
+      margin-bottom: 3pxk;
       line-height: 1;
     }
     h1 {
