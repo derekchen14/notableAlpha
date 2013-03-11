@@ -2,5 +2,4 @@
   <ul id="notes" data-update-url="<%= sort_notes_url %>" class="notes">
     <%= render partial: 'shared/note', collection: @notes %>
   </ul>
-  <%= will_paginate @notes %>
 <% end %>
