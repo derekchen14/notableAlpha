@@ -86,7 +86,7 @@ class RegistrationsController < Devise::RegistrationsController
       if res.code == '201'
         response_body = JSON.parse(res.body)
         resource.update_attributes(sendhub_id: response_body['id'])
-        flash[:success] = "Profile successfully updated."
+        flash[:success] = "Phone number successfully added."
         return true
       else 
         flash[:error] = "Phone number not added. Please try again later."
@@ -100,7 +100,7 @@ class RegistrationsController < Devise::RegistrationsController
       res = Texter.edit_contact(resource.username, resource.phone_number, resource.sendhub_id)
       if res.code == '202'
         response_body = JSON.parse(res.body)
-        flash[:success] = "Profile successfully updated."
+        flash[:success] = "Phone number successfully updated."
         return true
       else 
         flash[:error] = "Phone number not updated. Please try again later."
@@ -114,7 +114,7 @@ class RegistrationsController < Devise::RegistrationsController
     if res.code == '204'
       resource.update_attributes(:phone_number => "")
       resource.update_attributes(:sendhub_id => nil)
-      flash[:success] = "Profile successfully updated."
+      flash[:success] = "Phone number successfully removed."
       return true
     else 
       flash[:error] = "Phone number not removed. Please try again later."
