@@ -161,16 +161,8 @@ input {
   @extend .error;
  }
 
-#user_remember_me {
-  margin-top: 2px;
-}
-
-.remember_label {
-  margin: 5px 0px 15px 0px;
-}
-
 .form_links {
-  position:absolute;
+  float: right;
   font-size: 14px;
 }
 
