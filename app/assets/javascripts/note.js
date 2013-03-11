@@ -1,14 +1,14 @@
-
 $(document).ready(function() {
   $("ul#notes").sortable({
     axis: 'y',
     handle: '.handle',
     update: function() {
       $.post($(this).data('update-url'), $(this).sortable('serialize'));
+      if (navigator.userAgent.indexOf("Firefox")!=-1)
+        $(".handle").hide();
     }
   });
 });
-
 
 $(function() {
   $(".best_in_place").best_in_place()
