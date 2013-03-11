@@ -11,6 +11,7 @@ gem 'json'
 gem 'best_in_place'
 gem 'devise'
 gem 'acts_as_list'
+# gem 'pjax_rails', '0.3.3'
 # gem 'ranked-model'
 
 group :development do

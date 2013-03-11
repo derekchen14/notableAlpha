@@ -6,14 +6,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   # Setup accessible (or protected) attributes for your model
+  before_save { |user| user.email = email.downcase }
+  before_validation :make_username
+  before_save :clean_phone_number
+  
   attr_accessor :current_password
   attr_accessible :email, :remember_me, :username, :phone_number, :sendhub_id,
     :password, :password_confirmation, :current_password
 
   has_many :notes, dependent: :destroy, :order => 'position'
-  before_save { |user| user.email = email.downcase }
-  before_save :make_username
-  before_save :clean_phone_number
 
   validates :username, 
   	length: {maximum: 50},

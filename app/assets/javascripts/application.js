@@ -11,8 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery-ui
 //= require jquery_ujs
+//= require jquery-ui
 //= require best_in_place.purr
 //= require best_in_place
 //= require bootstrap
