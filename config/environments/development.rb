@@ -32,7 +32,7 @@ Notable::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  # Devise setup
+  # Devise Mailer setup
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
