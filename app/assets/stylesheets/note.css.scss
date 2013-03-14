@@ -96,7 +96,7 @@ input[type="tel"], .phone_input {
   bottom: 1px;
 }
 
-a.remind:focus {
+a.remind:focus, a.trash:focus {
   outline: none;
 }
 
