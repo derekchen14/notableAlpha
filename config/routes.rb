@@ -1,5 +1,7 @@
 Notable::Application.routes.draw do
-  devise_for :users, :controllers => { :registrations => "registrations"} do
+  devise_for :users, :controllers => { :registrations => "registrations"}
+
+  devise_scope :user do
     match '/signin', to: 'devise/sessions#new'
     match '/signup', to: 'devise/registrations#new'
   end
