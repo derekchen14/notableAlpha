@@ -8,10 +8,11 @@ $(document).ready(function() {
         $(".handle").hide();
     }
   });
+
+  $(".best_in_place").best_in_place()
 });
 
 $(function() {
-  $(".best_in_place").best_in_place()
   $("li").hover(function(event) {
     $(this).children(".handle").toggle();
   });
@@ -22,22 +23,23 @@ $(function() {
   $(".badge").click(send_message);
 });
 
-
 $.rails.confirm = function(message, element) { 
   var state = element.data('state');
-  var txt = element.text();
+  var txt = element.html();
   if (!state) {
     element.data('state', 'last');
     element.text('Sure?');
+    $(".handle").hide();
     setTimeout(function() {
       element.data('state', null);
-      element.text(txt);
+      element.html(txt);
     }, 2000);
     return false;
 	} else {
     return true;
   }
 };
+
 
 $.rails.allowAction = function(element) {
 	var message = element.data('confirm');
@@ -50,6 +52,7 @@ $.rails.allowAction = function(element) {
 	}
 	return answer && callback;
 };
+
 
 function send_message(event) {
   var $t = $(event.target)

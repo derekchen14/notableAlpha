@@ -31,7 +31,10 @@ class NotesController < ApplicationController
 	
   def destroy
     @note.destroy
-    redirect_to root_url
+    respond_to do |format|
+      format.html { redirect_to root_url}
+      format.js
+    end
 	end
 
   def index
