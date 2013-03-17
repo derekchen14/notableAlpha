@@ -57,6 +57,31 @@ class NotesController < ApplicationController
     render nothing: true    
   end
 
+  def sort_date
+    @notes = current_user.notes.order("created_at desc")
+    respond_to { |format| format.js }
+  end
+
+  def sort_date_updated
+    @notes = current_user.notes.order("updated_at desc")
+    respond_to { |format| format.js }
+  end
+
+  def sort_a_z
+    @notes = current_user.notes.order("content asc")
+    respond_to { |format| format.js }
+  end
+
+  def sort_z_a
+    @notes = current_user.notes.order("content desc")
+    respond_to { |format| format.js }
+  end
+
+  def sort_position
+    @notes = current_user.notes.sort{ |n| n.position}
+    respond_to { |format| format.js }
+  end
+
 	private
     def correct_user
       @note = current_user.notes.find_by_id(params[:id])
