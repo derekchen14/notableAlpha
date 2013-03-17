@@ -1,3 +1,4 @@
+<%= render 'shared/sort' %>
 <% if @notes.any? %>
   <ul id="notes" data-update-url="<%= sort_notes_url %>" class="notes">
     <%= render partial: 'shared/note', collection: @notes %>
