@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :remember_me, :username, :phone_number, :sendhub_id,
     :password, :password_confirmation, :current_password
 
-  has_many :notes, dependent: :destroy, :order => 'position'
+  has_many :notes, dependent: :destroy
+  # , :order => 'position'
 
   validates :username, 
   	length: {maximum: 50},

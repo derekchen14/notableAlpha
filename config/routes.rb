@@ -12,6 +12,11 @@ Notable::Application.routes.draw do
 
   resources :users
   resources :notes do 
+    collection { get :sort_date }
+    collection { get :sort_date_updated }
+    collection { get :sort_a_z }
+    collection { get :sort_z_a }
+    collection { get :sort_position }
     collection { post :sort }
   end
 
