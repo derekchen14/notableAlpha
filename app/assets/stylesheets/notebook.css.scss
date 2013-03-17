@@ -1,0 +1,30 @@
+/****************
+  Mixins and Variables
+ *****************/
+
+$notableBlue: #14A4FF;
+$notableOrange: #E97C12;
+$notableYellow: #FFDC33;
+$notableWhite: #FDFDFD;
+$notableGray: #EAEAEA;
+$notableBlack: #3D3D3D;
+
+/*******************
+  Notebook 
+ *******************/
+
+.sort {
+  float: right;
+  position: relative;
+  bottom: 32px;
+  border: 1px solid $notableBlack;
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+
+.sort-toggle {
+  color: $notableBlack;  
+}
+
+.sort-menu {
+}
