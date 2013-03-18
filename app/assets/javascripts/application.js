@@ -31,3 +31,5 @@ $(document).ajaxComplete(function(event, request) {
   	$(".alert").delay(7000).fadeOut(1400);
   };
 });
+
+
