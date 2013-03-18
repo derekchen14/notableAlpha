@@ -78,7 +78,7 @@ class NotesController < ApplicationController
   end
 
   def sort_position
-    @notes = current_user.notes.sort{ |n| n.position}
+    @notes = current_user.notes.sort_by{ |n| n.position}
     respond_to { |format| format.js }
   end
 
