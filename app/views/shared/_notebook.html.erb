@@ -1,10 +1,5 @@
 <%= render 'shared/sort' %>
 <% if @notes.any? %>
-  <%= link_to "Date Sort", {controller: "notes", action: "sort_date"}, remote: true %>
-  <%= link_to "Updated At", {controller: "notes", action: "sort_date_updated"}, remote: true %>
-  <%= link_to "A-Z", {controller: "notes", action: "sort_a_z"}, remote: true %>
-  <%= link_to "Z-A", {controller: "notes", action: "sort_z_a"}, remote: true %>
-  <%= link_to "Position", {controller: "notes", action: "sort_position"}, remote: true %>
   <ul id="notes" data-update-url="<%= sort_notes_url %>" class="notes">
     <%= render partial: 'shared/note', collection: @notes.sort{ |n| n.position} %>
   </ul>

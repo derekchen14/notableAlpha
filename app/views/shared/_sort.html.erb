@@ -3,10 +3,10 @@
     Sort <b class="caret"></b>
   </a>
   <ul class="dropdown-menu sort-menu">
-    <li><%= link_to "Alphabetical (A-Z)", "#" %></li>
-    <li><%= link_to "Alphabetical (Z-A)", "#" %></li>
-    <li><%= link_to "Date Created", "#" %></li>
-    <li><%= link_to "Last Updated", "#" %></li>
-    <li><%= link_to "Custom Order", "#" %></li>
+    <li> <%= link_to "Alphabetical (A-Z)", {controller: "notes", action: "sort_a_z"}, remote: true %> </li>
+    <li> <%= link_to "Alphabetical (Z-A)", {controller: "notes", action: "sort_z_a"}, remote: true %> </li>
+    <li><%= link_to "Date Created", {controller: "notes", action: "sort_date"}, remote: true %> </li>
+    <li> <%= link_to "Last Updated", {controller: "notes", action: "sort_date_updated"}, remote: true %> </li>
+    <li> <%= link_to "Custom Order", {controller: "notes", action: "sort_position"}, remote: true %> </li>
  </ul>
 </span>
