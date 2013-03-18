@@ -59,27 +59,37 @@ class NotesController < ApplicationController
 
   def sort_date
     @notes = current_user.notes.order("created_at desc")
-    respond_to { |format| format.js }
+    respond_to do |format| 
+      format.js { render action: "custom_sort"}
+    end
   end
 
   def sort_date_updated
     @notes = current_user.notes.order("updated_at desc")
-    respond_to { |format| format.js }
+    respond_to do |format| 
+      format.js { render action: "custom_sort"}
+    end
   end
 
-  def sort_a_z
-    @notes = current_user.notes.order("content asc")
-    respond_to { |format| format.js }
+  def sort_a_z 
+    @notes = current_user.notes.order("lower(content) asc")
+    respond_to do |format| 
+      format.js { render action: "custom_sort"}
+    end
   end
 
   def sort_z_a
-    @notes = current_user.notes.order("content desc")
-    respond_to { |format| format.js }
+    @notes = current_user.notes.order("lower(content) desc")
+    respond_to do |format| 
+      format.js { render action: "custom_sort"}
+    end
   end
 
   def sort_position
-    @notes = current_user.notes.sort{ |n| n.position}
-    respond_to { |format| format.js }
+    @notes = current_user.notes.sort_by{ |n| n.position}
+    respond_to do |format| 
+      format.js { render action: "custom_sort"}
+    end
   end
 
 	private
