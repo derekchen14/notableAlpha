@@ -1,4 +1,4 @@
-<%= render 'shared/sort' %>
+<% #render 'shared/sort' %>
 <% if @notes.any? %>
   <%= link_to "Date Sort", {controller: "notes", action: "sort_date"}, remote: true %>
   <%= link_to "Updated At", {controller: "notes", action: "sort_date_updated"}, remote: true %>
