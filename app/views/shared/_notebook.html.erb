@@ -1,6 +1,7 @@
-<% #render 'shared/sort' %>
 <% if @notes.any? %>
-  <ul id="notes" data-update-url="<%= sort_notes_url %>" class="notes">
-    <%= render partial: 'shared/note', collection: @notes.sort_by{ |n| n.position} %>
-  </ul>
+  <% cache @notes do %>
+    <ul id="notes" data-update-url="<%= sort_notes_url %>" class="notes">
+      <%= render @notes %>
+    </ul>
+  <%end%>
 <% end %>

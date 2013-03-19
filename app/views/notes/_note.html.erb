@@ -9,11 +9,11 @@
       <%= link_to "<i class='icon-trash'></i>".html_safe, note, 
         method: :delete, data: { confirm: "You sure?" }, class: "trash", remote: true, title: "Trash" %>
       <%= link_to image_tag("reminder.png", alt: "reminder", size: "15x15"),'#', class: "remind", title: "Remind Me" %>
-      
+
       <%= link_to image_tag("duplicate@2x.png", alt: "duplicate", 
-        size: "15x15"), note, method: :duplicate, class: "duplicate",
-        title: "Duplicate" %>
-      
+                            size: "15x15"), note, method: :duplicate, class: "duplicate",
+                            title: "Duplicate" %>
+
       <div class="handle"><span class="icon-resize-vertical"></span></div>
     <% end %>
 
@@ -27,14 +27,14 @@
       </div>
     <% else %>
       <div class="remind_times"> 
-      <%= form_for(current_user) do |f| %>  
-        <%= render 'shared/error_messages', object: f.object  %>
-        <%= f.label :phone_number, "Please add a phone number first:", class: "phone_instructions" %>
-        <%= f.telephone_field :phone_number, class: "phone_input" %>
-        <%= f.submit "Add", class: "btn btn-small btn-primary phone_submit" %>
-      <% end %>
+        <%= form_for(current_user) do |f| %>  
+          <%= render 'shared/error_messages', object: f.object  %>
+          <%= f.label :phone_number, "Please add a phone number first:", class: "phone_instructions" %>
+          <%= f.telephone_field :phone_number, class: "phone_input" %>
+          <%= f.submit "Add", class: "btn btn-small btn-primary phone_submit" %>
+        <% end %>
       </div>
     <% end %>
-    
+
   <% end %>
 <% end %>
