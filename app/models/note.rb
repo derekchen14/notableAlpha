@@ -2,7 +2,7 @@ class Note < ActiveRecord::Base
   acts_as_list
 
   attr_accessible :content, :format
-  belongs_to :user
+  belongs_to :user, touch: true
   has_many :items
   
   validates_presence_of :user_id
