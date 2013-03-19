@@ -8,15 +8,11 @@ Notable::Application.routes.draw do
 
   get "items/create"
   get "reminders/create"
+  get "notes/sort_by/:criteria", to: 'notes#sort_by', as: :sort_by
   get "lasttest/create"
 
   resources :users
   resources :notes do 
-    collection { get :sort_a_z }
-    collection { get :sort_z_a }
-    collection { get :sort_date }
-    collection { get :sort_date_updated }
-    collection { get :sort_position }
     collection { post :sort }
   end
 

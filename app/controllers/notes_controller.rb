@@ -57,40 +57,53 @@ class NotesController < ApplicationController
     render nothing: true    
   end
 
-  def sort_date
-    @notes = current_user.notes.order("created_at desc")
+  def sort_by
+    @notes = current_user.notes.order(params[:criteria])
+    cookies[:sort_criteria] =  params[:criteria]
     respond_to do |format| 
       format.js { render action: "custom_sort"}
     end
   end
 
-  def sort_date_updated
-    @notes = current_user.notes.order("updated_at desc")
-    respond_to do |format| 
-      format.js { render action: "custom_sort"}
-    end
-  end
+  # def sort_date
+  #   @notes = current_user.notes.order("created_at desc")
+  #   cookies[:sort_criteria] = "created_at desc"
+  #   respond_to do |format| 
+  #     format.js { render action: "custom_sort"}
+  #   end
+  # end
 
-  def sort_a_z 
-    @notes = current_user.notes.order("lower(content) asc")
-    respond_to do |format| 
-      format.js { render action: "custom_sort"}
-    end
-  end
+  # def sort_date_updated
+  #   @notes = current_user.notes.order("updated_at desc")
+  #   cookies[:sort_criteria] = "updated_at desc"
+  #   respond_to do |format| 
+  #     format.js { render action: "custom_sort"}
+  #   end
+  # end
 
-  def sort_z_a
-    @notes = current_user.notes.order("lower(content) desc")
-    respond_to do |format| 
-      format.js { render action: "custom_sort"}
-    end
-  end
+  # def sort_a_z 
+  #   @notes = current_user.notes.order("lower(content) asc")
+  #   cookies[:sort_criteria] = "lower(content) asc"
+  #   respond_to do |format| 
+  #     format.js { render action: "custom_sort"}
+  #   end
+  # end
 
-  def sort_position
-    @notes = current_user.notes.sort_by{ |n| n.position}
-    respond_to do |format| 
-      format.js { render action: "custom_sort"}
-    end
-  end
+  # def sort_z_a
+  #   @notes = current_user.notes.order("lower(content) desc")
+  #   cookies[:sort_criteria] = "lower(content) desc"
+  #   respond_to do |format| 
+  #     format.js { render action: "custom_sort"}
+  #   end
+  # end
+
+  # def sort_position
+  #   @notes = current_user.notes.sort_by{ |n| n.position}
+  #   cookies[:sort_criteria] = "position"
+  #   respond_to do |format| 
+  #     format.js { render action: "custom_sort"}
+  #   end
+  # end
 
 	private
     def correct_user

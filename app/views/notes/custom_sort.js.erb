@@ -1,4 +1,4 @@
-$("#notes").html("<%= j render(partial: 'shared/note', collection: @notes) %>");
+$("#notes").html("<%= j render @notes %>");
 
 $(function() {
   $("li").hover(function(event) {
