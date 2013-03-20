@@ -1,3 +1,7 @@
+/*****************
+  Move Notes
+*****************/
+
 $(document).ready(function() {
   $("ul#notes").sortable({
     axis: 'y',
@@ -8,7 +12,6 @@ $(document).ready(function() {
         $(".handle").hide();
     }
   });
-
   $(".best_in_place").best_in_place()
 });
 
@@ -16,12 +19,11 @@ $(function() {
   $("li").hover(function(event) {
     $(this).children(".handle").toggle();
   });
-  $(".remind").click(function(e) {
-    e.preventDefault();
-    $(this).closest("li").children(".remind_times").toggle(300);
-  });
-  $(".badge").click(send_message);
 });
+
+/*****************
+  Trash
+*****************/
 
 $.rails.confirm = function(message, element) { 
   var state = element.data('state');
@@ -35,24 +37,34 @@ $.rails.confirm = function(message, element) {
       element.html(txt);
     }, 2000);
     return false;
-	} else {
+  } else {
     return true;
   }
 };
 
-
 $.rails.allowAction = function(element) {
-	var message = element.data('confirm');
+  var message = element.data('confirm');
   var answer = false, callback;
-	
-	if (!message) { return true; }
-	if ($.rails.fire(element, 'confirm')) {
+  
+  if (!message) { return true; }
+  if ($.rails.fire(element, 'confirm')) {
     answer = $.rails.confirm(message, element);
     callback = $.rails.fire(element, 'confirm:complete', [answer]);
-	}
-	return answer && callback;
+  }
+  return answer && callback;
 };
 
+/*****************
+  Remind Me
+*****************/
+
+$(function() {
+  $(".remind").click(function(e) {
+    e.preventDefault();
+    $(this).closest("li").children(".remind_times").toggle(300);
+  });
+  $(".badge").click(send_message);
+});
 
 function send_message(event) {
   var $t = $(event.target)
@@ -83,8 +95,6 @@ function send_message(event) {
   });
 
 }
-
-
 
 
 

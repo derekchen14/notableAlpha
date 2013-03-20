@@ -19,11 +19,16 @@ $notableBlack: #3D3D3D;
   bottom: 32px;
   border: 1px solid $notableBlack;
   border-radius: 4px;
-  padding: 1px 4px;
+  padding: 1px 0;
+  background-color: $notableGray;
 }
 
 .sort-toggle {
-  color: $notableBlack;  
+  color: $notableBlack;
+  padding: 4px;
+  &:hover {
+   text-decoration: none;
+  }
 }
 
 .sort-menu {
