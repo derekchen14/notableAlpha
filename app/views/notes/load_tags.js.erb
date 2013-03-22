@@ -1,0 +1,7 @@
+
+$("#note_<%= @note.id %>_tags").html("<%= j render "notes/tag"  %>")
+
+$("#tag_list_<%= @note.id %>").tokenInput( '/tags.json',{
+  theme: 'facebook',
+prePopulate: $("#tag_list_<%= @note.id %>").data('load')
+});

@@ -1,7 +1,11 @@
-<% cache note do %>
+<%# <% cache note do %>
   <%= content_tag_for :li, note do %>
     <span class="content"><%= best_in_place note, :content  %></span>
-    <span class="content">Tags:<%= best_in_place note, :tag_list %></span>
+
+    <%= link_to "<i class='icon-tags'></i>".html_safe, load_tags_path(note), remote: true %>
+    <div id=<%="note_#{note.id}_tags"%>></div>
+   
+    <span class="my_tags">Tags: <%= note.tag_list %></span></br>
     <span class="timestamp">
       Posted <%= time_ago_in_words(note.created_at) %> ago.
     </span>
@@ -38,4 +42,4 @@
     <% end %>
 
   <% end %>
-<% end %>
+<%# <% end %>

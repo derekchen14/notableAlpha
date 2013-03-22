@@ -39,6 +39,10 @@ class NotesController < ApplicationController
 
   def index
   end
+
+  def show
+    @note = Note.find(params[:id])
+  end
   
   def duplicate
     @note = current_user.notes.find(params[:id]).dup
@@ -63,6 +67,11 @@ class NotesController < ApplicationController
     respond_to do |format| 
       format.js { render action: "custom_sort"}
     end
+  end
+
+  def load_tags
+    @note = current_user.notes.find(params[:id])
+    respond_to { |format| format.js }
   end
 
 	private

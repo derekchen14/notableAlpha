@@ -1,4 +1,5 @@
 Notable::Application.routes.draw do
+
   devise_for :users, :controllers => { :registrations => "registrations"}
 
   devise_scope :user do
@@ -11,7 +12,9 @@ Notable::Application.routes.draw do
   get "notes/sort_by/:criteria", to: 'notes#sort_by', as: :sort_by
   get "lasttest/create"
 
+  get "notes/load_tags/:id", to: 'notes#load_tags', as: :load_tags
   resources :users
+  resources:tags
   resources :notes do 
     collection { post :sort }
   end

@@ -10,6 +10,18 @@ $(document).ready(function() {
   });
 
   $(".best_in_place").best_in_place()
+  
+  $("#note_tag_list").tokenInput( '/tags.json',{
+    theme: 'facebook',
+    prePopulate: $("#note_tag_list").data('load')
+  });
+
+  $(".tags").hide();
+
+  $(".icon-tags").click(function(e){
+    e.preventDefault();
+    $(this).closest("li").children(".tags").toggle(300);
+  });
 });
 
 $(function() {
@@ -21,6 +33,7 @@ $(function() {
     $(this).closest("li").children(".remind_times").toggle(300);
   });
   $(".badge").click(send_message);
+
 });
 
 $.rails.confirm = function(message, element) { 
