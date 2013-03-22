@@ -6,7 +6,7 @@ class Tag < ActiveRecord::Base
   def self.tokens(query)
     tags = where("name like ?", "%#{query}%")
     if tags.empty?
-      [{id: "<<<#{query}>>>"}, name: "New: \"#{query}\""]
+      [{id: "<<<#{query}>>>", name: "New: \"#{query}\""}]
     else
       tags
     end
