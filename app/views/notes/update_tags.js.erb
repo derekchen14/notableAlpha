@@ -1,0 +1,3 @@
+$("#note_<%= @note.id %>_tags").empty();
+$("#tags_<%= @note.id %>").text("<%= @note.tag_list %>");
+$("#tags_<%= @note.id %>").show();

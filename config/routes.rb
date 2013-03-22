@@ -13,6 +13,7 @@ Notable::Application.routes.draw do
   get "lasttest/create"
 
   get "notes/load_tags/:id", to: 'notes#load_tags', as: :load_tags
+  put "notes/update_tags/:id", to: 'notes#update_tags', as: :update_tags
   resources :users
   resources:tags
   resources :notes do 

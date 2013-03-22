@@ -74,6 +74,12 @@ class NotesController < ApplicationController
     respond_to { |format| format.js }
   end
 
+  def update_tags
+    @note = current_user.notes.find(params[:id])
+    @note.update_attributes(params[:note])
+    respond_to { |format| format.js }
+  end
+
 	private
     def correct_user
       @note = current_user.notes.find_by_id(params[:id])
