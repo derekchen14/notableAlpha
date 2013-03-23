@@ -100,18 +100,19 @@ function send_message(event) {
   FilePicker
 *****************/
 
-
 $(function() {
-  $(".fptest").click(function(e) {
-    e.preventDefault();
-    var x = $("input").value 
-    //Add some way to grab the URL from fpfiles
-    $(this).closest("li").find(".best_in_place").append(x);
-    // Add some way to save the note
+  $('input[type="filepicker"]').change(function(event){
+    var url = "</br><a href=";
+    url += event.originalEvent.target.value;
+    url += ">View File</a>"
+    $(this).closest("li").find(".content").append(url);
+    var out = '';
+    for(var i=0;i<event.fpfiles.length;i++){
+      out += event.fpfiles[i].url;
+      out+=' '};
+    alert(out);
   });
 });
-
-
 
 
 
