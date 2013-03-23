@@ -10,7 +10,7 @@
         class: "trash", remote: true, title: "Trash" %>
 
       <%= link_to image_tag("reminder.png", alt: "reminder", 
-        size: "15x15"),'#', class: "remind", title: "Remind Me" %>
+        size: "15x15"),'javascript:void(0)', class: "remind", title: "Remind Me" %>
 
       <%= link_to image_tag("duplicate@2x.png", alt: "duplicate", 
         size: "15x15"), note, method: :duplicate, class: "duplicate",
@@ -21,13 +21,13 @@
         data-fp-button-text="<i class='icon-folder-open'></i>".html_safe
         data-fp-container="modal"
         data-fp-class="filepicker" 
-        data-fp-maxsize="10000000" 
+        data-fp-maxsize="10485760" 
         data-fp-mimetypes="*/*" 
         data-fp-multiple="true" 
         data-fp-services="COMPUTER,DROPBOX,FACEBOOK,GOOGLE_DRIVE,BOX,EVERNOTE,GITHUB,WEBCAM" 
         onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out)">
 
-      <%= link_to "FP_Test", '#', class: "fptest", title: "fptest" %>
+      <%= link_to "FP_Test", 'javascript:void(0)', class: "fptest", title: "fptest" %>
 
       <div class="handle"><span class="icon-resize-vertical">
         </span></div>

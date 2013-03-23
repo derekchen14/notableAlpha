@@ -104,9 +104,9 @@ function send_message(event) {
 $(function() {
   $(".fptest").click(function(e) {
     e.preventDefault();
-    console.log(JSON.stringify(fpfiles));
+    var x = $("input").value 
     //Add some way to grab the URL from fpfiles
-    $(this).closest("li").find(".best_in_place").append(" URL");
+    $(this).closest("li").find(".best_in_place").append(x);
     // Add some way to save the note
   });
 });
