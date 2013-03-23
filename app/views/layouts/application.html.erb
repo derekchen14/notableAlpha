@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= analytics_init if Rails.env.production? %>
+  <%= filepicker_js_include_tag %>
   <%= render 'layouts/shim' %>
 </head>
 <body>

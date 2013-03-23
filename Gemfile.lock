@@ -93,6 +93,8 @@ GEM
       i18n (~> 0.4)
     ffi (1.2.0)
     ffi (1.2.0-x86-mingw32)
+    filepicker-rails (0.0.2)
+      railties (>= 3.1.0, < 5.0)
     gherkin (2.11.5)
       json (>= 1.4.6)
     gherkin (2.11.5-x86-mingw32)
@@ -251,6 +253,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (= 4.1.0)
   faker (= 1.0.1)
+  filepicker-rails
   google-analytics-rails
   growl (= 1.0.3)
   guard-rails (~> 0.3.4)

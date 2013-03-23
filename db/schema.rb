@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305173755) do
+ActiveRecord::Schema.define(:version => 20130323001406) do
 
   create_table "items", :force => true do |t|
     t.integer  "variable"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20130305173755) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "filepicker_url"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
