@@ -4,37 +4,32 @@
     <span class="timestamp">
       Posted <%= time_ago_in_words(note.created_at) %> ago.
     </span>
-
     <% if current_user == note.user %>
       <%= link_to "<i class='icon-trash'></i>".html_safe, note, 
-        method: :delete, data: { confirm: "You sure?" }, class: "trash", remote: true, title: "Trash" %>
-      <%= link_to image_tag("reminder.png", alt: "reminder", size: "15x15"),'#', class: "remind", title: "Remind Me" %>
+        method: :delete, data: { confirm: "You sure?" }, 
+        class: "trash", remote: true, title: "Trash" %>
+
+      <%= link_to image_tag("reminder.png", alt: "reminder", 
+        size: "15x15"),'#', class: "remind", title: "Remind Me" %>
 
       <%= link_to image_tag("duplicate@2x.png", alt: "duplicate", 
-                            size: "15x15"), note, method: :duplicate, class: "duplicate",
-                            title: "Duplicate" %>
+        size: "15x15"), note, method: :duplicate, class: "duplicate",
+        title: "Duplicate" %>
 
-      <div class="handle"><span class="icon-resize-vertical"></span></div>
+      <input type="filepicker" class="filepicker"
+        data-fp-apikey="AIEVEYpUyS9Srvu5qwlnJz" 
+        data-fp-mimetypes="*/*" 
+        data-fp-container="modal" 
+        data-fp-multiple="true" 
+        data-fp-button-text="<i class='icon-folder-open'></i>".html_safe
+        data-fp-maxsize="10000000" 
+        data-fp-services="COMPUTER,DROPBOX,FACEBOOK,GOOGLE_DRIVE,BOX,EVERNOTE,GITHUB,WEBCAM" 
+        onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out)">
+
+      <div class="handle"><span class="icon-resize-vertical">
+        </span></div>
+
     <% end %>
-
-    <% unless current_user.sendhub_id.nil? %>
-      <div class="btn-group remind_times">
-        <button class="badge badge-success">Right Now</button>
-        <button class="badge badge-warning">30 Minutes</button>
-        <button class="badge badge-important">In an Hour</button>
-        <button class="badge badge-info">Later Today</button>
-        <button class="badge badge-inverse">Tomorrow</button>
-      </div>
-    <% else %>
-      <div class="remind_times"> 
-        <%= form_for(current_user) do |f| %>  
-          <%= render 'shared/error_messages', object: f.object  %>
-          <%= f.label :phone_number, "Please add a phone number first:", class: "phone_instructions" %>
-          <%= f.telephone_field :phone_number, class: "phone_input" %>
-          <%= f.submit "Add", class: "btn btn-small btn-primary phone_submit" %>
-        <% end %>
-      </div>
-    <% end %>
-
+    <%= render 'features/reminders' %>    
   <% end %>
 <% end %>
