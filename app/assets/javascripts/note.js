@@ -96,5 +96,23 @@ function send_message(event) {
 
 }
 
+/*****************
+  FilePicker
+*****************/
+
+
+$(function() {
+  $(".fptest").click(function(e) {
+    e.preventDefault();
+    console.log(JSON.stringify(fpfiles));
+    //Add some way to grab the URL from fpfiles
+    $(this).closest("li").find(".best_in_place").append(" URL");
+    // Add some way to save the note
+  });
+});
+
+
+
+
 
 

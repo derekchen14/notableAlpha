@@ -16,15 +16,18 @@
         size: "15x15"), note, method: :duplicate, class: "duplicate",
         title: "Duplicate" %>
 
-      <input type="filepicker" class="filepicker"
+      <input type="filepicker"
         data-fp-apikey="AIEVEYpUyS9Srvu5qwlnJz" 
-        data-fp-mimetypes="*/*" 
-        data-fp-container="modal" 
-        data-fp-multiple="true" 
         data-fp-button-text="<i class='icon-folder-open'></i>".html_safe
+        data-fp-container="modal"
+        data-fp-class="filepicker" 
         data-fp-maxsize="10000000" 
+        data-fp-mimetypes="*/*" 
+        data-fp-multiple="true" 
         data-fp-services="COMPUTER,DROPBOX,FACEBOOK,GOOGLE_DRIVE,BOX,EVERNOTE,GITHUB,WEBCAM" 
         onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out)">
+
+      <%= link_to "FP_Test", '#', class: "fptest", title: "fptest" %>
 
       <div class="handle"><span class="icon-resize-vertical">
         </span></div>
