@@ -1,4 +1,12 @@
-<input type="filepicker" class="btn btn-info" data-fp-apikey="AIEVEYpUyS9Srvu5qwlnJz" data-fp-mimetypes="*/*" data-fp-container="modal" data-fp-multiple="true" data-fp-maxsize="10000000" data-fp-services="COMPUTER,DROPBOX,FACEBOOK,GOOGLE_DRIVE,BOX,EVERNOTE,GITHUB,WEBCAM" onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out)">
+<input type="filepicker" class="filepicker"
+	data-fp-apikey="AIEVEYpUyS9Srvu5qwlnJz" 
+	data-fp-mimetypes="*/*" 
+	data-fp-container="modal" 
+	data-fp-multiple="true" 
+	data-fp-button-text="<i class='icon-folder-open'></i>".html_safe
+	data-fp-maxsize="10000000" 
+	data-fp-services="COMPUTER,DROPBOX,FACEBOOK,GOOGLE_DRIVE,BOX,EVERNOTE,GITHUB,WEBCAM" 
+	onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out)">
 
 <span id="fat-menu" class="dropdown sort pull-right">
   <a href="#" class="dropdown-toggle sort-toggle" data-toggle="dropdown">
