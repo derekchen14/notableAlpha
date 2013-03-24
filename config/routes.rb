@@ -8,8 +8,8 @@ Notable::Application.routes.draw do
 
   get "items/create"
   get "reminders/create"
+  get "filepickers/create"
   get "notes/sort_by/:criteria", to: 'notes#sort_by', as: :sort_by
-  get "lasttest/create"
 
   resources :users
   resources :notes do 

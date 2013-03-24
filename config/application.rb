@@ -68,5 +68,7 @@ module Notable
     # Heroku Deployment
     config.assets.initialize_on_precompile = false
 
+    config.filepicker_rails.api_key = "AIEVEYpUyS9Srvu5qwlnJz"
+
   end
 end
