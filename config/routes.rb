@@ -10,6 +10,7 @@ Notable::Application.routes.draw do
   get "items/create"
   get "reminders/create"
   get "notes/sort_by/:criteria", to: 'notes#sort_by', as: :sort_by
+  get 'tags/:tag', to: 'notes#filter_by_tags', as: :filter_tag
   get "lasttest/create"
 
   get "notes/load_tags/:id", to: 'notes#load_tags', as: :load_tags

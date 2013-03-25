@@ -80,6 +80,17 @@ class NotesController < ApplicationController
     respond_to { |format| format.js }
   end
 
+  def filter_by_tags
+    if params[:tag]
+      @notes = Note.tagged_with(params[:tag])
+    else
+      @notes = Note.all
+    end
+    respond_to do |format| 
+      format.js { render action: "custom_sort"}
+    end
+  end
+
 	private
     def correct_user
       @note = current_user.notes.find_by_id(params[:id])

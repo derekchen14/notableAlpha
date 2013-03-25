@@ -1,7 +1,7 @@
 class Tag < ActiveRecord::Base
   attr_accessible :name
   has_many :taggings
-  has_many :notes, through: :tagging
+  has_many :notes, through: :taggings
 
   def self.tokens(query)
     tags = where("name like ?", "%#{query}%")

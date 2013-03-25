@@ -12,7 +12,8 @@ class Note < ActiveRecord::Base
   validates_presence_of :format
 
   def self.tagged_with(name)
-    Tag.find_by_name!(name).articles
+    # Tag.find(name).notes
+    Tag.find_by_name!(name).notes
   end
 
   def tag_list
