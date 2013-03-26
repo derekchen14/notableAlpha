@@ -4,8 +4,9 @@
 
     <%= link_to "<i class='icon-tags'></i>".html_safe, load_tags_path(note), remote: true %>
     <span id=<%="tags_#{note.id}" %>>
-    <%= raw note.tags.map(&:name).map { |t| link_to t, filter_tag_path(t), remote: true }.join(', ') %>
-  </span>
+      <%= raw note.tags.map(&:name).map { |t| link_to t, filter_tag_path(t), remote: true }.join(', ') %>
+    </span>
+    
     <div id=<%="note_#{note.id}_tags"%>></div>
    
     <span class="timestamp">
