@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   before_save { |user| user.email = email.downcase }
   before_validation :make_username
-  before_save :clean_phone_number
   
   attr_accessor :current_password
   attr_accessible :email, :remember_me, :username, :phone_number, :sendhub_id,
@@ -17,21 +16,13 @@ class User < ActiveRecord::Base
   has_many :notes, dependent: :destroy
   # , :order => 'position'
 
+  validates :phone_number, 
+    length: {maximum: 10}
   validates :username, 
   	length: {maximum: 50},
     :presence => true
 
   private
-
-    def clean_phone_number
-      unless self.phone_number.nil?
-        self.phone_number = self.phone_number.gsub(/\D/, '')
-    		if self.phone_number.length == 11 
-    			self.phone_number = self.phone_number.sub(/1/, '') 
-          #Remove country code "1" at beginning.
-    		end
-      end
-    end
 
     def make_username
       if self.username.nil?
