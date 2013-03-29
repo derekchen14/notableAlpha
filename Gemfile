@@ -24,6 +24,7 @@ group :development do
   gem 'annotate', '2.5.0'
   gem 'rubygems-bundler', '1.1.0'
   gem "better_errors"
+  gem 'quiet_assets'
 end
 
 group :assets do
