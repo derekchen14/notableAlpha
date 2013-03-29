@@ -23,6 +23,7 @@ group :development do
   gem 'spork', '0.9.2'
   gem 'annotate', '2.5.0'
   gem 'rubygems-bundler', '1.1.0'
+  gem "better_errors"
 end
 
 group :assets do
