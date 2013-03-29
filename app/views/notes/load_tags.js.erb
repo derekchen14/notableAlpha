@@ -9,6 +9,6 @@ if ($("#note_<%= @note.id %>_tags").is(':empty')) {
     });
 }
 else {
-  $("#note_<%= @note.id %>_tags").empty();
   $("#tags_<%= @note.id %>").show();
+  $("#note_<%= @note.id %>_tags").empty();
 }
