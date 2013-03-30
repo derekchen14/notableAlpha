@@ -1,5 +1,5 @@
 
-<h4><%= link_to "Tags", sort_by_path(criteria: cookies[:criteria] || "position"), remote: true %></h4>
+<h4>Tags</h4>
 <% @tags.each do |tag| %>
   <ul>
     <li><%= link_to tag.name, filter_tag_path(tag.name), class: "tag_area_item btn btn-small btn-warning", remote: true %></li>

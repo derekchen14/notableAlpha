@@ -3,4 +3,4 @@ $("#tags_<%= @note.id %>").html("<%= raw @note.tags.map(&:name).map { |t| j(link
 $("#tags_<%= @note.id %>").show();
 
 $("#tag_area").empty();
-$("#tag_area").html("<%= j render "tags/taglist", collection: @tags%>");
+$("#tag_area").html("<%= j render "features/taglist", collection: @tags%>");
