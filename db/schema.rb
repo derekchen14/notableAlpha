@@ -42,6 +42,22 @@ ActiveRecord::Schema.define(:version => 20130324003832) do
   add_index "notes", ["item_id"], :name => "index_notes_on_item_id"
   add_index "notes", ["user_id", "created_at"], :name => "index_notes_on_user_id_and_created_at"
 
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "note_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "taggings", ["note_id"], :name => "index_taggings_on_note_id"
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "email"

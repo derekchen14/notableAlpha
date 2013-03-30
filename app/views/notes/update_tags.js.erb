@@ -1,0 +1,6 @@
+$("#note_<%= @note.id %>_tags").empty();
+$("#tags_<%= @note.id %>").html("<%= raw @note.tags.map(&:name).map { |t| j(link_to t, filter_tag_path(t), remote: true) }.join(', ') %>");
+$("#tags_<%= @note.id %>").show();
+
+$("#tag_area").empty();
+$("#tag_area").html("<%= j render "tags/taglist", collection: @tags%>");

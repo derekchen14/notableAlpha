@@ -19,7 +19,7 @@ $blueLight: #444fff;
   list-style: none;
   margin: 10px 0 0 0;
 
-  li {
+  > li{
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
@@ -118,3 +118,32 @@ a.remind:focus, a.trash:focus {
   margin: 5px 20px 0px 22px;
 }
 
+/*******************
+  Tags 
+ *******************/
+
+.tag {
+  float: right;
+}
+
+#tag_area  ul {
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 5px;
+  display: inline;
+}
+
+#tag_area ul li {
+  margin-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: inline;
+}
+
+.tag_area_item {
+  margin-top: 3px;
+}
+
+.clear_filter {
+  margin: 5px 0;
+}
