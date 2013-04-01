@@ -1,4 +1,4 @@
-<%= form_for @note, url: update_tags_path(@note), remote: true do |f| %>
+<%= form_for @note, url: update_tags_path(@note, @note.user.id), remote: true do |f| %>
   <%= f.submit "Update", class: "tag btn btn-small btn-primary phone_submit" %>
   <%= f.text_field :tag_list, id: "tag_list_#{@note.id}", data:{load: @note.tags} %>
 <% end %>

@@ -22,7 +22,7 @@ class Note < ActiveRecord::Base
   end
 
   def tag_list=(names)
-    self.tag_ids = Tag.ids_from_tokens(names)
+    self.tag_ids = Tag.ids_from_tokens(names, user_id)
   end
 end
   
