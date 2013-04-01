@@ -78,7 +78,7 @@ class NotesController < ApplicationController
   def update_tags
     @note = current_user.notes.find(params[:id])
     @note.update_attributes(params[:note])
-    @tags = Tag.all
+    @tags = current_user.tags
     respond_to { |format| format.js }
   end
 

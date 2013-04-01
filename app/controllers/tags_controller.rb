@@ -1,6 +1,8 @@
 class TagsController < ApplicationController
+  # before_filter :assign_user, only: [:new, :create]
+
   def index
-    @tags = Tag.order(:name)
+    @tags = current_user.tags.order(:name)
     respond_to do |format|
       format.html
       format.json { render json: @tags.tokens(params[:q]) }
@@ -40,5 +42,10 @@ class TagsController < ApplicationController
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
+  end
+  
+  private
+
+  def assign_user
   end
 end
