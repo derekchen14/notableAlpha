@@ -4,6 +4,13 @@
 
 $grayMediumLight: #eaeaea;
 $blueLight: #444fff;
+$notableBlue: #14A4FF;
+$notableOrange: #E97C12;
+$notableYellow: #FFDC33;
+$notableWhite: #FDFDFD;
+$notableGray: #EAEAEA;
+$notableBlack: #3D3D3D;
+
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -103,6 +110,20 @@ a.remind:focus, a.trash:focus {
 .filepicker {
   border: none;
   background-color: transparent;
+}
+
+.icon-tags {
+  margin: 3px 4px 0px 4px;
+}
+
+.list-tags {
+  position: relative;
+  top: 1px;
+  & a {
+    color: $notableYellow;
+    text-shadow: 1px 1px #A6871F, -1px -1px 2px #665200;
+    filter: dropshadow(color=#A6871F, offx=1, offy=1);
+  }
 }
 
 /*******************

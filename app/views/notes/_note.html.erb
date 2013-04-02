@@ -6,6 +6,7 @@
         <%= link_to "View File", file.url %></br>
       <% end %>
     </div>
+<<<<<<< HEAD
 
     <%= link_to "<i class='icon-tags'></i>".html_safe, load_tags_path(note), remote: true %>
     <span id=<%="tags_#{note.id}" %>>
@@ -13,6 +14,8 @@
     </span>
 
     <div id=<%="note_#{note.id}_tags"%>></div>
+=======
+>>>>>>> Ticket0218
    
     <span class="timestamp">
       Posted <%= time_ago_in_words(note.created_at) %> ago.
@@ -38,6 +41,12 @@
         data-fp-mimetypes="*/*" 
         data-fp-multiple="true" 
         data-fp-services="COMPUTER,DROPBOX,FACEBOOK,GOOGLE_DRIVE,BOX,EVERNOTE,GITHUB,WEBCAM">
+
+      <%= link_to "<i class='icon-tags'></i>".html_safe, load_tags_path(note), remote: true %>
+      <span class="list-tags" id=<%="tags_#{note.id}" %>>
+        <%= raw note.tags.map(&:name).map { |t| link_to t, filter_tag_path(t), remote: true }.join(', ') %>
+      </span>
+      <div id=<%="note_#{note.id}_tags"%>></div>
 
       <div class="handle"><span class="icon-resize-vertical">
         </span></div>
