@@ -31,12 +31,6 @@ $(function() {
   $("li").hover(function(event) {
     $(this).children(".handle").toggle();
   });
-  $(".remind").click(function(e) {
-    e.preventDefault();
-    $(this).closest("li").children(".remind_times").toggle(300);
-  });
-  $(".badge").click(send_message);
-
 });
 
 /*****************

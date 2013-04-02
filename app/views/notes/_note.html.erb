@@ -32,15 +32,14 @@
         data-fp-multiple="true" 
         data-fp-services="COMPUTER,DROPBOX,FACEBOOK,GOOGLE_DRIVE,BOX,EVERNOTE,GITHUB,WEBCAM">
 
+      <div class="handle"><span class="icon-resize-vertical">
+        </span></div>
+
       <%= link_to "<i class='icon-tags'></i>".html_safe, load_tags_path(note), remote: true %>
       <span class="list-tags" id=<%="tags_#{note.id}" %>>
         <%= raw note.tags.map(&:name).map { |t| link_to t, filter_tag_path(t), remote: true }.join(', ') %>
       </span>
       <div id=<%="note_#{note.id}_tags"%>></div>
-
-      <div class="handle"><span class="icon-resize-vertical">
-        </span></div>
-
 
     <% end %>
     <%= render 'features/reminders' %>    
