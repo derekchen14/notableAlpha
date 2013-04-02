@@ -65,12 +65,10 @@ class RegistrationsController < Devise::RegistrationsController
   def update_success
     phone = params[:user][:phone_number]
 
-    if resource.phone_number.blank? && !phone.blank?
+    if current_user.sendhub_id.nil? && !phone.blank? 
       create_reminder_id
-    elsif !resource.phone_number.blank? && phone.blank?
-      delete_reminder_id
-    elsif !resource.phone_number.blank? && !phone.blank?
-      edit_reminder_id
+    elsif !current_user.sendhub_id.nil?
+      phone.blank? ? delete_reminder_id : edit_reminder_id
     else
       if resource.update_attributes(params[:user])
         sign_in(current_user, :bypass => true)

@@ -22,5 +22,15 @@ module Requests
       fill_in "Password", with: password
     end
 
+    def edit_profile_with(username, email, phone_number, password, password_confirmation)
+      fill_in :user_name, with: username
+      fill_in :email, with: email
+      fill_in :phone_number, with: phone_number
+      fill_in :password, with: password
+      fill_in :password_confirmation, with: password_confirmation
+
+      click_button "Save changes"
+    end
+
   end
 end
