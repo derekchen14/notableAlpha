@@ -5,6 +5,15 @@
       <nav>
         <ul class="nav pull-right">
           <% if user_signed_in? %>
+            <li id="search_field">
+              <%= form_tag note_search_path, method: :get, remote: true do %>
+                <p>
+                  <%= text_field_tag :query, params[:query] %>
+                  <%= submit_tag "Search", name: nil %>
+                </p>
+              <% end %>
+            </li>
+          
             <% if current_user.admin? %>
               <li><%= link_to "Users", users_path %></li>
             <% end %>
