@@ -120,9 +120,9 @@ a.remind:focus, a.trash:focus {
   position: relative;
   top: 1px;
   & a {
-    color: $notableYellow;
-    text-shadow: 1px 1px #A6871F, -1px -1px 2px #665200;
-    filter: dropshadow(color=#A6871F, offx=1, offy=1);
+    color: gray;
+    text-shadow: 0px 0px 2px $notableYellow;
+    filter: dropshadow(color=#A6871F, offx=0, offy=0);
   }
 }
 

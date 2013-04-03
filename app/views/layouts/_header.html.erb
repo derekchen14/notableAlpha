@@ -6,11 +6,12 @@
         <ul class="nav pull-right">
           <% if user_signed_in? %>
             <li id="search_field">
-              <%= form_tag note_search_path, method: :get, remote: true do %>
-                <p>
-                  <%= text_field_tag :query, params[:query] %>
-                  <%= submit_tag "Search", name: nil %>
-                </p>
+              <%= form_tag note_search_path, class: "form-search", method: :get, remote: true do %>
+                  <div class="input-append">
+                  <%= text_field_tag :query, params[:query], 
+                  class: "span2 search-query" %>
+                  <%= submit_tag "Search", name: nil, class: "btn" %>
+                </div>
               <% end %>
             </li>
           
