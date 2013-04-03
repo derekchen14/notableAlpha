@@ -168,3 +168,39 @@ a.remind:focus, a.trash:focus {
 .clear_filter {
   margin: 5px 0;
 }
+
+/*******************
+  Search 
+ *******************/
+
+.search_btn {
+  background: white;
+  border: none;
+}
+
+.search_btn:hover {
+  background: white;
+}
+
+@-moz-document url-prefix() {
+  .search_btn {
+    padding-bottom: 2px;
+    background: white;
+    border: none;
+  }
+
+  :focus {outline:none;}
+  ::-moz-focus-inner {border:0;}
+}
+
+input#query{
+  border-style: none;
+}
+
+input#query:active,input#query:focus {
+  outline: none;
+  border:none !important;
+  box-shadow:none !important;
+   -webkit-appearance:none;
+}
+
