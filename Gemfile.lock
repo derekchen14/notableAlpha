@@ -145,6 +145,9 @@ GEM
     orm_adapter (0.4.0)
     pg (0.12.2)
     pg (0.12.2-x86-mingw32)
+    pg_search (0.6.0)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
     polyglot (0.3.3)
     pry (0.9.10)
       coderay (~> 1.0.5)
@@ -269,6 +272,7 @@ DEPENDENCIES
   json
   launchy
   pg (= 0.12.2)
+  pg_search
   quiet_assets
   rails (= 3.2.11)
   rb-fsevent (= 0.9.1)

@@ -13,6 +13,7 @@ gem 'devise'
 gem 'acts_as_list'
 gem 'cache_digests'
 gem 'filepicker-rails'
+gem 'pg_search'
 
 group :development do
   # gem 'sqlite3', '1.3.5'
