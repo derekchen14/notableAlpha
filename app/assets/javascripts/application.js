@@ -34,3 +34,15 @@ $(document).ajaxComplete(function(event, request) {
 });
 
 
+function save_url(event) {
+  var note_id = $(this).closest("li").attr('id').substring(5);
+  var url = event.originalEvent.target.value;
+ $.ajax({
+    url: "filepickers/create.json",
+    dataType: "json",
+    data: {filepicker: {url: url, 
+      note_id: note_id}},
+    type: "GET"
+  });
+}
+

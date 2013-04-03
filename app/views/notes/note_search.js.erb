@@ -2,6 +2,13 @@
 $("#notes").html("<%= j render @notes %>");
 
 $(function() {
+  $("#notes li input[type='filepicker']").each(function() {
+    this.type="filepicker";
+    filepicker.constructWidget(this);
+  });
+  
+  $('input[type="filepicker"]').change(save_url);
+ 
   $("li").hover(function(event) {
     $(this).children(".handle").toggle();
   });
