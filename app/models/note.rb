@@ -22,7 +22,7 @@ class Note < ActiveRecord::Base
       rank = <<-RANK 
         ts_rank(to_tsvector(content), plainto_tsquery(#{sanitize(query)}))
         RANK
-        where("to_tsvector('english', content) @@ :q", q: query)
+        where("content @@ :q", q: query)
     else
       scoped
     end
