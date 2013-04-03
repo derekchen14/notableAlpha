@@ -115,19 +115,6 @@ function send_message(event) {
 $(function() {
   $('input[type="filepicker"]').change(save_url);
 });
-
-function save_url(event) {
-  var note_id = $(this).closest("li").attr('id').substring(5);
-  var url = event.originalEvent.target.value;
- $.ajax({
-    url: "filepickers/create.json",
-    dataType: "json",
-    data: {filepicker: {url: url, 
-      note_id: note_id}},
-    type: "GET"
-  });
-}
-
     // $(this).closest("li").find(".content").append(url);
     // var out = '';
     // for(var i=0;i<event.fpfiles.length;i++){

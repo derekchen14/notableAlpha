@@ -112,6 +112,14 @@ p {
   background-image: linear-gradient(to bottom, #14A4FF, #1C8DFF);
 }
 
+#search_field {
+  padding-top: 5px;
+  height: 30px;
+  & .btn {
+    margin-top: 0px;
+  }
+}
+
 /*******************
   General Pages 
  *******************/

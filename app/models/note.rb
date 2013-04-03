@@ -12,6 +12,22 @@ class Note < ActiveRecord::Base
   validates_presence_of :content
   validates_presence_of :format
 
+  include PgSearch
+
+  pg_search_scope :search, against: [:content],
+    using: { tsearch: { dictionary: "english"}}
+
+  def self.text_search(query)
+    if query.present?
+      rank = <<-RANK 
+        ts_rank(to_tsvector(content), plainto_tsquery(#{sanitize(query)}))
+        RANK
+        where("content @@ :q", q: query)
+    else
+      scoped
+    end
+  end
+
   def self.tagged_with(name)
     # Tag.find(name).notes
     Tag.find_by_name!(name).notes
