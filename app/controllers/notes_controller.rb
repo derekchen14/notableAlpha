@@ -93,6 +93,11 @@ class NotesController < ApplicationController
     end
   end
 
+  def note_search
+    @notes = current_user.notes.text_search(params[:query])
+    respond_to { |format| format.js }
+  end
+
 	private
     def correct_user
       @note = current_user.notes.find_by_id(params[:id])
