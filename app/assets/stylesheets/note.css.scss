@@ -178,15 +178,9 @@ a.remind:focus, a.trash:focus {
   border: none;
 }
 
-.search_btn:hover {
-  background: white;
-}
-
 @-moz-document url-prefix() {
   .search_btn {
-    padding-bottom: 2px;
-    background: white;
-    border: none;
+    padding-bottom: 1px;
   }
 
   :focus {outline:none;}

@@ -5,17 +5,7 @@
       <nav>
         <ul class="nav pull-right">
           <% if user_signed_in? %>
-            <li id="search_field">
-              <%= form_tag note_search_path, class: "form-search", method: :get, remote: true do %>
-                  <div class="input-append">
-                  <%= text_field_tag :query, params[:query], 
-                  class: "span2 search-query search_txt" %>
-                  <button type="submit" class="btn search_btn" tabindex="-1">
-                    <i class="icon-search"></i>
-                  </button>
-                </div>
-              <% end %>
-            </li>
+            <%= render 'features/search' %> 
           
             <% if current_user.admin? %>
               <li><%= link_to "Users", users_path %></li>
