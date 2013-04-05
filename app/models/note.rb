@@ -9,7 +9,6 @@ class Note < ActiveRecord::Base
   has_many :tags, through: :taggings
   
   validates_presence_of :user_id
-  validates_presence_of :content
   validates_presence_of :format
 
   include PgSearch

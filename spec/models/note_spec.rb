@@ -10,8 +10,8 @@ describe Note do
     FactoryGirl.build(:note, user: nil).should_not be_valid
   end
 
-  it "invalid without content" do 
-    FactoryGirl.build(:note, content: "").should_not be_valid
+  it "valid without content" do 
+    FactoryGirl.build(:note, content: "").should be_valid
   end
 
   it "invalid without a format" do
