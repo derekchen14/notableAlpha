@@ -83,11 +83,7 @@ class NotesController < ApplicationController
   end
 
   def filter_by_tags
-    if params[:tag]
-      @notes = Note.tagged_with(params[:tag])
-    else
-      @notes = Note.all
-    end
+    @notes = Note.tagged_with(params[:tag]) 
     respond_to do |format| 
       format.js { render action: "custom_sort"}
     end
