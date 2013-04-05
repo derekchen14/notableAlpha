@@ -1,9 +1,15 @@
-<h4>Tags</h4>
-<% @tags.each do |tag| %>
-  <ul>
-    <li><%= link_to tag.name, filter_tag_path(tag.name), class: "tag_area_item btn btn-small btn-warning", remote: true %></li>
-  </ul>
-<% end %>
+<h2>TAGS</h2>
+<ul>
+  <li>
+    <ul>
+      <% @tags.each do |tag| %>
+        <li>
+        <%= link_to tag.name, filter_tag_path(tag.name), remote: true %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
 
 <div class="clear_filter">
   <%= link_to "Clear all", sort_by_path(criteria: cookies[:criteria] || "position"), remote: true %>

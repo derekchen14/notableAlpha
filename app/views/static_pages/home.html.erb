@@ -1,23 +1,22 @@
 <% if user_signed_in? %>
   <% provide(:title, current_user.username) %>
-  <div class="row">
-    <aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-      	<%= render 'shared/note_form' %>
-      </section>
-      <section id="tag_area">
-        <%= render 'features/taglist' %>
-      </section>
-    </aside>
+    <section>
+      <div class="inline-left">
+        <button id="simple-menu"> <i class="icon-align-justify"></i> </button>
+      </div>
+      <div class="inline-left"> <%= render 'shared/note_form' %> </div>
+    </section>
+    
     <div class="span8">
-      <h3><%= current_user.username %>'s Notes</h3>
-      <%= render 'shared/notebook' %>
+      <div id="sidr">
+        <%= render 'features/taglist' %>
+      </div>
+      <div>
+        <h3><%= current_user.username %>'s Notes</h3>
+        <%= render 'shared/notebook' %>
+      </div>
     </div>
 
-  </div>  
 <% else %>
 
 	<div class="center hero-unit">

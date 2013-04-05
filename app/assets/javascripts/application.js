@@ -14,10 +14,15 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery.tokeninput
+//= require jquery.sidr.min
 //= require best_in_place.purr
 //= require best_in_place
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function() {
+  $("#simple-menu").sidr();
+});
 
 $(function() {
 	$(".alert").delay(7000).fadeOut(1400);
