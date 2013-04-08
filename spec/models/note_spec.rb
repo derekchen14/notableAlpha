@@ -17,5 +17,10 @@ describe Note do
   it "invalid without a format" do
     FactoryGirl.build(:note, format: "").should_not be_valid
   end
+
+  it "correctly shortens a note" do
+    note = FactoryGirl.build(:note, content: "This is my note to shorten")
+    note.shorten.should eq("This is my ...")
+  end
   
 end
