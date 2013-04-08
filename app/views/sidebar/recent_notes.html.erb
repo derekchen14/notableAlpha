@@ -1,0 +1,11 @@
+<ul>
+  <li>
+    <ul>
+      <% @recent_notes.each do |note| %>
+        <li>
+        <%= link_to note.shorten %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
