@@ -9,7 +9,11 @@
     
     <div class="span8">
       <div id="sidr">
-        <%= render 'features/taglist' %>
+        <h2 id="side-notebooks">NOTEBOOKS</h2>
+        <h2 id="side-recent-notes">RECENT NOTES</h2>
+        <h2 id="side-notes">NOTES</h2>
+        <h2 id="side-tags">TAGS</h2>
+        <div id="side-user-tags"><%= render 'features/taglist' %></div>
       </div>
       <div>
         <h3><%= current_user.username %>'s Notes</h3>
