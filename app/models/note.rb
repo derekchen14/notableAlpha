@@ -11,6 +11,8 @@ class Note < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :format
 
+  scope :recent_notes, order("updated_at desc").limit(3)
+
   include PgSearch
 
   pg_search_scope :search, against: [:content],
@@ -38,6 +40,10 @@ class Note < ActiveRecord::Base
 
   def tag_list=(names)
     self.tag_ids = Tag.ids_from_tokens(names, user_id)
+  end
+
+  def shorten
+    "#{self.content.slice(0..10)}..."
   end
 end
   
