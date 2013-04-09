@@ -3,7 +3,7 @@
     <ul>
       <% @recent_notes.each do |note| %>
         <li>
-        <%= link_to note.shorten %>
+        <%= link_to note.shorten, select_note_path(note.id), remote: true%>
         </li>
       <% end %>
     </ul>
