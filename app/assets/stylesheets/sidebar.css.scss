@@ -1,3 +1,24 @@
-// Place all the styles related to the sidebar controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/****************
+  Mixins and Variables
+ *****************/
+
+$grayMediumLight: #eaeaea;
+$blueLight: #444fff;
+$notableBlue: #14A4FF;
+$notableOrange: #E97C12;
+$notableYellow: #FFDC33;
+$notableWhite: #FDFDFD;
+$notableGray: #EAEAEA;
+$notableBlack: #3D3D3D;
+
+div#sidr li a:hover {
+  color: $notableYellow;
+}
+
+div#sidr li a {
+  color: rgba(51,51,51,0.8);
+}
+
+div#sidr li a.clicked {
+  color: $notableBlue;
+}

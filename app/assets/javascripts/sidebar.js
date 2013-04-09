@@ -11,4 +11,13 @@ $(document).ready(function(){
   $("#side-tags").click(function(){
    $("#side-user-tags").toggle();
   });
+
+  $("div#sidr li a").click(function(){
+    $("div#sidr li > a").removeClass("clicked");
+    $(this).toggleClass("clicked");
+  });
+
+  $(".clear_filter").click(function(){
+    $("div#sidr li > a").removeClass("clicked");
+  });
 });
