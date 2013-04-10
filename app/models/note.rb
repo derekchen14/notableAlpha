@@ -43,7 +43,7 @@ class Note < ActiveRecord::Base
   end
 
   def shorten
-    "#{self.content.slice(0..10)}..."
+    "#{self.content.slice(0..20)}..." 
   end
 end
   

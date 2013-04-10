@@ -9,7 +9,7 @@ class NotesController < ApplicationController
 
 	def create
     @note = current_user.notes.build(params[:note])
-    if Note.last.content.nil?
+    if Note.last.content.empty?
       flash[:alert] = "You already have an empty note."
     elsif @note.save
       @note.move_to_top
