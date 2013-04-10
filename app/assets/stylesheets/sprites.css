@@ -1,0 +1,73 @@
+/* ----------------------------------------------------
+   created with http://www.texturepacker.com 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:a5919d80851027baf3396cce094143a5$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(notable_icon_spritesheet.png);}
+
+.alarm_icon {width:22px; height:22px; background-position: -50px -173px}
+.alarm_icon_clicked {width:22px; height:22px; background-position: -26px -173px}
+.alarm_icon_hover {width:22px; height:22px; background-position: -2px -173px}
+.alarm_icon_selected {width:22px; height:22px; background-position: -212px -149px}
+.arrow_down_icon {width:13px; height:13px; background-position: -197px -149px}
+.arrow_down_icon_clicked {width:13px; height:13px; background-position: -182px -149px}
+.arrow_down_icon_hover {width:13px; height:13px; background-position: -167px -149px}
+.arrow_right_icon {width:13px; height:13px; background-position: -152px -149px}
+.arrow_right_icon_clicked {width:13px; height:13px; background-position: -137px -149px}
+.arrow_right_icon_hover {width:13px; height:13px; background-position: -122px -149px}
+.attach_icon {width:22px; height:22px; background-position: -98px -149px}
+.attach_icon_clicked {width:22px; height:22px; background-position: -74px -149px}
+.attach_icon_hover {width:22px; height:22px; background-position: -50px -149px}
+.attach_icon_selected {width:22px; height:22px; background-position: -26px -149px}
+.duplicate_icon {width:22px; height:22px; background-position: -2px -149px}
+.duplicate_icon_clicked {width:22px; height:22px; background-position: -232px -117px}
+.duplicate_icon_hover {width:22px; height:22px; background-position: -208px -117px}
+.duplicate_icon_selected {width:22px; height:22px; background-position: -184px -117px}
+.expand_icon {width:30px; height:30px; background-position: -152px -117px}
+.expand_icon_clicked {width:30px; height:30px; background-position: -120px -117px}
+.expand_icon_hover {width:30px; height:30px; background-position: -88px -117px}
+.expand_icon_selected {width:30px; height:30px; background-position: -56px -117px}
+.freeform_icon {width:25px; height:22px; background-position: -29px -117px}
+.freeform_icon_clicked {width:25px; height:22px; background-position: -2px -117px}
+.freeform_icon_hover {width:25px; height:22px; background-position: -218px -93px}
+.freeform_icon_selected {width:25px; height:22px; background-position: -191px -93px}
+.grid_icon {width:25px; height:22px; background-position: -164px -93px}
+.grid_icon_clicked {width:25px; height:22px; background-position: -137px -93px}
+.grid_icon_hover {width:25px; height:22px; background-position: -110px -93px}
+.grid_icon_selected {width:25px; height:22px; background-position: -83px -93px}
+.list_icon {width:25px; height:22px; background-position: -56px -93px}
+.list_icon_clicked {width:25px; height:22px; background-position: -29px -93px}
+.list_icon_hover {width:25px; height:22px; background-position: -2px -93px}
+.list_icon_selected {width:25px; height:22px; background-position: -206px -61px}
+.mindmap_icon {width:25px; height:22px; background-position: -179px -61px}
+.mindmap_icon_clicked {width:25px; height:22px; background-position: -152px -61px}
+.mindmap_icon_hover {width:25px; height:22px; background-position: -125px -61px}
+.mindmap_icon_selected {width:25px; height:22px; background-position: -98px -61px}
+.new_icon {width:30px; height:30px; background-position: -66px -61px}
+.new_icon_clicked {width:30px; height:30px; background-position: -34px -61px}
+.new_icon_hover {width:30px; height:30px; background-position: -2px -61px}
+.new_icon_selected {width:30px; height:30px; background-position: -214px -26px}
+.profile_dropdown_icon {width:33px; height:33px; background-position: -179px -26px}
+.profile_dropdown_icon_clicked {width:33px; height:33px; background-position: -144px -26px}
+.profile_dropdown_icon_hover {width:33px; height:33px; background-position: -109px -26px}
+.profile_dropdown_icon_selected {width:33px; height:33px; background-position: -74px -26px}
+.search_icon {width:22px; height:22px; background-position: -50px -26px}
+.sort_dropdown_icon {width:22px; height:22px; background-position: -26px -26px}
+.sort_dropdown_icon_clicked {width:22px; height:22px; background-position: -2px -26px}
+.sort_dropdown_icon_hover {width:22px; height:22px; background-position: -218px -2px}
+.sort_dropdown_icon_selected {width:22px; height:22px; background-position: -194px -2px}
+.tag_icon {width:22px; height:22px; background-position: -170px -2px}
+.tag_icon_clicked {width:22px; height:22px; background-position: -146px -2px}
+.tag_icon_hover {width:22px; height:22px; background-position: -122px -2px}
+.tag_icon_selected {width:22px; height:22px; background-position: -98px -2px}
+.trash_icon {width:22px; height:22px; background-position: -74px -2px}
+.trash_icon_clicked {width:22px; height:22px; background-position: -50px -2px}
+.trash_icon_hover {width:22px; height:22px; background-position: -26px -2px}
+.trash_icon_selected {width:22px; height:22px; background-position: -2px -2px}
