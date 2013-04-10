@@ -6,15 +6,26 @@
       </div>
       <div class="inline-left"> <%= render 'shared/note_form' %> </div>
     </section>
-    
     <div class="span8">
       <div id="sidr">
-        <h2 id="side-notebooks">NOTEBOOKS</h2>
-        <h2 id="side-recent-notes">RECENT NOTES</h2>
+        <h2 id="side-notebooks">
+          <span class="arrow_down_icon sprite"></span>
+          Notebooks
+        </h2>
+        <h2 id="side-recent-notes">
+          <span class="arrow_down_icon sprite"></span>
+          Recent Notes
+        </h2>
         <div id="side-user-recent-notes"><%= render template: 'sidebar/recent_notes' %></div>
-        <h2 id="side-notes">NOTES</h2>
+        <h2 id="side-notes">
+          <span class="arrow_down_icon sprite"></span>
+          Notes
+        </h2>
         <div id="side-user-notes"><%= render template: 'sidebar/short_notes' %></div>
-        <h2 id="side-tags">TAGS</h2>
+        <h2 id="side-tags">
+          <span class="arrow_down_icon sprite"></span>
+          Tags
+        </h2>
         <div id="side-user-tags"><%= render 'features/taglist' %></div>
       </div>
       <div>

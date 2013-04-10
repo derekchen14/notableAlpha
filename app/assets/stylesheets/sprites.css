@@ -10,7 +10,8 @@
 
 */
 
-.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(notable_icon_spritesheet.png);}
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(sprites.png);}
 
 .alarm_icon {width:22px; height:22px; background-position: -50px -173px}
 .alarm_icon_clicked {width:22px; height:22px; background-position: -26px -173px}

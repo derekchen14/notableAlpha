@@ -3,13 +3,16 @@ $(document).ready(function(){
    // $("#side-user-tags").toggle();
   });
   $("#side-recent-notes").click(function(){
-   $("#side-user-recent-notes").toggle();
+    $("#side-recent-notes span").toggleClass("arrow_right_icon", "arrow_down_icon");
+    $("#side-user-recent-notes").toggle("slow");
   });
   $("#side-notes").click(function(){
-   $("#side-user-notes").toggle();
+    $("#side-notes span").toggleClass("arrow_right_icon", "arrow_down_icon");
+   $("#side-user-notes").toggle("slow");
   });
   $("#side-tags").click(function(){
-   $("#side-user-tags").toggle();
+    $("#side-tags span").toggleClass("arrow_right_icon", "arrow_down_icon");
+   $("#side-user-tags").toggle("slow");
   });
 
   $("div#sidr li a").click(function(){
@@ -20,4 +23,6 @@ $(document).ready(function(){
   $(".clear_filter").click(function(){
     $("div#sidr li > a").removeClass("clicked");
   });
+
+
 });

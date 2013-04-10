@@ -22,3 +22,15 @@ div#sidr li a {
 div#sidr li a.clicked {
   color: $notableBlue;
 }
+
+div#sidr {
+  background-image:url('brilliant.png');
+}
+div#sidr h2 {
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-family: Arial, sans-serif; 
+  background-color: #EDEDED;
+  margin: 0 0 0;
+}
