@@ -1,0 +1,562 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.8.12/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'madeye' ]
+2 info using npm@1.1.63
+3 info using node@v0.8.12
+4 verbose read json /usr/local/share/npm/lib/package.json
+5 verbose read json /usr/local/share/npm/lib/package.json
+6 verbose cache add [ 'madeye', null ]
+7 silly cache add name=undefined spec="madeye" args=["madeye",null]
+8 verbose parsed url { pathname: 'madeye', path: 'madeye', href: 'madeye' }
+9 silly lockFile aabdc0b5-madeye madeye
+10 verbose lock madeye /Users/Derek_Chen/.npm/aabdc0b5-madeye.lock
+11 silly lockFile aabdc0b5-madeye madeye
+12 verbose addNamed [ 'madeye', '' ]
+13 verbose addNamed [ null, '' ]
+14 silly lockFile 83ffe730-madeye madeye@
+15 verbose lock madeye@ /Users/Derek_Chen/.npm/83ffe730-madeye.lock
+16 silly addNameRange { name: 'madeye', range: '', hasData: false }
+17 verbose url raw madeye
+18 verbose url resolving [ 'https://registry.npmjs.org/', './madeye' ]
+19 verbose url resolved https://registry.npmjs.org/madeye
+20 info trying registry request attempt 1 at 21:15:38
+21 http GET https://registry.npmjs.org/madeye
+22 http 200 https://registry.npmjs.org/madeye
+23 silly registry.get cb [ 200,
+23 silly registry.get   { vary: 'Accept',
+23 silly registry.get     server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+23 silly registry.get     etag: '"4ILVPTRGXWDZHOI0QD72HLEFJ"',
+23 silly registry.get     date: 'Wed, 10 Apr 2013 04:06:58 GMT',
+23 silly registry.get     'content-type': 'application/json',
+23 silly registry.get     'content-length': '30502' } ]
+24 silly addNameRange number 2 { name: 'madeye', range: '', hasData: true }
+25 silly addNameRange versions [ 'madeye',
+25 silly addNameRange   [ '0.0.1',
+25 silly addNameRange     '0.0.2',
+25 silly addNameRange     '0.0.3',
+25 silly addNameRange     '0.0.4',
+25 silly addNameRange     '0.0.5',
+25 silly addNameRange     '0.0.6',
+25 silly addNameRange     '0.0.7',
+25 silly addNameRange     '0.0.8',
+25 silly addNameRange     '0.0.9',
+25 silly addNameRange     '0.0.10',
+25 silly addNameRange     '0.0.11',
+25 silly addNameRange     '0.0.13',
+25 silly addNameRange     '0.0.14',
+25 silly addNameRange     '0.0.15',
+25 silly addNameRange     '0.0.16',
+25 silly addNameRange     '0.0.17',
+25 silly addNameRange     '0.0.18',
+25 silly addNameRange     '0.0.19',
+25 silly addNameRange     '0.0.20',
+25 silly addNameRange     '0.0.21',
+25 silly addNameRange     '0.0.23',
+25 silly addNameRange     '0.0.24',
+25 silly addNameRange     '0.0.25',
+25 silly addNameRange     '0.0.26',
+25 silly addNameRange     '0.1.0' ] ]
+26 verbose addNamed [ 'madeye', '0.1.0' ]
+27 verbose addNamed [ '0.1.0', '0.1.0' ]
+28 silly lockFile 676faa07-madeye-0-1-0 madeye@0.1.0
+29 verbose lock madeye@0.1.0 /Users/Derek_Chen/.npm/676faa07-madeye-0-1-0.lock
+30 silly lockFile 723cb721-pmjs-org-madeye-madeye-0-1-0-tgz https://registry.npmjs.org/madeye/-/madeye-0.1.0.tgz
+31 verbose lock https://registry.npmjs.org/madeye/-/madeye-0.1.0.tgz /Users/Derek_Chen/.npm/723cb721-pmjs-org-madeye-madeye-0-1-0-tgz.lock
+32 verbose addRemoteTarball [ 'https://registry.npmjs.org/madeye/-/madeye-0.1.0.tgz',
+32 verbose addRemoteTarball   '52ae3f48ba5f54b086ba80a5253744e032963353' ]
+33 info retry fetch attempt 1 at 21:15:40
+34 verbose fetch to= /Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/tmp.tgz
+35 http GET https://registry.npmjs.org/madeye/-/madeye-0.1.0.tgz
+36 http 200 https://registry.npmjs.org/madeye/-/madeye-0.1.0.tgz
+37 silly shasum updated bytes 19102
+38 info shasum 52ae3f48ba5f54b086ba80a5253744e032963353
+38 info shasum /Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/tmp.tgz
+39 verbose tar unpack /Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/tmp.tgz
+40 silly lockFile a3f8bc3d-40558-0-4750733545515686-package /Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/package
+41 verbose lock /Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/package /Users/Derek_Chen/.npm/a3f8bc3d-40558-0-4750733545515686-package.lock
+42 silly gunzTarPerm modes [ '755', '644' ]
+43 silly gunzTarPerm extractEntry package.json
+44 silly gunzTarPerm extractEntry .npmignore
+45 silly gunzTarPerm extractEntry README.md
+46 silly gunzTarPerm extractEntry bin/madeye.js
+47 silly gunzTarPerm extractEntry bin/mochac
+48 silly gunzTarPerm extractEntry bin/releasePrep
+49 silly gunzTarPerm extractEntry bin/madeye
+50 silly gunzTarPerm extractEntry bin/init
+51 silly gunzTarPerm extractEntry bin/run_tests
+52 silly gunzTarPerm extractEntry src/dementor.coffee
+53 silly gunzTarPerm extractEntry src/projectFiles.coffee
+54 silly gunzTarPerm extractEntry src/httpClient.coffee
+55 silly gunzTarPerm extractEntry madeye-common/package.json
+56 silly gunzTarPerm extractEntry madeye-common/.npmignore
+57 silly gunzTarPerm extractEntry madeye-common/README.md
+58 silly gunzTarPerm extractEntry madeye-common/common.js
+59 silly gunzTarPerm extractEntry madeye-common/preMeteor.js
+60 silly gunzTarPerm extractEntry madeye-common/postMeteor.js
+61 silly gunzTarPerm extractEntry madeye-common/package.js
+62 silly gunzTarPerm extractEntry madeye-common/bin/mochac
+63 silly gunzTarPerm extractEntry madeye-common/bin/init
+64 silly gunzTarPerm extractEntry madeye-common/bin/run_tests
+65 silly gunzTarPerm extractEntry madeye-common/src/errors.coffee
+66 silly gunzTarPerm extractEntry madeye-common/src/messages.coffee
+67 silly gunzTarPerm extractEntry madeye-common/src/fileTree.coffee
+68 silly gunzTarPerm extractEntry madeye-common/src/Settings.coffee
+69 silly gunzTarPerm extractEntry madeye-common/tests/unit/fileTreeTest.coffee
+70 silly gunzTarPerm extractEntry madeye-common/tests/mock/MockSocket.coffee
+71 silly gunzTarPerm extractEntry madeye-common/tests/mock/MockIoSocket.coffee
+72 silly gunzTarPerm extractEntry tests/unit/dementorTest.coffee
+73 silly gunzTarPerm extractEntry tests/unit/projectFilesTest.coffee
+74 silly gunzTarPerm extractEntry tests/mock/mockProjectFiles.coffee
+75 silly gunzTarPerm extractEntry tests/mock/mockHttpClient.coffee
+76 silly gunzTarPerm extractEntry tests/util/fileUtils.coffee
+77 silly gunzTarPerm extractEntry npm-shrinkwrap.json
+78 silly gunzTarPerm extractEntry .gitmodules
+79 silly gunzTarPerm extractEntry app.coffee
+80 verbose read json /Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/package/package.json
+81 silly lockFile a3f8bc3d-40558-0-4750733545515686-package /Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/package
+82 verbose from cache /Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/package/package.json
+83 verbose tar pack [ '/Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz',
+83 verbose tar pack   '/Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/package' ]
+84 verbose tarball /Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz
+85 verbose folder /Users/Derek_Chen/tmp/npm-3179/1365567340558-0.4750733545515686/package
+86 silly lockFile 8bf978c9-hen-npm-madeye-0-1-0-package-tgz /Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz
+87 verbose lock /Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz /Users/Derek_Chen/.npm/8bf978c9-hen-npm-madeye-0-1-0-package-tgz.lock
+88 silly lockFile 8bf978c9-hen-npm-madeye-0-1-0-package-tgz /Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz
+89 silly lockFile bedb3d43-ek-Chen-npm-madeye-0-1-0-package /Users/Derek_Chen/.npm/madeye/0.1.0/package
+90 verbose lock /Users/Derek_Chen/.npm/madeye/0.1.0/package /Users/Derek_Chen/.npm/bedb3d43-ek-Chen-npm-madeye-0-1-0-package.lock
+91 silly lockFile bedb3d43-ek-Chen-npm-madeye-0-1-0-package /Users/Derek_Chen/.npm/madeye/0.1.0/package
+92 verbose tar unpack /Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz
+93 silly lockFile bedb3d43-ek-Chen-npm-madeye-0-1-0-package /Users/Derek_Chen/.npm/madeye/0.1.0/package
+94 verbose lock /Users/Derek_Chen/.npm/madeye/0.1.0/package /Users/Derek_Chen/.npm/bedb3d43-ek-Chen-npm-madeye-0-1-0-package.lock
+95 silly gunzTarPerm modes [ '755', '644' ]
+96 silly gunzTarPerm extractEntry package.json
+97 silly gunzTarPerm extractEntry .npmignore
+98 silly gunzTarPerm extractEntry README.md
+99 silly gunzTarPerm extractEntry .gitmodules
+100 silly gunzTarPerm extractEntry app.coffee
+101 silly gunzTarPerm extractEntry bin/madeye.js
+102 silly gunzTarPerm extractEntry bin/init
+103 silly gunzTarPerm extractEntry bin/madeye
+104 silly gunzTarPerm extractEntry bin/mochac
+105 silly gunzTarPerm extractEntry bin/releasePrep
+106 silly gunzTarPerm extractEntry bin/run_tests
+107 silly gunzTarPerm extractEntry madeye-common/package.json
+108 silly gunzTarPerm extractEntry madeye-common/.npmignore
+109 silly gunzTarPerm extractEntry madeye-common/README.md
+110 silly gunzTarPerm extractEntry madeye-common/common.js
+111 silly gunzTarPerm extractEntry madeye-common/package.js
+112 silly gunzTarPerm extractEntry madeye-common/postMeteor.js
+113 silly gunzTarPerm extractEntry madeye-common/preMeteor.js
+114 silly gunzTarPerm extractEntry madeye-common/bin/init
+115 silly gunzTarPerm extractEntry madeye-common/bin/mochac
+116 silly gunzTarPerm extractEntry madeye-common/bin/run_tests
+117 silly gunzTarPerm extractEntry madeye-common/src/errors.coffee
+118 silly gunzTarPerm extractEntry madeye-common/src/fileTree.coffee
+119 silly gunzTarPerm extractEntry madeye-common/src/messages.coffee
+120 silly gunzTarPerm extractEntry madeye-common/src/Settings.coffee
+121 silly gunzTarPerm extractEntry madeye-common/tests/mock/MockIoSocket.coffee
+122 silly gunzTarPerm extractEntry madeye-common/tests/mock/MockSocket.coffee
+123 silly gunzTarPerm extractEntry madeye-common/tests/unit/fileTreeTest.coffee
+124 silly gunzTarPerm extractEntry npm-shrinkwrap.json
+125 silly gunzTarPerm extractEntry src/dementor.coffee
+126 silly gunzTarPerm extractEntry src/httpClient.coffee
+127 silly gunzTarPerm extractEntry src/projectFiles.coffee
+128 silly gunzTarPerm extractEntry tests/mock/mockHttpClient.coffee
+129 silly gunzTarPerm extractEntry tests/mock/mockProjectFiles.coffee
+130 silly gunzTarPerm extractEntry tests/unit/dementorTest.coffee
+131 silly gunzTarPerm extractEntry tests/unit/projectFilesTest.coffee
+132 silly gunzTarPerm extractEntry tests/util/fileUtils.coffee
+133 verbose read json /Users/Derek_Chen/.npm/madeye/0.1.0/package/package.json
+134 silly lockFile bedb3d43-ek-Chen-npm-madeye-0-1-0-package /Users/Derek_Chen/.npm/madeye/0.1.0/package
+135 silly shasum updated bytes 18798
+136 info shasum 0de898b2b2126f3efc14194cf83ac9fb3fb8bf51
+136 info shasum /Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz
+137 verbose from cache /Users/Derek_Chen/.npm/madeye/0.1.0/package/package.json
+138 verbose chmod /Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz 644
+139 verbose chown /Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz [ 0, 20 ]
+140 silly lockFile 723cb721-pmjs-org-madeye-madeye-0-1-0-tgz https://registry.npmjs.org/madeye/-/madeye-0.1.0.tgz
+141 silly lockFile 676faa07-madeye-0-1-0 madeye@0.1.0
+142 silly lockFile 83ffe730-madeye madeye@
+143 silly resolved [ { name: 'madeye',
+143 silly resolved     bin: { madeye: 'bin/madeye' },
+143 silly resolved     version: '0.1.0',
+143 silly resolved     private: false,
+143 silly resolved     engines: { node: '>=0.8.21' },
+143 silly resolved     dependencies:
+143 silly resolved      { wrench: '~1.4.2',
+143 silly resolved        'coffee-script': '~1.6.2',
+143 silly resolved        underscore: '~1.4.2',
+143 silly resolved        'node-uuid': '~1.4.0',
+143 silly resolved        request: '~2.14.0',
+143 silly resolved        'watch-tree-maintained': '~0.1.2',
+143 silly resolved        commander: '~1.1.0',
+143 silly resolved        'cli-color': '~0.2.1',
+143 silly resolved        'socket.io-client': '~0.9.11' },
+143 silly resolved     devDependencies: { mocha: '~1.8.1', chai: '~1.5.0' },
+143 silly resolved     readme: 'MadEye\n======\n\nMadEye lets you share your coding projects with your friends.  Run it in the\nproject\'s directory, and then go to the madeye link.  Everyone can edit in \nreal-time, like Google Docs.  When they save, the file is saved back onto your\nlocal file system.\n\nYou can also use MadEye within Google Hangouts!  Just use the Hangout link,\nand you\'ll be coding together with live video chat.\n\nFor more information, see http://madeye.io/\n\n',
+143 silly resolved     _id: 'madeye@0.1.0',
+143 silly resolved     description: 'MadEye ======',
+143 silly resolved     dist: { shasum: '0de898b2b2126f3efc14194cf83ac9fb3fb8bf51' },
+143 silly resolved     _from: 'madeye' } ]
+144 info install madeye@0.1.0 into /usr/local/share/npm/lib
+145 info installOne madeye@0.1.0
+146 warn engine madeye@0.1.0: wanted: {"node":">=0.8.21"} (current: {"node":"v0.8.12","npm":"1.1.63"})
+147 verbose from cache /Users/Derek_Chen/.npm/madeye/0.1.0/package/package.json
+148 info /usr/local/share/npm/lib/node_modules/madeye unbuild
+149 verbose read json /usr/local/share/npm/lib/node_modules/madeye/package.json
+150 verbose tar unpack /Users/Derek_Chen/.npm/madeye/0.1.0/package.tgz
+151 silly lockFile b23f82e3-hare-npm-lib-node-modules-madeye /usr/local/share/npm/lib/node_modules/madeye
+152 verbose lock /usr/local/share/npm/lib/node_modules/madeye /Users/Derek_Chen/.npm/b23f82e3-hare-npm-lib-node-modules-madeye.lock
+153 silly gunzTarPerm modes [ '755', '644' ]
+154 silly gunzTarPerm extractEntry package.json
+155 silly gunzTarPerm extractEntry .npmignore
+156 silly gunzTarPerm extractEntry README.md
+157 silly gunzTarPerm extractEntry .gitmodules
+158 silly gunzTarPerm extractEntry app.coffee
+159 silly gunzTarPerm extractEntry bin/madeye.js
+160 silly gunzTarPerm extractEntry bin/init
+161 silly gunzTarPerm extractEntry bin/madeye
+162 silly gunzTarPerm extractEntry bin/mochac
+163 silly gunzTarPerm extractEntry bin/releasePrep
+164 silly gunzTarPerm extractEntry bin/run_tests
+165 silly gunzTarPerm extractEntry madeye-common/package.json
+166 silly gunzTarPerm extractEntry madeye-common/.npmignore
+167 silly gunzTarPerm extractEntry madeye-common/README.md
+168 silly gunzTarPerm extractEntry madeye-common/common.js
+169 silly gunzTarPerm extractEntry madeye-common/package.js
+170 silly gunzTarPerm extractEntry madeye-common/postMeteor.js
+171 silly gunzTarPerm extractEntry madeye-common/preMeteor.js
+172 silly gunzTarPerm extractEntry madeye-common/bin/init
+173 silly gunzTarPerm extractEntry madeye-common/bin/mochac
+174 silly gunzTarPerm extractEntry madeye-common/bin/run_tests
+175 silly gunzTarPerm extractEntry madeye-common/src/errors.coffee
+176 silly gunzTarPerm extractEntry madeye-common/src/fileTree.coffee
+177 silly gunzTarPerm extractEntry madeye-common/src/messages.coffee
+178 silly gunzTarPerm extractEntry madeye-common/src/Settings.coffee
+179 silly gunzTarPerm extractEntry madeye-common/tests/mock/MockIoSocket.coffee
+180 silly gunzTarPerm extractEntry madeye-common/tests/mock/MockSocket.coffee
+181 silly gunzTarPerm extractEntry madeye-common/tests/unit/fileTreeTest.coffee
+182 silly gunzTarPerm extractEntry npm-shrinkwrap.json
+183 silly gunzTarPerm extractEntry src/dementor.coffee
+184 silly gunzTarPerm extractEntry src/httpClient.coffee
+185 silly gunzTarPerm extractEntry src/projectFiles.coffee
+186 silly gunzTarPerm extractEntry tests/mock/mockHttpClient.coffee
+187 silly gunzTarPerm extractEntry tests/mock/mockProjectFiles.coffee
+188 silly gunzTarPerm extractEntry tests/unit/dementorTest.coffee
+189 silly gunzTarPerm extractEntry tests/unit/projectFilesTest.coffee
+190 silly gunzTarPerm extractEntry tests/util/fileUtils.coffee
+191 verbose read json /usr/local/share/npm/lib/node_modules/madeye/package.json
+192 silly lockFile b23f82e3-hare-npm-lib-node-modules-madeye /usr/local/share/npm/lib/node_modules/madeye
+193 info preinstall madeye@0.1.0
+194 verbose from cache /usr/local/share/npm/lib/node_modules/madeye/package.json
+195 info shrinkwrap file "/usr/local/share/npm/lib/node_modules/madeye/npm-shrinkwrap.json"
+196 verbose readDependencies returned deps { wrench: 'wrench@~1.4.2',
+196 verbose readDependencies returned deps   'coffee-script': 'coffee-script@~1.6.2',
+196 verbose readDependencies returned deps   underscore: 'underscore@~1.4.2',
+196 verbose readDependencies returned deps   'node-uuid': 'node-uuid@~1.4.0',
+196 verbose readDependencies returned deps   request: 'request@~2.14.0',
+196 verbose readDependencies returned deps   'watch-tree-maintained': 'watch-tree-maintained@~0.1.2',
+196 verbose readDependencies returned deps   commander: 'commander@~1.1.0',
+196 verbose readDependencies returned deps   'cli-color': 'cli-color@~0.2.1',
+196 verbose readDependencies returned deps   'socket.io-client': 'socket.io-client@~0.9.11' }
+197 verbose from cache /usr/local/share/npm/lib/node_modules/madeye/package.json
+198 verbose readDependencies: using existing wrap [ '/usr/local/share/npm/lib/node_modules/madeye',
+198 verbose readDependencies: using existing wrap   { wrench: { version: '1.4.4', from: 'wrench@~1.4.2' },
+198 verbose readDependencies: using existing wrap     'coffee-script': { version: '1.6.2', from: 'coffee-script@~1.6.2' },
+198 verbose readDependencies: using existing wrap     underscore: { version: '1.4.4', from: 'underscore@~1.4.2' },
+198 verbose readDependencies: using existing wrap     'node-uuid': { version: '1.4.0', from: 'node-uuid@~1.4.0' },
+198 verbose readDependencies: using existing wrap     request:
+198 verbose readDependencies: using existing wrap      { version: '2.14.0',
+198 verbose readDependencies: using existing wrap        from: 'request@~2.14.0',
+198 verbose readDependencies: using existing wrap        dependencies: [Object] },
+198 verbose readDependencies: using existing wrap     'watch-tree-maintained':
+198 verbose readDependencies: using existing wrap      { version: '0.1.2',
+198 verbose readDependencies: using existing wrap        from: 'watch-tree-maintained@~0.1.2',
+198 verbose readDependencies: using existing wrap        dependencies: [Object] },
+198 verbose readDependencies: using existing wrap     commander:
+198 verbose readDependencies: using existing wrap      { version: '1.1.1',
+198 verbose readDependencies: using existing wrap        from: 'commander@~1.1.0',
+198 verbose readDependencies: using existing wrap        dependencies: [Object] },
+198 verbose readDependencies: using existing wrap     'cli-color':
+198 verbose readDependencies: using existing wrap      { version: '0.2.2',
+198 verbose readDependencies: using existing wrap        from: 'cli-color@~0.2.1',
+198 verbose readDependencies: using existing wrap        dependencies: [Object] },
+198 verbose readDependencies: using existing wrap     'socket.io-client':
+198 verbose readDependencies: using existing wrap      { version: '0.9.11',
+198 verbose readDependencies: using existing wrap        from: 'socket.io-client@~0.9.11',
+198 verbose readDependencies: using existing wrap        dependencies: [Object] } } ]
+199 verbose from wrap [ 'wrench', { version: '1.4.4', from: 'wrench@~1.4.2' } ]
+200 verbose from wrap [ 'coffee-script',
+200 verbose from wrap   { version: '1.6.2', from: 'coffee-script@~1.6.2' } ]
+201 verbose from wrap [ 'underscore',
+201 verbose from wrap   { version: '1.4.4', from: 'underscore@~1.4.2' } ]
+202 verbose from wrap [ 'node-uuid', { version: '1.4.0', from: 'node-uuid@~1.4.0' } ]
+203 verbose from wrap [ 'request',
+203 verbose from wrap   { version: '2.14.0',
+203 verbose from wrap     from: 'request@~2.14.0',
+203 verbose from wrap     dependencies: { 'form-data': [Object], mime: [Object] } } ]
+204 verbose from wrap [ 'watch-tree-maintained',
+204 verbose from wrap   { version: '0.1.2',
+204 verbose from wrap     from: 'watch-tree-maintained@~0.1.2',
+204 verbose from wrap     dependencies: { optimist: [Object], async: [Object], async_testing: [Object] } } ]
+205 verbose from wrap [ 'commander',
+205 verbose from wrap   { version: '1.1.1',
+205 verbose from wrap     from: 'commander@~1.1.0',
+205 verbose from wrap     dependencies: { keypress: [Object] } } ]
+206 verbose from wrap [ 'cli-color',
+206 verbose from wrap   { version: '0.2.2',
+206 verbose from wrap     from: 'cli-color@~0.2.1',
+206 verbose from wrap     dependencies: { 'es5-ext': [Object], memoizee: [Object] } } ]
+207 verbose from wrap [ 'socket.io-client',
+207 verbose from wrap   { version: '0.9.11',
+207 verbose from wrap     from: 'socket.io-client@~0.9.11',
+207 verbose from wrap     dependencies:
+207 verbose from wrap      { 'uglify-js': [Object],
+207 verbose from wrap        ws: [Object],
+207 verbose from wrap        xmlhttprequest: [Object],
+207 verbose from wrap        'active-x-obfuscator': [Object] } } ]
+208 verbose readDependencies returned deps { wrench: 'wrench@~1.4.2',
+208 verbose readDependencies returned deps   'coffee-script': 'coffee-script@~1.6.2',
+208 verbose readDependencies returned deps   underscore: 'underscore@~1.4.2',
+208 verbose readDependencies returned deps   'node-uuid': 'node-uuid@~1.4.0',
+208 verbose readDependencies returned deps   request: 'request@~2.14.0',
+208 verbose readDependencies returned deps   'watch-tree-maintained': 'watch-tree-maintained@~0.1.2',
+208 verbose readDependencies returned deps   commander: 'commander@~1.1.0',
+208 verbose readDependencies returned deps   'cli-color': 'cli-color@~0.2.1',
+208 verbose readDependencies returned deps   'socket.io-client': 'socket.io-client@~0.9.11' }
+209 verbose shrinkwrap resolving underscore@~1.4.2 to underscore@underscore@~1.4.2
+210 verbose cache add [ 'underscore@underscore@~1.4.2', null ]
+211 silly cache add name=undefined spec="underscore@underscore@~1.4.2" args=["underscore@underscore@~1.4.2",null]
+212 verbose parsed url { pathname: 'underscore@underscore@~1.4.2',
+212 verbose parsed url   path: 'underscore@underscore@~1.4.2',
+212 verbose parsed url   href: 'underscore@underscore@~1.4.2' }
+213 silly cache add name="underscore" spec="underscore@~1.4.2" args=["underscore","underscore@~1.4.2"]
+214 verbose parsed url { pathname: 'underscore@~1.4.2',
+214 verbose parsed url   path: 'underscore@~1.4.2',
+214 verbose parsed url   href: 'underscore@~1.4.2' }
+215 verbose addNamed [ 'underscore', 'underscore@~1.4.2' ]
+216 verbose addNamed [ null, null ]
+217 silly lockFile 99503bbe-underscore-underscore-1-4-2 underscore@underscore@~1.4.2
+218 verbose lock underscore@underscore@~1.4.2 /Users/Derek_Chen/.npm/99503bbe-underscore-underscore-1-4-2.lock
+219 verbose shrinkwrap resolving node-uuid@~1.4.0 to node-uuid@node-uuid@~1.4.0
+220 verbose cache add [ 'node-uuid@node-uuid@~1.4.0', null ]
+221 silly cache add name=undefined spec="node-uuid@node-uuid@~1.4.0" args=["node-uuid@node-uuid@~1.4.0",null]
+222 verbose parsed url { pathname: 'node-uuid@node-uuid@~1.4.0',
+222 verbose parsed url   path: 'node-uuid@node-uuid@~1.4.0',
+222 verbose parsed url   href: 'node-uuid@node-uuid@~1.4.0' }
+223 silly cache add name="node-uuid" spec="node-uuid@~1.4.0" args=["node-uuid","node-uuid@~1.4.0"]
+224 verbose parsed url { pathname: 'node-uuid@~1.4.0',
+224 verbose parsed url   path: 'node-uuid@~1.4.0',
+224 verbose parsed url   href: 'node-uuid@~1.4.0' }
+225 verbose addNamed [ 'node-uuid', 'node-uuid@~1.4.0' ]
+226 verbose addNamed [ null, null ]
+227 silly lockFile 41af7013-node-uuid-node-uuid-1-4-0 node-uuid@node-uuid@~1.4.0
+228 verbose lock node-uuid@node-uuid@~1.4.0 /Users/Derek_Chen/.npm/41af7013-node-uuid-node-uuid-1-4-0.lock
+229 info addNameTag [ 'underscore', 'underscore@~1.4.2' ]
+230 info addNameTag [ 'node-uuid', 'node-uuid@~1.4.0' ]
+231 verbose url raw underscore
+232 verbose url resolving [ 'https://registry.npmjs.org/', './underscore' ]
+233 verbose url resolved https://registry.npmjs.org/underscore
+234 info trying registry request attempt 1 at 21:15:42
+235 http GET https://registry.npmjs.org/underscore
+236 verbose url raw node-uuid
+237 verbose url resolving [ 'https://registry.npmjs.org/', './node-uuid' ]
+238 verbose url resolved https://registry.npmjs.org/node-uuid
+239 info trying registry request attempt 1 at 21:15:42
+240 http GET https://registry.npmjs.org/node-uuid
+241 verbose shrinkwrap resolving request@~2.14.0 to request@request@~2.14.0
+242 verbose cache add [ 'request@request@~2.14.0', null ]
+243 silly cache add name=undefined spec="request@request@~2.14.0" args=["request@request@~2.14.0",null]
+244 verbose parsed url { pathname: 'request@request@~2.14.0',
+244 verbose parsed url   path: 'request@request@~2.14.0',
+244 verbose parsed url   href: 'request@request@~2.14.0' }
+245 silly cache add name="request" spec="request@~2.14.0" args=["request","request@~2.14.0"]
+246 verbose parsed url { pathname: 'request@~2.14.0',
+246 verbose parsed url   path: 'request@~2.14.0',
+246 verbose parsed url   href: 'request@~2.14.0' }
+247 verbose addNamed [ 'request', 'request@~2.14.0' ]
+248 verbose addNamed [ null, null ]
+249 silly lockFile 2a4920d7-request-request-2-14-0 request@request@~2.14.0
+250 verbose lock request@request@~2.14.0 /Users/Derek_Chen/.npm/2a4920d7-request-request-2-14-0.lock
+251 verbose shrinkwrap resolving watch-tree-maintained@~0.1.2 to watch-tree-maintained@watch-tree-maintained@~0.1.2
+252 verbose cache add [ 'watch-tree-maintained@watch-tree-maintained@~0.1.2', null ]
+253 silly cache add name=undefined spec="watch-tree-maintained@watch-tree-maintained@~0.1.2" args=["watch-tree-maintained@watch-tree-maintained@~0.1.2",null]
+254 verbose parsed url { pathname: 'watch-tree-maintained@watch-tree-maintained@~0.1.2',
+254 verbose parsed url   path: 'watch-tree-maintained@watch-tree-maintained@~0.1.2',
+254 verbose parsed url   href: 'watch-tree-maintained@watch-tree-maintained@~0.1.2' }
+255 silly cache add name="watch-tree-maintained" spec="watch-tree-maintained@~0.1.2" args=["watch-tree-maintained","watch-tree-maintained@~0.1.2"]
+256 verbose parsed url { pathname: 'watch-tree-maintained@~0.1.2',
+256 verbose parsed url   path: 'watch-tree-maintained@~0.1.2',
+256 verbose parsed url   href: 'watch-tree-maintained@~0.1.2' }
+257 verbose addNamed [ 'watch-tree-maintained', 'watch-tree-maintained@~0.1.2' ]
+258 verbose addNamed [ null, null ]
+259 silly lockFile 2363ecb9-ined-watch-tree-maintained-0-1-2 watch-tree-maintained@watch-tree-maintained@~0.1.2
+260 verbose lock watch-tree-maintained@watch-tree-maintained@~0.1.2 /Users/Derek_Chen/.npm/2363ecb9-ined-watch-tree-maintained-0-1-2.lock
+261 verbose shrinkwrap resolving commander@~1.1.0 to commander@commander@~1.1.0
+262 verbose cache add [ 'commander@commander@~1.1.0', null ]
+263 silly cache add name=undefined spec="commander@commander@~1.1.0" args=["commander@commander@~1.1.0",null]
+264 verbose parsed url { pathname: 'commander@commander@~1.1.0',
+264 verbose parsed url   path: 'commander@commander@~1.1.0',
+264 verbose parsed url   href: 'commander@commander@~1.1.0' }
+265 silly cache add name="commander" spec="commander@~1.1.0" args=["commander","commander@~1.1.0"]
+266 verbose parsed url { pathname: 'commander@~1.1.0',
+266 verbose parsed url   path: 'commander@~1.1.0',
+266 verbose parsed url   href: 'commander@~1.1.0' }
+267 verbose addNamed [ 'commander', 'commander@~1.1.0' ]
+268 verbose addNamed [ null, null ]
+269 silly lockFile 5558b15a-commander-commander-1-1-0 commander@commander@~1.1.0
+270 verbose lock commander@commander@~1.1.0 /Users/Derek_Chen/.npm/5558b15a-commander-commander-1-1-0.lock
+271 verbose shrinkwrap resolving cli-color@~0.2.1 to cli-color@cli-color@~0.2.1
+272 verbose cache add [ 'cli-color@cli-color@~0.2.1', null ]
+273 silly cache add name=undefined spec="cli-color@cli-color@~0.2.1" args=["cli-color@cli-color@~0.2.1",null]
+274 verbose parsed url { pathname: 'cli-color@cli-color@~0.2.1',
+274 verbose parsed url   path: 'cli-color@cli-color@~0.2.1',
+274 verbose parsed url   href: 'cli-color@cli-color@~0.2.1' }
+275 silly cache add name="cli-color" spec="cli-color@~0.2.1" args=["cli-color","cli-color@~0.2.1"]
+276 verbose parsed url { pathname: 'cli-color@~0.2.1',
+276 verbose parsed url   path: 'cli-color@~0.2.1',
+276 verbose parsed url   href: 'cli-color@~0.2.1' }
+277 verbose addNamed [ 'cli-color', 'cli-color@~0.2.1' ]
+278 verbose addNamed [ null, null ]
+279 silly lockFile 9117ecdd-cli-color-cli-color-0-2-1 cli-color@cli-color@~0.2.1
+280 verbose lock cli-color@cli-color@~0.2.1 /Users/Derek_Chen/.npm/9117ecdd-cli-color-cli-color-0-2-1.lock
+281 verbose shrinkwrap resolving socket.io-client@~0.9.11 to socket.io-client@socket.io-client@~0.9.11
+282 verbose cache add [ 'socket.io-client@socket.io-client@~0.9.11', null ]
+283 silly cache add name=undefined spec="socket.io-client@socket.io-client@~0.9.11" args=["socket.io-client@socket.io-client@~0.9.11",null]
+284 verbose parsed url { pathname: 'socket.io-client@socket.io-client@~0.9.11',
+284 verbose parsed url   path: 'socket.io-client@socket.io-client@~0.9.11',
+284 verbose parsed url   href: 'socket.io-client@socket.io-client@~0.9.11' }
+285 silly cache add name="socket.io-client" spec="socket.io-client@~0.9.11" args=["socket.io-client","socket.io-client@~0.9.11"]
+286 verbose parsed url { pathname: 'socket.io-client@~0.9.11',
+286 verbose parsed url   path: 'socket.io-client@~0.9.11',
+286 verbose parsed url   href: 'socket.io-client@~0.9.11' }
+287 verbose addNamed [ 'socket.io-client', 'socket.io-client@~0.9.11' ]
+288 verbose addNamed [ null, null ]
+289 silly lockFile 9bb05ee3-o-client-socket-io-client-0-9-11 socket.io-client@socket.io-client@~0.9.11
+290 verbose lock socket.io-client@socket.io-client@~0.9.11 /Users/Derek_Chen/.npm/9bb05ee3-o-client-socket-io-client-0-9-11.lock
+291 verbose shrinkwrap resolving wrench@~1.4.2 to wrench@wrench@~1.4.2
+292 verbose cache add [ 'wrench@wrench@~1.4.2', null ]
+293 silly cache add name=undefined spec="wrench@wrench@~1.4.2" args=["wrench@wrench@~1.4.2",null]
+294 verbose parsed url { pathname: 'wrench@wrench@~1.4.2',
+294 verbose parsed url   path: 'wrench@wrench@~1.4.2',
+294 verbose parsed url   href: 'wrench@wrench@~1.4.2' }
+295 silly cache add name="wrench" spec="wrench@~1.4.2" args=["wrench","wrench@~1.4.2"]
+296 verbose parsed url { pathname: 'wrench@~1.4.2',
+296 verbose parsed url   path: 'wrench@~1.4.2',
+296 verbose parsed url   href: 'wrench@~1.4.2' }
+297 verbose addNamed [ 'wrench', 'wrench@~1.4.2' ]
+298 verbose addNamed [ null, null ]
+299 silly lockFile 8c093fb6-wrench-wrench-1-4-2 wrench@wrench@~1.4.2
+300 verbose lock wrench@wrench@~1.4.2 /Users/Derek_Chen/.npm/8c093fb6-wrench-wrench-1-4-2.lock
+301 verbose shrinkwrap resolving coffee-script@~1.6.2 to coffee-script@coffee-script@~1.6.2
+302 verbose cache add [ 'coffee-script@coffee-script@~1.6.2', null ]
+303 silly cache add name=undefined spec="coffee-script@coffee-script@~1.6.2" args=["coffee-script@coffee-script@~1.6.2",null]
+304 verbose parsed url { pathname: 'coffee-script@coffee-script@~1.6.2',
+304 verbose parsed url   path: 'coffee-script@coffee-script@~1.6.2',
+304 verbose parsed url   href: 'coffee-script@coffee-script@~1.6.2' }
+305 silly cache add name="coffee-script" spec="coffee-script@~1.6.2" args=["coffee-script","coffee-script@~1.6.2"]
+306 verbose parsed url { pathname: 'coffee-script@~1.6.2',
+306 verbose parsed url   path: 'coffee-script@~1.6.2',
+306 verbose parsed url   href: 'coffee-script@~1.6.2' }
+307 verbose addNamed [ 'coffee-script', 'coffee-script@~1.6.2' ]
+308 verbose addNamed [ null, null ]
+309 silly lockFile 15b28108-offee-script-coffee-script-1-6-2 coffee-script@coffee-script@~1.6.2
+310 verbose lock coffee-script@coffee-script@~1.6.2 /Users/Derek_Chen/.npm/15b28108-offee-script-coffee-script-1-6-2.lock
+311 info addNameTag [ 'request', 'request@~2.14.0' ]
+312 info addNameTag [ 'watch-tree-maintained', 'watch-tree-maintained@~0.1.2' ]
+313 info addNameTag [ 'commander', 'commander@~1.1.0' ]
+314 info addNameTag [ 'cli-color', 'cli-color@~0.2.1' ]
+315 info addNameTag [ 'socket.io-client', 'socket.io-client@~0.9.11' ]
+316 info addNameTag [ 'wrench', 'wrench@~1.4.2' ]
+317 info addNameTag [ 'coffee-script', 'coffee-script@~1.6.2' ]
+318 verbose url raw request
+319 verbose url resolving [ 'https://registry.npmjs.org/', './request' ]
+320 verbose url resolved https://registry.npmjs.org/request
+321 info trying registry request attempt 1 at 21:15:42
+322 http GET https://registry.npmjs.org/request
+323 verbose url raw watch-tree-maintained
+324 verbose url resolving [ 'https://registry.npmjs.org/', './watch-tree-maintained' ]
+325 verbose url resolved https://registry.npmjs.org/watch-tree-maintained
+326 info trying registry request attempt 1 at 21:15:42
+327 http GET https://registry.npmjs.org/watch-tree-maintained
+328 verbose url raw commander
+329 verbose url resolving [ 'https://registry.npmjs.org/', './commander' ]
+330 verbose url resolved https://registry.npmjs.org/commander
+331 info trying registry request attempt 1 at 21:15:42
+332 http GET https://registry.npmjs.org/commander
+333 verbose url raw cli-color
+334 verbose url resolving [ 'https://registry.npmjs.org/', './cli-color' ]
+335 verbose url resolved https://registry.npmjs.org/cli-color
+336 info trying registry request attempt 1 at 21:15:42
+337 http GET https://registry.npmjs.org/cli-color
+338 verbose url raw socket.io-client
+339 verbose url resolving [ 'https://registry.npmjs.org/', './socket.io-client' ]
+340 verbose url resolved https://registry.npmjs.org/socket.io-client
+341 info trying registry request attempt 1 at 21:15:42
+342 http GET https://registry.npmjs.org/socket.io-client
+343 verbose url raw wrench
+344 verbose url resolving [ 'https://registry.npmjs.org/', './wrench' ]
+345 verbose url resolved https://registry.npmjs.org/wrench
+346 info trying registry request attempt 1 at 21:15:42
+347 http GET https://registry.npmjs.org/wrench
+348 verbose url raw coffee-script
+349 verbose url resolving [ 'https://registry.npmjs.org/', './coffee-script' ]
+350 verbose url resolved https://registry.npmjs.org/coffee-script
+351 info trying registry request attempt 1 at 21:15:42
+352 http GET https://registry.npmjs.org/coffee-script
+353 http 200 https://registry.npmjs.org/watch-tree-maintained
+354 silly registry.get cb [ 200,
+354 silly registry.get   { vary: 'Accept',
+354 silly registry.get     server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+354 silly registry.get     etag: '"7GFINZRSTAJTKV6XS5PQRQJTL"',
+354 silly registry.get     date: 'Wed, 10 Apr 2013 04:07:01 GMT',
+354 silly registry.get     'content-type': 'application/json',
+354 silly registry.get     'content-length': '4338' } ]
+355 silly lockFile 2363ecb9-ined-watch-tree-maintained-0-1-2 watch-tree-maintained@watch-tree-maintained@~0.1.2
+356 verbose about to build /usr/local/share/npm/lib/node_modules/madeye
+357 info /usr/local/share/npm/lib/node_modules/madeye unbuild
+358 verbose from cache /usr/local/share/npm/lib/node_modules/madeye/package.json
+359 info preuninstall madeye@0.1.0
+360 info uninstall madeye@0.1.0
+361 verbose true,/usr/local/share/npm/lib/node_modules,/usr/local/share/npm/lib/node_modules unbuild madeye@0.1.0
+362 verbose /usr/local/share/npm/bin,[object Object] binRoot
+363 info postuninstall madeye@0.1.0
+364 http 200 https://registry.npmjs.org/node-uuid
+365 silly registry.get cb [ 200,
+365 silly registry.get   { vary: 'Accept',
+365 silly registry.get     server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+365 silly registry.get     etag: '"51E0TZTQAI520ZOXN9PSYZU94"',
+365 silly registry.get     date: 'Wed, 10 Apr 2013 04:07:01 GMT',
+365 silly registry.get     'content-type': 'application/json',
+365 silly registry.get     'content-length': '21269' } ]
+366 http 200 https://registry.npmjs.org/underscore
+367 silly registry.get cb [ 200,
+367 silly registry.get   { vary: 'Accept',
+367 silly registry.get     server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+367 silly registry.get     etag: '"CS0VROGYFJ20B67139L5IUZHE"',
+367 silly registry.get     date: 'Wed, 10 Apr 2013 04:07:01 GMT',
+367 silly registry.get     'content-type': 'application/json',
+367 silly registry.get     'content-length': '35956' } ]
+368 silly lockFile 41af7013-node-uuid-node-uuid-1-4-0 node-uuid@node-uuid@~1.4.0
+369 silly lockFile 99503bbe-underscore-underscore-1-4-2 underscore@underscore@~1.4.2
+370 error Error: No compatible version found: watch-tree-maintained@'watch-tree-maintained@~0.1.2'
+370 error Valid install targets:
+370 error ["0.1.2"]
+370 error     at installTargetsError (/usr/local/Cellar/node/0.8.12/lib/node_modules/npm/lib/cache.js:553:10)
+370 error     at /usr/local/Cellar/node/0.8.12/lib/node_modules/npm/lib/cache.js:477:15
+370 error     at saved (/usr/local/Cellar/node/0.8.12/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:138:7)
+370 error     at /usr/local/Cellar/node/0.8.12/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:218:7
+370 error     at Object.oncomplete (fs.js:297:15)
+371 error If you need help, you may report this log at:
+371 error     <http://github.com/isaacs/npm/issues>
+371 error or email it to:
+371 error     <npm-@googlegroups.com>
+372 error System Darwin 10.8.0
+373 error command "/usr/local/Cellar/node/0.8.12/bin/node" "/usr/local/bin/npm" "install" "-g" "madeye"
+374 error cwd /Users/Derek_Chen/Sites/notable
+375 error node -v v0.8.12
+376 error npm -v 1.1.63
+377 verbose exit [ 1, true ]
