@@ -10,6 +10,6 @@
  *
  *= require_self
  *= require token-input-facebook
- *= require jquery.sidr.dark
+ *= require jquery.sidr.light
  *= require_tree .
  */

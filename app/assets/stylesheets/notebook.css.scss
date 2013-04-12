@@ -8,6 +8,7 @@ $notableYellow: #FFDC33;
 $notableWhite: #FDFDFD;
 $notableGray: #EAEAEA;
 $notableBlack: #3D3D3D;
+$notableDarkGray: #999999;
 
 /*******************
   Notebook 
@@ -32,4 +33,61 @@ $notableBlack: #3D3D3D;
 }
 
 .sort-menu {
+}
+
+#notebooks_section {
+  display: block;
+  background-image:url('cardboard_flat_@2X.png');
+  position: relative;  
+  margin: 0 25px;
+  h3 {
+    color: $notableDarkGray;
+    font-family: 'Century Gothic', "Arial", san-serif;
+    text-align:center;
+    line-height:1px;
+    font-size: 1.2em;
+    padding-top: 15px;
+    font-weight: normal;
+  }
+ }
+
+#freeform_view {
+  &:hover {
+    background-position: -218px -93px;
+  }
+  &:active {
+    background-position: -2px -117px;
+  }
+}
+
+#grid_view {
+  &:hover {
+    background-position: -110px -93px;
+  }
+  &:active {
+    background-position: -137px -93px;
+  }
+}
+
+
+#list_view {
+  &:hover {
+    background-position: -2px -93px;
+  }
+  &:active {
+    background-position: -29px -93px;
+  }
+}
+
+#mindmap_view {
+  &:hover {
+    background-position: -125px -61px;
+  }
+  &:active {
+    background-position: -152px -61px;
+  }
+}
+
+#feature_bar {
+  z-index: 99;
 }

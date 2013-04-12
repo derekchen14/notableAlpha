@@ -1,22 +1,50 @@
 <% if user_signed_in? %>
   <% provide(:title, current_user.username) %>
-    <section>
-      <div class="inline-left">
-        <button id="simple-menu"> <i class="icon-align-justify"></i> </button>
-      </div>
-      <div class="inline-left"> <%= render 'shared/note_form' %> </div>
-    </section>
-    
+    <div id="sidr">
+      <h2 id="side-notebooks">
+        <span class="arrow_down_icon sprite"></span>
+        Notebooks
+      </h2>
+      <h2 id="side-recent-notes">
+        <span class="arrow_down_icon sprite"></span>
+        Recent Notes
+      </h2>
+      <div id="side-user-recent-notes"><%= render template: 'sidebar/recent_notes' %></div>
+      <h2 id="side-notes">
+        <span class="arrow_down_icon sprite"></span>
+        Notes
+      </h2>
+      <div id="side-user-notes"><%= render template: 'sidebar/short_notes' %></div>
+      <h2 id="side-tags">
+        <span class="arrow_down_icon sprite"></span>
+        Tags
+      </h2>
+      <div id="side-user-tags"><%= render 'features/taglist' %></div>
+    </div>
+  <section id="feature_bar">
+    <div class="inline-left">
+      <button id="simple-menu"> <i class="icon-align-justify"></i> </button>
+    </div>
+    <div class="inline-left"> <%= render 'shared/note_form' %> </div>
+    <div id="extension_views" class="pull-right">
+      <%= render 'features/sort' %>
+      <span id="freeform_view" class="freeform_icon sprite" ></span>
+      <span id="grid_view" class="grid_icon sprite" ></span>
+      <span id="list_view" class="list_icon sprite" ></span>
+      <span id="mindmap_view" class="mindmap_icon sprite" ></span>
+    </div>
+  </section>
+  <section id="notebooks_section">
+    <h3><%= current_user.username %>'s Notebook</h3>
+    <section id="notes_section">
     <div class="span8">
-      <div id="sidr">
-        <%= render 'features/taglist' %>
-      </div>
       <div>
-        <h3><%= current_user.username %>'s Notes</h3>
         <%= render 'shared/notebook' %>
       </div>
     </div>
-
+    </section>
+  </section>
+ 
 <% else %>
 
 	<div class="center hero-unit">

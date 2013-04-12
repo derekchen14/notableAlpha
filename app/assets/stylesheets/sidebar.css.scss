@@ -1,0 +1,36 @@
+/****************
+  Mixins and Variables
+ *****************/
+
+$grayMediumLight: #eaeaea;
+$blueLight: #444fff;
+$notableBlue: #14A4FF;
+$notableOrange: #E97C12;
+$notableYellow: #FFDC33;
+$notableWhite: #FDFDFD;
+$notableGray: #EAEAEA;
+$notableBlack: #3D3D3D;
+
+div#sidr li a:hover {
+  color: $notableYellow;
+}
+
+div#sidr li a {
+  color: rgba(51,51,51,0.8);
+}
+
+div#sidr li a.clicked {
+  color: $notableBlue;
+}
+
+div#sidr {
+  background-image:url('brilliant.png');
+}
+div#sidr h2 {
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-family: Arial, sans-serif; 
+  background-color: #EDEDED;
+  margin: 0 0 0;
+}

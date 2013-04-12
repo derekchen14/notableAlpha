@@ -14,6 +14,9 @@ Notable::Application.routes.draw do
   get 'tags/:tag', to: 'notes#filter_by_tags', as: :filter_tag
   get "lasttest/create"
 
+  get "sidebar/select_note/:id", to: "sidebar#select_note", as: :select_note
+  get "sidebar/recent_notes", to: "sidebar#recent_notes", as: :recent_notes
+  get "sidebar/short_notes", to: "sidebar#short_notes", as: :short_notes
   get "notes/load_tags/:id", to: 'notes#load_tags', as: :load_tags
   get "notes/note_search",to: "notes#note_search", as: :note_search
   put "notes/update_tags/:id/user/:user_id", to: 'notes#update_tags', as: :update_tags

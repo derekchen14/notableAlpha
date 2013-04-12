@@ -176,31 +176,14 @@ a.remind:focus, a.trash:focus {
 }
 
 /*******************
-  Search 
+  Sign In
  *******************/
 
-.search_btn {
-  background: white;
-  border: none;
+#user_remember_me {
+  margin-top: 2px;
 }
 
-@-moz-document url-prefix() {
-  .search_btn {
-    padding-bottom: 1px;
-  }
-
-  :focus {outline:none;}
-  ::-moz-focus-inner {border:0;}
-}
-
-input#query{
-  border-style: none;
-}
-
-input#query:active,input#query:focus {
-  outline: none;
-  border:none !important;
-  box-shadow:none !important;
-   -webkit-appearance:none;
+.remember_label {
+  margin: 5px 0px 15px 0px;
 }
 

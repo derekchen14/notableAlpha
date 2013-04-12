@@ -1,0 +1,19 @@
+$("#notes").html("<%= j render @note %>");
+
+$(function() {
+  $("#notes li input[type='filepicker']").each(function() {
+    this.type="filepicker";
+    filepicker.constructWidget(this);
+  });
+
+  $('input[type="filepicker"]').change(save_url);
+  
+  $("li").hover(function(event) {
+    $(this).children(".handle").toggle();
+  });
+  $(".remind").click(function(e) {
+    e.preventDefault();
+    $(this).closest("li").children(".remind_times").toggle(300);
+  });
+  $(".badge").click(send_message);
+});

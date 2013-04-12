@@ -27,6 +27,7 @@ group :development do
   gem 'rubygems-bundler', '1.1.0'
   gem "better_errors"
   gem 'quiet_assets'
+  gem 'pry-rails'
 end
 
 group :assets do

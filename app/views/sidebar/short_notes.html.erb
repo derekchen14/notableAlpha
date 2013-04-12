@@ -1,0 +1,11 @@
+<ul>
+  <li>
+    <ul>
+      <% @notes.each do |note| %>
+        <li>
+        <%= link_to note.shorten, select_note_path(note.id), remote: true%>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
