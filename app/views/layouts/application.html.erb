@@ -10,37 +10,46 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
-  <div id="sidr">
-    <h2 id="side-notebooks">
-      <span class="arrow_down_icon sprite"></span>
-      Notebooks
-    </h2>
-    <h2 id="side-recent-notes">
-      <span class="arrow_down_icon sprite"></span>
-      Recent Notes
-    </h2>
-    <div id="side-user-recent-notes"><%= render template: 'sidebar/recent_notes' %></div>
-    <h2 id="side-notes">
-      <span class="arrow_down_icon sprite"></span>
-      Notes
-    </h2>
-    <div id="side-user-notes"><%= render template: 'sidebar/short_notes' %></div>
-    <h2 id="side-tags">
-      <span class="arrow_down_icon sprite"></span>
-      Tags
-    </h2>
-    <div id="side-user-tags"><%= render 'features/taglist' %></div>
-  </div>
+  <!-- TODO: Make left panel into partial -->
+    
+    <div id="header">
+      <%= render 'layouts/header' %>
+    </div>
+  
+    <div id="sidr">
+        <h2 id="side-notebooks">
+          <span class="arrow_down_icon sprite"></span>
+          Notebooks
+        </h2>
+        <h2 id="side-recent-notes">
+          <span class="arrow_down_icon sprite"></span>
+          Recent Notes
+        </h2>
+        <div id="side-user-recent-notes"><%= render template: 'sidebar/recent_notes' %></div>
+        <h2 id="side-notes">
+          <span class="arrow_down_icon sprite"></span>
+          Notes
+        </h2>
+        <div id="side-user-notes"><%= render template: 'sidebar/short_notes' %></div>
+        <h2 id="side-tags">
+          <span class="arrow_down_icon sprite"></span>
+          Tags
+        </h2>
+        <div id="side-user-tags"><%= render 'features/taglist' %></div>
+      </div>
+  
   <div class="container" id="main_container">
-    <%= render 'layouts/header' %>
-    <% flash.each do |key, msg| %>
-      <%= content_tag(:div, msg, class: "alert alert-#{key}") unless msg.blank? %>
-    <% end %>
-		<%= yield %>
-    <% unless user_signed_in? %>
-      <%= render 'layouts/footer' %>
-    <% end %>
+    <div id="content">
+      <% flash.each do |key, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-#{key}") unless msg.blank? %>
+      <% end %>
+      <%= yield %>
+      <% unless user_signed_in? %>
+        <%= render 'layouts/footer' %>
+      <% end %>
+    </div>
     <%= debug(params) if Rails.env.development? %>
   </div>
+
 </body>
 </html>

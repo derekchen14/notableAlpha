@@ -1,11 +1,5 @@
 <li id="search_field">
-  <%= form_tag note_search_path, class: "form-search", method: :get, remote: true do %>
-      <div class="input-append">
-      <%= text_field_tag :query, params[:query], 
-      class: "span2 search-query search_txt" %>
-      <button type="submit" class="btn search_btn" tabindex="-1">
-        <i class="icon-search"></i>
-      </button>
-    </div>
+  <%= form_tag note_search_path, class: "navbar-search", method: :get, remote: true do %>
+      <%= text_field_tag :query, params[:query], class: "search-query", placeholder:"Search" %>
   <% end %>
 </li>

@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top">
+<header class="navbar ">
   <div class="navbar-inner" id="navbar-main">
     <div class="container">
       <%= link_to "NOTABLE v0.6", root_path, id: "logo" %>
@@ -10,10 +10,8 @@
             <% if current_user.admin? %>
               <li><%= link_to "Users", users_path %></li>
             <% end %>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" id="account_settings" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
+            <li>
+              <a href="#" id="account_settings" class="profile_dropdown_icon sprite dropdown-toggle" data-toggle="dropdown" ></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Notes", root_path, id: "user_notes" %></li>
                 <li><%= link_to "Notebooks", notes_path, id: "user_notebooks" %></li>

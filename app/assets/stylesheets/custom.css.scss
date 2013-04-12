@@ -42,7 +42,7 @@ textarea {
   }
 }
 body {
-  background-image: url('brilliant.png');
+  background-image:url('satinweave_@2X.png');
 }
 
 
@@ -85,7 +85,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: $notableWhite;
+  color: $notableBlue;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -100,6 +100,8 @@ p {
 .navbar .nav > li > a {
   color: $notableWhite;
   text-shadow: 0 1px 0 #555555;
+  padding: 0;
+  margin: 5px 0 0 10px;
 }
 
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
@@ -107,9 +109,21 @@ p {
 }
 
 #navbar-main {
-  background-color: #14A4FF;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,  from(#14A4FF), to(#1C8DFF));
-  background-image: linear-gradient(to bottom, #14A4FF, #1C8DFF);
+  height: 60px;
+  background: #eaeaea; /* Old browsers */
+  background: -moz-linear-gradient(top,  #eaeaea 0%, #fdfdfd 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaeaea), color-stop(100%,#fdfdfd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #eaeaea 0%,#fdfdfd 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #eaeaea 0%,#fdfdfd 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #eaeaea 0%,#fdfdfd 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #eaeaea 0%,#fdfdfd 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#fdfdfd',GradientType=0 ); /* IE6-9 */
+  -moz-box-shadow: 0px 0px 4px #999999;
+  -webkit-box-shadw: 0px 0px 4px #999999;
+  box-shadow: 0px 0px 4px #999999;
+  // background-color: #14A4FF;
+  // background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,  from(#14A4FF), to(#1C8DFF));
+  // background-image: linear-gradient(to bottom, #14A4FF, #1C8DFF);
 }
 
 #search_field {
@@ -298,3 +312,20 @@ footer {
   margin-top: 45px;
   @include box_sizing;
 }
+
+
+
+/*******************
+  Layout 
+ *******************/
+
+
+
+ #notes_section {
+   display: block;
+   background-color: #FDFDFD;
+   position: relative;
+   margin: 30px 25px;
+ }
+
+
