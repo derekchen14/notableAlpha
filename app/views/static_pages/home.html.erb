@@ -1,5 +1,26 @@
 <% if user_signed_in? %>
   <% provide(:title, current_user.username) %>
+    <div id="sidr">
+      <h2 id="side-notebooks">
+        <span class="arrow_down_icon sprite"></span>
+        Notebooks
+      </h2>
+      <h2 id="side-recent-notes">
+        <span class="arrow_down_icon sprite"></span>
+        Recent Notes
+      </h2>
+      <div id="side-user-recent-notes"><%= render template: 'sidebar/recent_notes' %></div>
+      <h2 id="side-notes">
+        <span class="arrow_down_icon sprite"></span>
+        Notes
+      </h2>
+      <div id="side-user-notes"><%= render template: 'sidebar/short_notes' %></div>
+      <h2 id="side-tags">
+        <span class="arrow_down_icon sprite"></span>
+        Tags
+      </h2>
+      <div id="side-user-tags"><%= render 'features/taglist' %></div>
+    </div>
   <section id="feature_bar">
     <div class="inline-left">
       <button id="simple-menu"> <i class="icon-align-justify"></i> </button>
