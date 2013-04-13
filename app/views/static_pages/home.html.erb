@@ -21,19 +21,22 @@
       </h2>
       <div id="side-user-tags"><%= render 'features/taglist' %></div>
     </div>
-  <section id="feature_bar">
-    <div class="inline-left">
-      <button id="simple-menu"> <i class="icon-align-justify"></i> </button>
+
+  <section id="extension-section">
+    <div id="extension-nav" class="pull-left">
+      <span id="simple-menu" class="expand_icon sprite"></span>
+      <span id="simple-nav" class="new_icon sprite"></span>
+      <%# <%= render 'shared/note_form' %>
     </div>
-    <div class="inline-left"> <%= render 'shared/note_form' %> </div>
     <div id="extension_views" class="pull-right">
       <%= render 'features/sort' %>
-      <span id="freeform_view" class="freeform_icon sprite" ></span>
-      <span id="grid_view" class="grid_icon sprite" ></span>
-      <span id="list_view" class="list_icon sprite" ></span>
-      <span id="mindmap_view" class="mindmap_icon sprite" ></span>
+      <span class="freeform_icon sprite" ></span>
+      <span class="grid_icon sprite" ></span>
+      <span class="list_icon sprite" ></span>
+      <span class="mindmap_icon sprite" ></span>
     </div>
   </section>
+
   <section id="notebooks_section">
     <h3><%= current_user.username %>'s Notebook</h3>
     <section id="notes_section">

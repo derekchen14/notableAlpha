@@ -25,6 +25,12 @@ $notableBlack: #3D3D3D;
 html {
   overflow-y: scroll;
 }
+body {
+  background-image:url('satinweave.png');
+}
+#main_container {
+  width: 75%;
+}
 section {
   overflow: auto;
 }
@@ -37,9 +43,8 @@ textarea {
     margin-bottom: 10px;
   }
 }
-body {
-  background-image:url('satinweave_@2X.png');
-}
+
+
 
 
 /******************
@@ -117,6 +122,31 @@ p {
   box-shadow: 0px 0px 4px #999999;
 }
 
+/*******************
+  Search 
+ *******************/
+
+.search_btn {
+  background: white;
+  border: none;
+}
+
+@-moz-document url-prefix() {
+  .search_btn {
+    padding-bottom: 1px;
+  }
+
+  :focus {outline:none;}
+  ::-moz-focus-inner {border:0;}
+}
+
+input#query:active,input#query:focus {
+  outline: none;
+  border:none !important;
+  box-shadow:none !important;
+   -webkit-appearance:none;
+}
+
 #search_field {
   padding-top: 5px;
   height: 30px;
@@ -154,18 +184,6 @@ p {
   Form
  *******************/
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
 #error_explanation {
   color: #f00;
   ul {
@@ -179,71 +197,6 @@ input {
   @extend .error;
  }
 
-.form_links {
-  float: right;
-  font-size: 14px;
-}
-
-
-/*******************
-  Sidebar
- *******************/
-
-aside {
-  section {
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3pxk;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.stats {
-  a {
-    float: left;
-    padding: 0 40px 0 10px;
-    border-left: 1px solid $grayLighter;
-    color: gray;
-    &:first-child {
-      padding: 0 10px 0 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: $blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-}
 
 /*******************
   User Views
@@ -298,42 +251,15 @@ footer {
 }
 
 /*******************
-  Miscellaneous 
+  Sign In
  *******************/
 
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
+#user_remember_me {
+  margin-top: 2px;
 }
 
-
-
-
-/*******************
-  Search 
- *******************/
-
-.search_btn {
-  background: white;
-  border: none;
+.remember_label {
+  margin: 5px 0px 15px 0px;
 }
 
-@-moz-document url-prefix() {
-  .search_btn {
-    padding-bottom: 1px;
-  }
-
-  :focus {outline:none;}
-  ::-moz-focus-inner {border:0;}
-}
-
-input#query:active,input#query:focus {
-  outline: none;
-  border:none !important;
-  box-shadow:none !important;
-   -webkit-appearance:none;
-}
 

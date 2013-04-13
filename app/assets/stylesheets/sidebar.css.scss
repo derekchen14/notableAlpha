@@ -11,6 +11,61 @@ $notableWhite: #FDFDFD;
 $notableGray: #EAEAEA;
 $notableBlack: #3D3D3D;
 
+/*******************
+  Sidebar
+ *******************/
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $notableGray;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3pxk;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.stats {
+  a {
+    float: left;
+    padding: 0 40px 0 10px;
+    border-left: 1px solid $notableGray;
+    color: gray;
+    &:first-child {
+      padding: 0 10px 0 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $notableBlue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
+
 div#sidr li a:hover {
   color: $notableYellow;
 }
@@ -34,3 +89,4 @@ div#sidr h2 {
   background-color: #EDEDED;
   margin: 0 0 0;
 }
+

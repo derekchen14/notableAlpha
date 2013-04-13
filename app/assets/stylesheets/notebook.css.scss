@@ -11,16 +11,50 @@ $notableBlack: #3D3D3D;
 $notableDarkGray: #999999;
 
 /*******************
-  Notebook 
+  Extension Section
+ *******************/
+
+#extension-section{
+  clear: both;
+}
+
+/*******************
+  Extension Nav
+ *******************/
+
+#extension-nav {
+  margin-left: 0.9em;
+}
+
+#simple-menu {
+  float: left;
+  margin: 0 5px 5px 0;
+}
+#simple-nav {
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
+.expand_icon {
+  &:hover {background-position: -88px -117px;}
+}
+.new_icon {
+  &:hover {background-position: -2px -61px;}
+}
+
+form#new_note {
+  margin: 0;
+}
+
+/*******************
+  Sort (Extension)
  *******************/
 
 .sort {
-  //float: right;
   position: relative;
   bottom: 32px;
   border: 1px solid $notableBlack;
   border-radius: 4px;
-  padding: 1px 0;
   background-color: $notableGray;
 }
 
@@ -35,60 +69,48 @@ $notableDarkGray: #999999;
 .sort-menu {
 }
 
+/*******************
+  Extension Views
+ *******************/
+
+#extension_views {
+  margin-right: 0.9em;
+}
+
+.freeform_icon {
+  &:hover {background-position: -218px -93px;}
+  &:active {background-position: -2px -117px;}
+}
+.grid_icon {
+  &:hover {background-position: -110px -93px;}
+  &:active {background-position: -137px -93px;}
+}
+.list_icon {
+  &:hover {background-position: -2px -93px;}
+  &:active {background-position: -29px -93px;}
+}
+.mindmap_icon {
+  &:hover {background-position: -125px -61px;}
+  &:active {background-position: -152px -61px;}
+}
+
+/*******************
+  Part B
+ *******************/
+
 #notebooks_section {
   display: block;
   background-image:url('cardboard_flat_@2X.png');
   position: relative;  
-  margin: 0 25px;
+  margin-bottom: 50px;
   border-radius: 10px;
   h3 {
     color: $notableDarkGray;
     font-family: 'Century Gothic', "Arial", san-serif;
     text-align:center;
-    line-height:1px;
-    font-size: 1.2em;
-    padding-top: 15px;
-    font-weight: normal;
+    font-size: 1.0em;
+    padding-top: 7px;
+    font-weight: bold;
   }
  }
 
-#freeform_view {
-  &:hover {
-    background-position: -218px -93px;
-  }
-  &:active {
-    background-position: -2px -117px;
-  }
-}
-
-#grid_view {
-  &:hover {
-    background-position: -110px -93px;
-  }
-  &:active {
-    background-position: -137px -93px;
-  }
-}
-
-
-#list_view {
-  &:hover {
-    background-position: -2px -93px;
-  }
-  &:active {
-    background-position: -29px -93px;
-  }
-}
-
-#mindmap_view {
-  &:hover {
-    background-position: -125px -61px;
-  }
-  &:active {
-    background-position: -152px -61px;
-  }
-}
-
-#feature_bar {
-  z-index: 99;
-}

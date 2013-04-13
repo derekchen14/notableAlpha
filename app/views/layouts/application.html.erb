@@ -18,16 +18,13 @@
   
   
   <div class="container" id="main_container">
-    <div id="content">
-      <% flash.each do |key, msg| %>
-        <%= content_tag(:div, msg, class: "alert alert-#{key}") unless msg.blank? %>
-      <% end %>
-      <%= yield %>
-      <% unless user_signed_in? %>
-        <%= render 'layouts/footer' %>
-      <% end %>
-    </div>
-    <%= debug(params) if Rails.env.development? %>
+    <% flash.each do |key, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-#{key}") unless msg.blank? %>
+    <% end %>
+    <%= yield %>
+    <% unless user_signed_in? %>
+      <%= render 'layouts/footer' %>
+    <% end %>
   </div>
 
 </body>

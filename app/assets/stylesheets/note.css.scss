@@ -174,21 +174,10 @@ a.remind:focus, a.trash:focus {
   margin: 5px 0;
 }
 
-/*******************
-  Sign In
- *******************/
-
-#user_remember_me {
-  margin-top: 2px;
-}
-
-.remember_label {
-  margin: 5px 0px 15px 0px;
-}
 
 
 /*******************
-  Items Section
+  Layout
  *******************/
 
 .items_section {
@@ -197,15 +186,10 @@ a.remind:focus, a.trash:focus {
   border: 2px dotted $notableGray;
 }
 
-
-/*******************
-  Layout
- *******************/
-
  #notes_section {
    background-color: #FDFDFD;
    display: block;
-   margin: 25px;
+   margin: 18px 25px 25px 25px;
  }
 
 

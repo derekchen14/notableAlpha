@@ -1,7 +1,5 @@
 <%= form_for(@note) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.hidden_field :content, value: "" %>
-  <button type="submit">
-    <i class="icon-plus"></i>
-  </button>
+  <button type="submit"> (X) </button>
 <% end %>
