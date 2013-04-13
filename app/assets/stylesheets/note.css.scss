@@ -31,16 +31,11 @@ $notableBlack: #3D3D3D;
     border-top: 1px solid #e8e8e8;
   }
 }
-.content {
-  display: block;
-}
+
 .timestamp {
   color: $blueLight;
 }
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
+
 aside {
   textarea {
     height: 100px;
@@ -51,6 +46,10 @@ aside {
 div.inline-left {
   float: left;
   padding: 2px 2px;
+}
+
+.note {
+  width: 80%;
 }
 
 
@@ -186,4 +185,27 @@ a.remind:focus, a.trash:focus {
 .remember_label {
   margin: 5px 0px 15px 0px;
 }
+
+
+/*******************
+  Items Section
+ *******************/
+
+.items_section {
+  width: 60%;
+  height: 100px;
+  border: 2px dotted $notableGray;
+}
+
+
+/*******************
+  Layout
+ *******************/
+
+ #notes_section {
+   background-color: #FDFDFD;
+   display: block;
+   margin: 25px;
+ }
+
 
