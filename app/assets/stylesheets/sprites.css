@@ -13,10 +13,10 @@
 
 .sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(sprites.png);}
 
-.alarm_icon {width:22px; height:22px; background-position: -50px -173px}
-.alarm_icon_clicked {width:22px; height:22px; background-position: -26px -173px}
-.alarm_icon_hover {width:22px; height:22px; background-position: -2px -173px}
-.alarm_icon_selected {width:22px; height:22px; background-position: -212px -149px}
+.reminder_icon {width:22px; height:22px; background-position: -50px -173px}
+.reminder_icon_clicked {width:22px; height:22px; background-position: -26px -173px}
+.reminder_icon_hover {width:22px; height:22px; background-position: -2px -173px}
+.reminder_icon_selected {width:22px; height:22px; background-position: -212px -149px}
 .arrow_down_icon {width:13px; height:13px; background-position: -197px -149px}
 .arrow_down_icon_clicked {width:13px; height:13px; background-position: -182px -149px}
 .arrow_down_icon_hover {width:13px; height:13px; background-position: -167px -149px}

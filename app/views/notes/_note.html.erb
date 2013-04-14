@@ -8,20 +8,19 @@
     </div>
    
     <% if current_user == note.user %>
-      <%= link_to "<i class='icon-trash'></i>".html_safe, note, 
-        method: :delete, data: { confirm: "You sure?" }, 
-        class: "trash", remote: true, title: "Trash" %>
+      <div id="note-icons">
 
-      <%= link_to image_tag("reminder.png", alt: "reminder", 
-        size: "15x15"),'javascript:void(0)', class: "remind", title: "Remind Me" %>
+      <%= link_to "", note, method: :delete, data: { confirm: "You sure?" },
+        class: "trash trash_icon sprite", remote: true, title: "Trash" %>
 
-      <%= link_to image_tag("duplicate@2x.png", alt: "duplicate", 
-        size: "15x15"), note, method: :duplicate, class: "duplicate",
+      <%= link_to "",'javascript:void(0)', class: "remind reminder_icon sprite", title: "Remind Me" %>
+
+      <%= link_to "", note, method: :duplicate, class: "duplicate duplicate_icon sprite",
         title: "Duplicate" %>
 
-      <input type="filepicker" 
+      <input type="filepicker" class="attach_icon sprite" 
         data-fp-apikey="AIEVEYpUyS9Srvu5qwlnJz" 
-        data-fp-button-text="<i class='icon-folder-open'></i>".html_safe
+        data-fp-button-text="<span class='attach_icon sprite'></span>".html_safe
         data-fp-container="modal"
         data-fp-class="filepicker" 
         data-fp-maxsize="10485760" 
@@ -29,14 +28,16 @@
         data-fp-multiple="true" 
         data-fp-services="COMPUTER,DROPBOX,FACEBOOK,GOOGLE_DRIVE,BOX,EVERNOTE,GITHUB,WEBCAM">
 
-      <div class="handle"><span class="icon-resize-vertical">
-        </span></div>
-
-      <%= link_to "<i class='icon-tags'></i>".html_safe, load_tags_path(note), remote: true %>
+      <%= link_to "", load_tags_path(note), class: "tag_icon sprite", remote: true %>
       <span class="list-tags" id=<%="tags_#{note.id}" %>>
         <%= raw note.tags.map(&:name).map { |t| link_to t, filter_tag_path(t), remote: true }.join(', ') %>
       </span>
       <div id=<%="note_#{note.id}_tags"%>></div>
+      </div>
+
+      <div class="handle"><span class="icon-resize-vertical">
+        </span></div>
+
 
     <% end %>
     <%= render 'features/reminders' %>

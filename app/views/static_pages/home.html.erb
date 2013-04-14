@@ -16,14 +16,10 @@
     </div>
   </section>
 
-  <section id="notebook_section">
+  <section id="notebook-section">
     <h3><%= current_user.username %>'s Notebook</h3>
     <section id="note-section">
-    <div class="span8">
-      <div>
-        <%= render 'shared/notebook' %>
-      </div>
-    </div>
+      <%= render 'shared/note_section' %>
     </section>
   </section>
  

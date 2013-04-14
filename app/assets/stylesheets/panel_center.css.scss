@@ -49,7 +49,7 @@ div.inline-left {
 }
 
 .note {
-  width: 80%;
+  width: 95%;
 }
 
 
@@ -92,20 +92,24 @@ input[type="tel"], .phone_input {
   Icons 
  *******************/
 
-.icon-trash {
-  margin: 2px 4px 0px 4px;
+#note-icons {
+  float: right;
 }
 
-.duplicate {
-  margin: 0px 3px;
-  position:relative;
-  bottom: 1px;
+.trash_icon {
+  &:hover {background-position: -26px -2px;}
 }
-
-.remind {
-  margin: 0px 3px;
-  position:relative;
-  bottom: 1px;
+.reminder_icon {
+  &:hover {background-position: -2px -173px;}
+}
+.attach_icon {
+  &:hover {background-position: -50px -149px;}
+}
+.duplicate_icon {
+  &:hover {background-position: -208px -117px;}
+}
+.tag_icon {
+  &:hover {background-position: -122px -2px;}
 }
 
 a.remind:focus, a.trash:focus {
@@ -115,10 +119,6 @@ a.remind:focus, a.trash:focus {
 .filepicker {
   border: none;
   background-color: transparent;
-}
-
-.icon-tags {
-  margin: 3px 4px 0px 4px;
 }
 
 .list-tags {
@@ -173,8 +173,6 @@ a.remind:focus, a.trash:focus {
 .clear_filter {
   margin: 5px 0;
 }
-
-
 
 /*******************
   Layout
