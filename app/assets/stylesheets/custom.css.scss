@@ -26,7 +26,10 @@ html {
   overflow-y: scroll;
 }
 body {
-  background-image:url('satinweave.png');
+  background-image:url('brilliant.png');
+  &#signed_in {
+    background-image:url('satinweave.png');
+  }
 }
 #main_container {
   width: 75%;
