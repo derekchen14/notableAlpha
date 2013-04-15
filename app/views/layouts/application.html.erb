@@ -13,8 +13,9 @@
 
   <div id="header"><%= render 'layouts/header' %></div>
   <div class="container" id="main_container">
-    <%= render 'layouts/flash' %>
-
+      <% flash.each do |key, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-#{key}") unless msg.blank? %>
+      <% end %>
     <% if user_signed_in? %>
       <%= render 'layouts/left_panel' %>
     <% end %>

@@ -26,20 +26,5 @@
   </section>
  
 <% else %>
-
-	<div class="center hero-unit">
-	  <h1>Welcome to Notable</h1>
-
-	  <p>
-	    This is the home page for the prequel app described in
-	    <a href="http://productivityanywhere.com">Productivity Anywhere</a>.
-	    It is a next generation note-taking tool that gives you a new way to organize your thoughts to make more effective decisions.
-	  </p>
-
-	  <%= link_to "Sign up now!", signup_path , class: "btn btn-large btn-primary" %>
-	</div> 
-
-	<div class="center">
-	<%= link_to image_tag("flower.jpg", alt: "Flower"), '#' %>
-	</div>
+  <%= render 'main/landing' %>
 <% end %>
