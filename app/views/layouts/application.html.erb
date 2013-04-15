@@ -9,18 +9,12 @@
   <%= filepicker_js_include_tag %>
   <%= render 'layouts/shim' %>
 </head>
-  <% if user_signed_in? %>
-    <body id="signed_in">  
-  <% else %>
-    <body>
-  <% end %>
+<body>
 
   <div id="header"><%= render 'layouts/header' %></div>
-  
   <div class="container" id="main_container">
-    <% flash.each do |key, msg| %>
-      <%= content_tag(:div, msg, class: "alert alert-#{key}") unless msg.blank? %>
-    <% end %>
+    <%= render 'layouts/flash' %>
+
     <% if user_signed_in? %>
       <%= render 'layouts/left_panel' %>
     <% end %>
@@ -32,5 +26,5 @@
     <% end %>
   </div>
 
-  </body>
+</body>
 </html>

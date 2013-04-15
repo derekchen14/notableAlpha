@@ -1,6 +1,8 @@
 <% if user_signed_in? %>
   <% provide(:title, current_user.username) %>
 
+<%# container id="signed_in" %>
+
   <section id="extension-section">
     <div id="extension-nav" class="pull-left">
       <span id="simple-menu" class="expand_icon sprite"></span>
