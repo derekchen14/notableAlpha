@@ -7,7 +7,6 @@ Notable::Application.routes.draw do
     match '/signup', to: 'devise/registrations#new'
   end
 
-  get "items/create"
   get "reminders/create"
   get "filepickers/create"
   get "notes/sort_by/:criteria", to: 'notes#sort_by', as: :sort_by
@@ -20,6 +19,7 @@ Notable::Application.routes.draw do
   get "notes/load_tags/:id", to: 'notes#load_tags', as: :load_tags
   get "notes/note_search",to: "notes#note_search", as: :note_search
   put "notes/update_tags/:id/user/:user_id", to: 'notes#update_tags', as: :update_tags
+  resources :items
   resources :users
   resources:tags
   resources :notes do 

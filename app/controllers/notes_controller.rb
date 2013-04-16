@@ -8,13 +8,12 @@ class NotesController < ApplicationController
   
 
 	def create
-    @note = current_user.notes.build(params[:note])
-    if Note.last.content.empty?
+    if current_user.notes.last.content.empty?
       flash[:alert] = "You already have an empty note."
-    elsif @note.save
+    else 
+      @note = current_user.notes.build(params[:note])
+      @note.save
       @note.move_to_top
-    else
-      flash[:error] = "Note was not saved correctly."
     end
     redirect_to root_url
 	end

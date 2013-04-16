@@ -38,11 +38,17 @@
       </span>
       <div id=<%="note_#{note.id}_tags"%>></div>
 
+      <div>
+        <% note.items.each do |item| %>
+          <div id=<%="note_item_#{item.id}"%>>
+            <ul id=<%= "item_#{item.id}" %> contenteditable="true" class="items_section">
+              <%= "#{item.data}".html_safe %>
+            </ul>
+          <div>
+        <% end %>
+      </div>
     <% end %>
     <%= render 'features/reminders' %>
-    <div><ul class="items_section" contenteditable="true">
-      <li>Sample item</li>
-    </ul></div>
   <% end %>
 <%# <% end %>
 
