@@ -55,10 +55,10 @@
 .new_icon_clicked {width:30px; height:30px; background-position: -34px -61px}
 .new_icon_hover {width:30px; height:30px; background-position: -2px -61px}
 .new_icon_selected {width:30px; height:30px; background-position: -214px -26px}
-.profile_dropdown_icon {width:33px; height:33px; background-position: -179px -26px}
-.profile_dropdown_icon_clicked {width:33px; height:33px; background-position: -144px -26px}
-.profile_dropdown_icon_hover {width:33px; height:33px; background-position: -109px -26px}
-.profile_dropdown_icon_selected {width:33px; height:33px; background-position: -74px -26px}
+.dropdown_icon {width:33px; height:33px; background-position: -179px -26px}
+.dropdown_icon_clicked {width:33px; height:33px; background-position: -144px -26px}
+.dropdown_icon_hover {width:33px; height:33px; background-position: -109px -26px}
+.dropdown_icon_selected {width:33px; height:33px; background-position: -74px -26px}
 .search_icon {width:22px; height:22px; background-position: -50px -26px}
 .sort_dropdown_icon {width:22px; height:22px; background-position: -26px -26px}
 .sort_dropdown_icon_clicked {width:22px; height:22px; background-position: -2px -26px}

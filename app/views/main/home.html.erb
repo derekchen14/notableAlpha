@@ -1,30 +1,25 @@
 <% if user_signed_in? %>
   <% provide(:title, current_user.username) %>
 
-<%# container id="signed_in" %>
-
-  <section id="extension-section">
-    <div id="extension-nav" class="pull-left">
-      <span id="simple-menu" class="expand_icon sprite"></span>
-      <span id="simple-nav" class="new_icon sprite"></span>
-      <%# <%= render 'shared/note_form' %>
+  <body>
+    <%= render 'layouts/header_in' %>
+    <div class="container" id="main_container">
+      <%= render 'layouts/flash' %>
+      <%= render 'layouts/left_panel' %>
+      <%= render 'layouts/top_panel' %>
+      <%= render 'layouts/center_panel' %>
     </div>
-    <div id="extension_views" class="pull-right">
-      <%= render 'features/sort' %>
-      <span class="freeform_icon sprite" ></span>
-      <span class="grid_icon sprite" ></span>
-      <span class="list_icon sprite" ></span>
-      <span class="mindmap_icon sprite" ></span>
-    </div>
-  </section>
+  </body>
 
-  <section id="notebook-section">
-    <h3><%= current_user.username %>'s Notebook</h3>
-    <section id="note-section">
-      <%= render 'shared/note_section' %>
-    </section>
-  </section>
- 
 <% else %>
-  <%= render 'main/landing' %>
+
+  <body id="signed_out">
+    <%= render 'layouts/header_out' %>
+    <div class="container" id="main_container">
+      <%= render 'layouts/flash' %>
+      <%= render 'main/landing' %>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+
 <% end %>
