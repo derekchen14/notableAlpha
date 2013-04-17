@@ -21,14 +21,12 @@ describe NotesController do
         post :create, note: FactoryGirl.attributes_for(:note)
         response.should redirect_to root_url
       end
-      
-      it "creates a blank note" do
-        expect{
-          post :create, note: FactoryGirl.attributes_for(:note, content: nil)
-        }.to change(Note,:count).by(1)
-      end
     end
     context "with invalid note" do 
+      it "does not create a new note" do
+        post :create, note: FactoryGirl.attributes_for(:note, content: nil)
+        flash[:error].should eq( "Note cannot be empty.")
+      end
     end
   end
 
@@ -130,5 +128,4 @@ describe NotesController do
       assigns(:notes).count.should eq(1) 
     end
   end
-
 end
