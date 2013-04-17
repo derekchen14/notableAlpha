@@ -42,7 +42,7 @@
       <div>
         <% note.items.each do |item| %>
           <div id=<%="note_item_#{item.id}"%>>
-            <ul id=<%= "item_#{item.id}" %> contenteditable="true" class="items_section">
+            <ul id=<%= "item_#{item.id}" %> contenteditable="true" class="items-area">
               <%= "#{item.data}".html_safe %>
             </ul>
           <div>
