@@ -1,4 +1,5 @@
 class Note < ActiveRecord::Base
+  after_create :add_item
   acts_as_list
 
   attr_accessible :content, :format, :name, :tag_list
@@ -45,5 +46,10 @@ class Note < ActiveRecord::Base
   def shorten
     "#{self.content.slice(0..20)}..." 
   end
+
+  private 
+  def add_item
+    Item.create(note_id: self.id, user_id: self.user.id)
+  end
+
 end
-  

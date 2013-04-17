@@ -24,16 +24,16 @@ $notableBlack: #3D3D3D;
 
 .notes {
   list-style: none;
-  margin: 10px 0 0 0;
+  margin: 10px 14px 0 14px;
 
   > li{
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    margin: 10px;
+    border-bottom: 2px solid #EDEDED;
   }
-}
-
-.timestamp {
-  color: $blueLight;
+  > li:last-child {
+    margin-bottom: 0;
+    border: none;
+  }
 }
 
 aside {
@@ -48,10 +48,13 @@ div.inline-left {
   padding: 2px 2px;
 }
 
-.note {
-  width: 95%;
-}
 
+
+.content {
+  font-size: 1.1em;
+  //font-family: Tahoma, Arial, sans-serif;
+  font-weight: bold;
+}
 
 /*******************
   Phone_Input_Form 
@@ -81,11 +84,12 @@ input[type="tel"], .phone_input {
  *******************/
 
 .handle {
-  float:right;
+  float: right;
   cursor: pointer;
   display: none;
   position: relative;
-  bottom: 10px;
+  top: 40px;
+  left: 130px;
 }
 
 /*******************
@@ -94,12 +98,16 @@ input[type="tel"], .phone_input {
 
 #note-icons {
   float: right;
+  position: relative;
+  bottom: 14px;
 }
 
 .trash_icon {
+  padding-right: 2px;
   &:hover {background-position: -26px -2px;}
 }
 .reminder_icon {
+  padding-right: 2px;
   &:hover {background-position: -2px -173px;}
 }
 .attach_icon {
@@ -119,6 +127,10 @@ a.remind:focus, a.trash:focus {
 .filepicker {
   border: none;
   background-color: transparent;
+}
+button.filepicker {
+  vertical-align: top;
+  padding: 0 1px 0 3px;
 }
 
 .list-tags {
@@ -180,13 +192,13 @@ a.remind:focus, a.trash:focus {
 
 .items-area {
   height: 100px;
-  border: 2px dotted $notableGray;
+  font-family: Tahoma, Arial, sans-serif;
 }
 
  #note-section {
    background-color: #FDFDFD;
    display: block;
-   margin: 18px 25px 25px 25px;
+   margin: 16px 25px 25px 25px;
  }
 
 
