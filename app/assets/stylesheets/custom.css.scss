@@ -87,21 +87,27 @@ p {
   float: left;
   margin-right: 10px;
   padding-top: 8px;
-  &:hover {
-    color: $notableYellow;
-    text-decoration: none;
-  }
 }
 
-.navbar .nav > li > a {
-  color: $notableWhite;
-  text-shadow: 0 1px 0 #555555;
+.navbar .nav {
+  margin: 0;
+}
+
+.navbar .signed_in > li > a  {
   padding: 0;
   margin: 7px 0 0 10px;
+
 }
 
-.navbar .nav li.dropdown > .dropdown-toggle .caret {
-  border-top-color: $notableWhite;
+.navbar .signed_out > li > a {
+  color: $notableBlue;
+  text-shadow: -1px -1px 0 #FDFDFD;
+  margin-top: 4px;
+  font-size: 1.1em;
+  &:hover {
+    color: $notableOrange;
+    text-decoration: none;
+  }
 }
 
 #navbar-main {
