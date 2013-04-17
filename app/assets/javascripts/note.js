@@ -25,12 +25,47 @@ $(document).ready(function() {
     e.preventDefault();
     $(this).closest("li").children(".tags").toggle(300);
   });
-});
 
-$(function() {
   $("li").hover(function(event) {
     $(this).children(".handle").toggle();
   });
+
+  
+  /*****************
+    Auto Save
+   *****************/
+  $("span#save_flash").hide();
+
+  $("[id^=item_]").focus(function(){
+    var item_id  = this.id.substring(5);
+    var el = "#item_"+item_id
+    $(el).idleTimer(5000);
+    $(el).on( 'idle.idleTimer', function(event){
+      var item_content = $("#item_"+item_id).html();
+      var item_path = "/items/"+item_id+".json";
+
+      save_items(item_path, item_id, item_content)
+    });
+  });
+
+  $("[id^=item_]").focusout(function(){
+    var item_id  = this.id.substring(5);
+    var item_content = $("#item_"+item_id).html();
+    var item_path = "/items/"+item_id+".json";
+
+    save_items(item_path, item_id, item_content)
+  });
+
+  function save_items(item_path, item_id, item_content) {
+    $.ajax(item_path, {
+      type: 'PUT',
+      data: { item: {id: item_id, data: item_content }},
+      dataType: 'json'
+    });
+
+    $("span#save_flash").show().delay(2000).fadeOut();
+  }
+  
 });
 
 /*****************
@@ -121,3 +156,4 @@ $(function() {
     //   out += event.fpfiles[i].url;
     //   out+=' '};
     // alert(out);
+

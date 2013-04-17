@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-	before_filter :signed_in_user
-	before_filter :correct_user,   only: :destroy
+	before_filter :authenticate_user!
 
 	def create
 		@item = item.new(params[:item])
@@ -12,10 +11,20 @@ class ItemsController < ApplicationController
 	end
 
   def update
+    respond_to do |format|
+      format.json do
+        @item = Item.find(params[:item][:id]);  
+        @item.update_attributes(params[:item]);
+        render nothing: true
+      end
+    end
   end
 
   def show
-		@item = current_user.note.item
+    @item = Item.find(params[:id]);  
+    respond_to do |format|
+      format.json  { render :json => @item }
+    end
   end
 
 	private
