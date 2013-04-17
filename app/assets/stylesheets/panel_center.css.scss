@@ -97,9 +97,11 @@ input[type="tel"], .phone_input {
 }
 
 .trash_icon {
+  padding-right: 2px;
   &:hover {background-position: -26px -2px;}
 }
 .reminder_icon {
+  padding-right: 2px;
   &:hover {background-position: -2px -173px;}
 }
 .attach_icon {
@@ -119,6 +121,10 @@ a.remind:focus, a.trash:focus {
 .filepicker {
   border: none;
   background-color: transparent;
+}
+button.filepicker {
+  vertical-align: top;
+  padding: 0 1px 0 3px;
 }
 
 .list-tags {
