@@ -1,13 +1,19 @@
 <% provide(:title, 'Help') %>
-<h1>Help</h1>
-<p> Notable is a web app used for discovering insights through organizing your thoughts and ideas. </p>
 <% if user_signed_in? %>
+
+	<h1>Help</h1>
+	<p> Notable is a web app used for discovering insights through organizing your thoughts and ideas. </p>
 	<p>
   	Start by adding notes and ideas that you need to organize.  Later on, features will be added that allow you to view and strucuture your thoughts in different ways.  There will also smart computers running in the background to give you suggested connections between your thoughts!
 	</p>
+
 <% else %>
+	
+	<h1>Help</h1>
+	<p> Notable is a web app used for discovering insights through organizing your thoughts and ideas. </p>
 	<p> If you have not created an account yet, then get started by 
 	<%= link_to "signing up", signup_path %>.  Otherwise, click here to 
 	<%= link_to "sign in", signin_path %> to Notable!  For all other questions, please <%= link_to "contact us", contact_path %>.
 	</p>	
+
 <% end %>
