@@ -34,7 +34,7 @@ $(document).ready(function() {
   /*****************
     Auto Save
    *****************/
-  $("span#save_flash").hide();
+  $("span#save-notification").hide();
 
   $("[id^=item_]").focus(function(){
     var item_id  = this.id.substring(5);
@@ -63,7 +63,7 @@ $(document).ready(function() {
       dataType: 'json'
     });
 
-    $("span#save_flash").show().delay(2000).fadeOut();
+    $("span#save-notification").show().delay(2000).fadeOut();
   }
   
 });

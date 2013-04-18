@@ -13,7 +13,7 @@
   <body>
     <%= render 'layouts/header_in' %>
     <div class="container" id="main_container">
-      <%= render 'layouts/flash' %>
+      <%= render partial: 'layouts/flash', locals: { flash: flash } %>
 		  <%= yield %>
     </div>
   </body>
@@ -21,7 +21,7 @@
   <body id="signed_out">
     <%= render 'layouts/header_out' %>
     <div class="container" id="main_container">
-      <%= render 'layouts/flash' %>
+      <%= render partial: 'layouts/flash', locals: { flash: flash } %>
 		  <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
