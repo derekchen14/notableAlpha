@@ -9,5 +9,23 @@
   <%= filepicker_js_include_tag %>
   <%= render 'layouts/shim' %>
 </head>
-  <%= yield %>
+<% if user_signed_in? %>
+  <body>
+    <%= render 'layouts/header_in' %>
+    <div class="container" id="main_container">
+      <%= render 'layouts/flash' %>
+		  <%= yield %>
+    </div>
+  </body>
+<% else %>
+  <body id="signed_out">
+    <%= render 'layouts/header_out' %>
+    <div class="container" id="main_container">
+      <%= render 'layouts/flash' %>
+		  <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+
+<% end %>
 </html>

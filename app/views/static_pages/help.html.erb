@@ -1,33 +1,19 @@
 <% provide(:title, 'Help') %>
-
 <% if user_signed_in? %>
 
-<body>
-  <%= render 'layouts/header_in' %>
-  <div class="container" id="main_container">
-    <%= render 'layouts/flash' %>
-		<h1>Help</h1>
-		<p> Notable is a web app used for discovering insights through organizing your thoughts and ideas. </p>
-		<p>
-	  	Start by adding notes and ideas that you need to organize.  Later on, features will be added that allow you to view and strucuture your thoughts in different ways.  There will also smart computers running in the background to give you suggested connections between your thoughts!
-		</p>
-	</div>
-</body>
+	<h1>Help</h1>
+	<p> Notable is a web app used for discovering insights through organizing your thoughts and ideas. </p>
+	<p>
+  	Start by adding notes and ideas that you need to organize.  Later on, features will be added that allow you to view and strucuture your thoughts in different ways.  There will also smart computers running in the background to give you suggested connections between your thoughts!
+	</p>
 
 <% else %>
 	
-<body id="signed_out">
-  <%= render 'layouts/header_out' %>
-  <div class="container" id="main_container">
-    <%= render 'layouts/flash' %>
-		<h1>Help</h1>
-		<p> Notable is a web app used for discovering insights through organizing your thoughts and ideas. </p>
-		<p> If you have not created an account yet, then get started by 
-		<%= link_to "signing up", signup_path %>.  Otherwise, click here to 
-		<%= link_to "sign in", signin_path %> to Notable!  For all other questions, please <%= link_to "contact us", contact_path %>.
-		</p>	
-		<%= render 'layouts/footer' %>
-	</div>
-</body>
+	<h1>Help</h1>
+	<p> Notable is a web app used for discovering insights through organizing your thoughts and ideas. </p>
+	<p> If you have not created an account yet, then get started by 
+	<%= link_to "signing up", signup_path %>.  Otherwise, click here to 
+	<%= link_to "sign in", signin_path %> to Notable!  For all other questions, please <%= link_to "contact us", contact_path %>.
+	</p>	
 
 <% end %>
