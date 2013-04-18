@@ -1,4 +1,9 @@
 <% provide(:title, 'About Us') %>
+ <body>
+    <%= render 'layouts/header_out' %>
+    <div class="container" id="main_container">
+      <%= render 'layouts/flash' %>
+
 <h1>About Us</h1>
 <p>
   Notable is a small team of designers and developers building out a web app used for discovering insights through organizing your thoughts and ideas. It is based off the 
@@ -13,4 +18,6 @@
 <p>
 	Built on the simple idea that true productivity is about taking effective action, rather than just efficient action, Notable allows you to work with your ideas to facilitate the discovery of meaningful connections.  More than just a tool for storing tasks or creating lists, Notable intelligently prioritizes those tasks to see which ones you should be taking action on first.  Ultimately, by allowing you to actively work with your ideas, Notable helps you find the signal through the noise. 
 </p>
-<p>Special thanks to Greg, Brian, Irina, Jasmine, Erik and Kevin.</p>
+<%= render 'layouts/footer' %>
+  </div>
+</body>
