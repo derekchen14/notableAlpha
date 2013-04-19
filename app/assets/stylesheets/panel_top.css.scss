@@ -35,6 +35,14 @@ $notableDarkGray: #999999;
   margin: 0 5px 5px 0;
 }
 
+#save-notification{
+  margin-top: 5px;
+  color: $notableDarkGray;
+  font-family: 'Century Gothic', "Arial", san-serif;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
 .expand_icon {
   cursor: pointer;
   &:hover {background-position: -88px -117px;}
