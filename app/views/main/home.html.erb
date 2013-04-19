@@ -1,5 +1,5 @@
-<% provide(:title, current_user.username) %>
 <% if user_signed_in? %>
+<% provide(:title, current_user.username) %>
   <%= render 'layouts/left_panel' %>
   <%= render 'layouts/top_panel' %>
   <%= render 'layouts/center_panel' %>
