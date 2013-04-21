@@ -56,6 +56,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   color: $notableBlack;
   font-family: 'Century Gothic', Helvetica, Arial, sans-serif; 
+  text-shadow: 0 1px white;
+
 }
 
 h1 {
@@ -77,6 +79,8 @@ p {
   line-height: 1.7em;
   color: gray;
   font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-shadow: 0 1px white;
+
 }
 
 /*******************
