@@ -1,6 +1,7 @@
 <%# <% cache note do %>
   <%= content_tag_for :li, note do %>
     <span class="content"><%= best_in_place note, :content  %></span>
+    <span class="subtitle"><%= best_in_place note, :subtitle, type: :input, nil: "Subtitle" %></span>
     <div class="filepicker_link">
       <% note.notable_filepickers.each do |file| %>
         <%= link_to "View File", file.url %></br>
