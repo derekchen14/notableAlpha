@@ -44,12 +44,16 @@ $(document).ready(function() {
       var item_content = $("#item_"+item_id).html();
       var item_path = "/items/"+item_id+".json";
 
-      save_items(item_path, item_id, item_content)
+      save_items(item_path, item_id, item_content);
+      console.log("saving1 " + el);
+      $("span#save-notification").show().delay(2000).fadeOut();
     });
   });
 
   $("[id^=item_]").focusout(function(){
     var item_id  = this.id.substring(5);
+    var el = "#item_"+item_id
+    $(el).idleTimer("destroy");
     var item_content = $("#item_"+item_id).html();
     var item_path = "/items/"+item_id+".json";
 
@@ -62,8 +66,6 @@ $(document).ready(function() {
       data: { item: {id: item_id, data: item_content }},
       dataType: 'json'
     });
-
-    $("span#save-notification").show().delay(2000).fadeOut();
   }
   
 });
