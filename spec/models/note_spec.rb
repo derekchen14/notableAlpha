@@ -5,6 +5,7 @@ describe Note do
   it { should respond_to(:content) }
   it { should respond_to(:user_id) }
   it { should respond_to(:user) }
+  it { should respond_to(:subtitle) }
 
   it "cannot be created without a user" do
     FactoryGirl.build(:note, user: nil).should_not be_valid
@@ -20,7 +21,11 @@ describe Note do
 
   it "correctly shortens a note" do
     note = FactoryGirl.build(:note, content: "This is my note to shorten")
-    note.shorten.should eq("This is my ...")
+    note.shorten.should eq("This is my note to sh...")
+  end
+
+  it "valid without subtitle" do
+    FactoryGirl.build(:note, subtitle: "").should be_valid
   end
   
 end

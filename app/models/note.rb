@@ -2,7 +2,7 @@ class Note < ActiveRecord::Base
   after_create :add_item
   acts_as_list
 
-  attr_accessible :content, :format, :name, :tag_list
+  attr_accessible :content, :format, :name, :tag_list, :subtitle
   belongs_to :user, touch: true
   has_many :items
   has_many :notable_filepickers
