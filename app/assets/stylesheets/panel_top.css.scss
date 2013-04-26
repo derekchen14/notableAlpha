@@ -15,8 +15,10 @@ $notableDarkGray: #999999;
  *******************/
 
 #extension-section{
-  clear: both;
+  display: inline-block; 
+  width: 100%;
 }
+
 
 /*******************
   Extension Nav
@@ -56,6 +58,8 @@ form#new_note {
   margin: 0;
 }
 
+
+
 /*******************
   Sort (Extension)
  *******************/
@@ -76,7 +80,7 @@ form#new_note {
   }
 }
 
-.sort-menu {
+.sort-menu { 
 }
 
 /*******************
@@ -84,7 +88,7 @@ form#new_note {
  *******************/
 
 #extension_views {
-  margin: 0.1em 0.9em 0 0;
+  margin: 0.1em 1.4em 0 0;
   padding-top: 4px;
 }
 
@@ -117,6 +121,7 @@ form#new_note {
   display: block;
   background-image:url('cardboard_flat_@2X.png');
   position: relative;  
+  z-index: -1000;
   margin-bottom: 50px;
   border-radius: 10px;
   h3 {
@@ -128,4 +133,3 @@ form#new_note {
     font-weight: bold;
   }
  }
-
