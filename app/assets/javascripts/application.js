@@ -14,11 +14,13 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery.tokeninput
-//= require idletimer.min
+//= require jquery.hotkeys
 //= require jquery.sidr.min
+//= require idletimer.min
 //= require best_in_place.purr
 //= require best_in_place
 //= require bootstrap
+//= require bootstrap-wysiwyg
 //= require_tree .
 
 $(document).ready(function() {

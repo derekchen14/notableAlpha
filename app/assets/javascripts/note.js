@@ -30,7 +30,11 @@ $(document).ready(function() {
     $(this).children(".handle").toggle();
   });
 
-  
+  /*****************
+   Mindmup Editor 
+   *****************/
+  $("[id^=item_]").wysiwyg();
+
   /*****************
     Auto Save
    *****************/
