@@ -42,6 +42,15 @@ $(document).ready(function() {
       'ctrl+y meta+y meta+shift+z': 'redo'
     }
   });
+  
+  function createURL(items) {
+    var URL = /(\b(?:(?:https?|ftp|file|[A-Za-z]+):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$]))/ig
+    var url_list = $(items).text().match(URL);
+    for(i in url_list){
+      $(items).text($(items).text().replace(url_list[i], "<a href='"+url_list[i]+"'>"+url_list[i]+"</a>"));
+    }
+    $(items).html($(items).text());
+  }
 
   /*****************
     Auto Save
@@ -56,8 +65,8 @@ $(document).ready(function() {
       var item_content = $("#item_"+item_id).html();
       var item_path = "/items/"+item_id+".json";
 
+      createURL(el);
       save_items(item_path, item_id, item_content);
-      console.log("saving1 " + el);
       $("span#save-notification").show().delay(2000).fadeOut();
     });
   });
@@ -65,6 +74,9 @@ $(document).ready(function() {
   $("[id^=item_]").focusout(function(){
     var item_id  = this.id.substring(5);
     var el = "#item_"+item_id
+    
+    createURL(el);
+  
     $(el).idleTimer("destroy");
     var item_content = $("#item_"+item_id).html();
     var item_path = "/items/"+item_id+".json";
