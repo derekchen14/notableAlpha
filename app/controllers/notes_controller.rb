@@ -76,9 +76,15 @@ class NotesController < ApplicationController
 
   def update_tags
     @note = current_user.notes.find(params[:id])
-    @note.update_attributes(params[:note])
-    @tags = current_user.tags
-    respond_to { |format| format.js }
+    if @note.update_attributes(params[:note])
+      @tags = current_user.tags.each do |tag|
+        if tag.notes.empty?
+          tag.delete
+          current_user.tags.delete(tag)
+        end
+      end
+      respond_to { |format| format.js }
+    end
   end
 
   def filter_by_tags
@@ -98,5 +104,4 @@ class NotesController < ApplicationController
       @note = current_user.notes.find_by_id(params[:id])
       redirect_to root_url if @note.nil?
     end
-    
 end
