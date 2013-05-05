@@ -2,7 +2,7 @@ class Tag < ActiveRecord::Base
   attr_accessible :name, :user_id
   belongs_to :user
   has_many :taggings
-  has_many :notes, through: :taggings
+  has_many :notes, through: :taggings, dependent: :destroy
 
   def self.tokens(query)
     tags = where("name like ?", "%#{query}%")
